@@ -1,0 +1,117 @@
+# Timer Blocks
+
+## Boolean Delay
+
+#### Introduction
+
+The **Boolean Delay** logic block is used to delay the change of a boolean value (`true` / `false`). When the input boolean value changes, the output will sync with it only after a set delay time. You can set different delay times for `true` and `false` status separately.
+
+This block does not change the original data. It only delays the output of status changes. This is helpful for debounce, delayed triggering, or requiring a state to be true or false for a certain period before running the next logic.
+
+You can use the parameters “Delay when input is true” and “Delay when input is false” to control delay times. You can enter the delay directly, or connect a number-type input for more flexible automation.
+
+#### Attribute Description
+
+- **Input / Output:** Configured on the block
+    - **Input:** Connect the boolean data to the left side.
+    - **Output:** Connect the output to a node that stores boolean data on the right.
+- **On Delay / Off Delay:** Double-click the block to enter the settings panel and configure the corresponding delay times.
+    - **On Delay:** Set the wait time (number type) for the true value.
+    - **Off Delay:** Set the wait time (number type) for the false value.
+
+#### Example
+
+Here is an example of turning on a light with a delay when someone enters a room, and turning off the light with a delay after the room is empty:
+
+1. Add a "Human Presence Sensor - Presence Status" (Boolean) as the **input node** on the left side of the canvas.
+2. Add a **Boolean Delay** logic block in the center of the canvas.
+3. Connect the **output** of the "Human Presence Sensor - Presence Status" to the **input** of the Boolean Delay block.
+4. Set the **On delay** to 2 seconds. This means when someone is detected, it will output true after a 2-second delay.
+5. Set the **Off delay** to 10 seconds. This means when no one is detected, it will output false after a 10-second delay.
+6. Add a "Light - Switch Status" as the **output node** on the right side of the canvas.
+7. Connect the **output** of the Boolean Delay logic block to the input of "Light - Switch Status".
+
+With this setup, the system will turn on the light with a 2-second delay after detecting someone, and turn off the light with a 10-second delay after no one is detected. This helps prevent false triggers and makes your lighting control smarter.
+
+## Delay Event
+
+#### Introduction
+
+When you want to delay the next action until the previous one finishes, you can use this logic block. It allows you to add a delay between two actions easily.
+
+#### How to Use
+
+1. Add the **Delay Event** logic block to your canvas.
+2. Connect the operation you want to delay to the `Fire` input of this block.
+3. Double-click the block, and set the delay duration in the `Delay Time` parameter.
+4. In the `Input` field, enter or connect the data you want to pass along after the delay (this can be a number, string, etc.).
+5. Connect the `Delay Event` output to the next node that needs to receive the delayed data. This completes the delayed triggering.
+
+#### Example
+
+Let’s take “delay 3 seconds to turn off the air conditioner after a door/window opens” as an example:
+
+1. Add a “Door/Window Sensor - State” point on the left of the canvas.
+2. Add a **Delay Event** block.
+3. Connect the output of the “Door/Window Sensor - State” to the `Fire` input of the Delay Event block.
+4. Double-click the block, set the delay time to `3` seconds, and set the `Input` to the value to turn off the AC (for example, `false`).
+5. Add an “Air Conditioner - Switch State” node on the right side of the canvas.
+6. Connect the `Delay Event` output to the `Input` of the “Air Conditioner - Switch State” node.
+
+With this setup, when the door or window is opened, the system will turn off the air conditioner after 3 seconds. This automation helps reduce energy waste.
+
+## Time Trigger
+
+#### Introduction
+
+The **Time Trigger** logic block is used to automatically trigger specific actions based on preset days and times. You can flexibly choose which days in a week and the exact time to trigger your devices. This makes scheduled automation, like turning devices on or off, simple.
+
+#### Attribute Description
+
+- **Fire:** Connect this output to the action you want to trigger.
+- **Days:** Set which days of the week this trigger takes effect (multiple selection is supported).
+- **Time:** Set the exact time for the trigger.
+
+:::tip
+To set `Days` and `Time`, double-click the block to see the configuration panel, and then you can set the `Value`.
+:::
+
+#### Example
+
+For “open the curtain at 8:00 every morning”, follow these steps:
+
+1. Add a **Time Trigger** block to your canvas.
+2. Set `Days` to every Monday to Sunday (select all), and set `Time` to `08:00`.
+3. Add a “Curtain - Switch State” node on the right side as the target device.
+4. Connect the `Trigger` output of the Time Trigger block to the `Input` of “Curtain - Switch State”.
+5. Double-click the connection line to open the configuration panel, expand `Converter > Target`, and open the toggle button of the `Value`.
+
+In this setup, the system will automatically open the curtain at 8:00 every morning.
+
+## Time Period
+
+#### Introduction
+
+This logic block helps you check if the current time falls within a specified period (based on selected days, start, and end times). When the time is within the range, it triggers the “Match” branch; otherwise, it triggers the “Not Match” branch.
+
+#### Attribute Description
+
+- Attributes displayed on block:
+    - **True:** Connect the action to trigger when the time is in the specified range.
+    - **Trigger:** Connect the action that should trigger this check on the left side.
+- Attributes hidden in configuration panel:
+    - **Days:** Set which days of the week the time period applies to (can select multiple).
+    - **Start Time:** Set the start time for the period.
+    - **End Time:** Set the end time for the period.
+    - **False:** (Optional)Connect the action to trigger when outside the range.
+
+#### Example
+
+For “turn on the conference room lights during working hours”, follow these steps:
+
+1. Add a "Light - Switch State" node to the left side of the canvas. This will be the action to turn on the lights.
+2. Add a **Time Period** logic block.
+3. Double-click the block, set `Days` to Monday through Friday. Set `Start Time` to `09:00` and `End Time` to `18:00`, so it only works from 9 AM to 6 PM on workdays.
+4. Connect the output of the "Light - Switch State" node to the `Trigger` port of the Time Period block.
+5. In the `True` branch, connect the input of "Light - Switch State" 
+6. Double-click the connection line to open the configuration panel. Edit the `Value` of `Converter > Target`, turn on the toggle switch in the popup, and make sure no Status is selected. So it will turn on during working hours.

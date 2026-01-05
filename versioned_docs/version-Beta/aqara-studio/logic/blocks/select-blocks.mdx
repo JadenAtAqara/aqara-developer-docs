@@ -1,0 +1,41 @@
+# Select Blocks
+
+#### Introduction
+
+A select block lets you choose one value to output from several options, such as "Input A", "Input B", or "Input C". Which input is chosen is determined by the "Select" parameter. You can only use this block to change the value of the same function point. 
+
+A common use case is switching the output by changing the select parameter. This is handy for adjusting parameters like power, mode, or level for the same device in a scene, helping you build automations that are flexible and easy to maintain.
+
+#### Attribute Description
+
+The default attributes displayed on the block:
+- **Output**: This outputs the selected value. It is usually used to set or update the value of a specific function point.
+- **Input A ~ Input C**: You can manually set possible values here, or connect constants or outputs from other logic blocks from the left side. Each input represents a different option. The type of these values must match the type of the function.
+- **Select**: Connect a number-type function point or variable to the left side. The block will choose which input to output based on its value.
+    The value meanings are:
+    - `1`: Output the value of Input A.
+    - `2`: Output the value of Input B.
+    - `3`: Output the value of Input C.
+    - and so on.
+
+If you want to add more inputs, double-click the block to enter the configuration panel, and you can see there are 5 more inputs availabe(Input D ~ Input H).
+
+To make them displayed on the block, modify their `Flags` by checking `Show` in the popup. Confirm your modification and you will see a new Input added on the block. 
+
+#### Block Types
+
+- Boolean Select
+- Enum Select
+- Numeric Select
+- String Select
+
+#### Example
+
+Here is how to switch the brightness of a lamp based on a button event:
+
+1. Add "Switch - Button Event" to the left of the canvas, and "Lamp - Brightness" to the right.
+2. Add a **Numeric Select** block.
+3. Set `Input A` as `20`, `Input B` as `60`, and `Input C` as `100`. These correspond to low, medium, and high brightness levels.
+4. Connect the output of the "Switch - Button Event" to the "Select" port of the **Numeric Select** logic block. In this way, Aqara Studio will automatically choose and output the corresponding input according to the enum value of the button event (for example, when the enum value is `1`, it outputs `Input A`; when it's `2`, it outputs `Input B`, and so on).
+5. Connect the output of the **Numeric Select** block to the input of "Lamp - Brightness".
+

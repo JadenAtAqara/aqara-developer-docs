@@ -1,0 +1,30 @@
+# Logic
+
+Aqara Studio offers flexible visual tools for configuring automation. You can combine different modules and data flow logic to quickly achieve smart control of IoT devices.
+
+## Advantages
+
+- **Flexible Composition**: The modular design lets you freely combine logic, math, and control functions to suit different IoT scenarios.
+- **Visualized Operation**: The graphical data connection interface is easy to use and helps improve development efficiency.
+- **Immediate Effect**: Your configuration takes effect right away. You don’t need to restart devices or the system.
+
+## How to Create Automation
+
+1. See [Automation - Create an Automation](./../automation.mdx#create-an-automation) to enter the logic editor.
+2. A slider at the bottom of the canvas allows you to zoom in or out. When you zoom out, "edit" icons appear on the left and right sides of the canvas. The left one is for adding input points (which listen for events or statuses). The right side is for adding output points (which trigger device actions).
+   1. Click one of the "edit" icons to see a popout.
+   2. In the popup, **click** the "edit" icon, and you will see a protocol tree. Expand a protocol folder by double-clicking the folder icon. Then, expand a device folder. Keep expanding the folders inside it until you reach the function points (you’ll know you’re there when you can’t expand further). 
+   3. Double-click the function point to select it. Multiple selection is supported. 
+   4. After choosing, click **Confirm** to add them.
+3. Connect the **output** of the input point to the **input** of the output point. This will let you create an automation logic.
+4. Once all configurations and connections are done and you have checked everything, you can **enable** the automation at the top of the canvas.
+
+   :::tip
+   The connection lines in automation are used for data flow. They transfer the output value from one node to the next node.
+   :::
+
+5. After you finish all configurations and connections, check everything carefully. Then, you can **enable** the automation at the top of the canvas.
+
+## Add Blocks
+
+To make your automation more flexible and complex, you can add multiple blocks. These blocks help you create conditions and process data. For more details, see [Blocks](/docs/category/blocks).

@@ -1,0 +1,33 @@
+# Backup and Restore
+
+Aqara Studio supports backing up user data, helping you quickly recover operations and ensure data security by restoring backup data in the event of service failures or operational errors.
+
+## Backup Data
+
+Navigate to the **Backup and Restore** page from the sidebar to [start backup](#start-backup) and [manage backups](#manage-backups).
+
+### Start Backup
+
+Aqara Studio uses a full backup mechanism that completely backs up user data. You can use two methods to back up: automatic backup and manual backup.
+
+| Backup Method | Description | Operation |
+| - | - | - |
+| Automatic Backup | You can set up a backup interval, and the system will automatically create backups according to this schedule. | Click "Local Auto-Backup Settings" to configure the following parameters:<br />1. **Enable** automatic backup.<br />2. Set the start date and time for automatic backups.<br />3. Set the maximum number of backup files allowed.<br />4. **Save** your configuration. |
+| Manual Backup | Instantly back up by triggering a manual backup. | Click "Manual Backup". |
+
+### Manage Backups
+
+After successful backup, you can see the backup on the backup list, and perform the following actions:
+- Reset: Restore the system data to this backup.
+- Download: Download the backup for local management.
+- Delete: Delete this backup.
+
+## Restore Data
+
+:::tip
+Restoring data will cause the system to reboot and log out the current account. Be sure to save all important data before proceeding!
+:::
+
+You can restore user data using either of the following methods:
+- Select any backup file and click "Reset" to restore data from that backup.
+- Click the **System Restore** button to select any backup file from your computer and restore it.

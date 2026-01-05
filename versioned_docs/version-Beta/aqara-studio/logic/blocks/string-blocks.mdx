@@ -1,0 +1,118 @@
+# String Blocks
+
+## String Concat
+
+#### Introduction
+
+This block is used to concatenate multiple input strings in order into a new string. It can be used to combine several fragments or variables to be a merged string.
+
+#### Attribute Description
+
+- **Input A ~ Input D**: These are string segments to be joined in order (you can connect 1 to 4 strings as needed).
+- **Output**: The full new string after being concatenated in input order.
+
+## String Index Of
+
+#### Introduction
+
+The "String Index Of" logic block checks if one string appears in another string and gets the index position.
+
+It's mainly used under the circumstances:
+- Analyzing string data reported by devices (such as status info, sensor callbacks, log content, etc.)
+- Checking if a specific field or keyword exists
+- Getting the start position of a keyword, so you can use this index for later logic
+
+#### Attribute Description
+
+| Attribute     | Type    | Required/Optional | Description                                                            |
+|---------------|---------|:----------------:|-----------------------------------------------------------------------|
+| Output        | Boolean | Output           | Whether Input B string is found.                                      |
+| In A       | String  | Required         | The original string to search in.                                     |
+| In B       | String  | Required         | The substring to look for.                                            |
+| From Index   | Number  | Optional         | The index to start searching from. By default, it starts from 0.      |
+| Begin Index   | Number  | Output           | The index of the first occurrence of Input B in the original string. Returns -1 if not found.  |
+| After Index    | Number  | Output           | It can be used as the "From Index" when searching again, convenient for repeated searches.        |
+
+:::tip
+Indexing starts from 0.
+:::
+
+#### Example
+
+Take "matching a single character" as an example, the steps are:
+
+1. Add a **String Index Of** block on the canvas.
+2. Set a string variable with the value `1234a567899999a` and connect it to Input A of the block.
+3. Set another string variable with the value `a` and connect it to Input B of the block.
+4. Do not set `From Index`, so the search starts from 0 by default.
+5. After running, the block outputs:
+   - **Output (Boolean):** `true`
+   - **Begin Index:** `4`
+   - **After Index:** `5`
+
+From this example, you can see that string B is found at position 4 in string A for the first time. If you want to search again, you should set `From Index` to 5.
+
+## String Len
+
+#### Introduction
+
+Get the length of the specified string.
+
+#### Attribute Description
+
+- **In**: The string to query.
+- **Output**: The length of the string.
+
+## Substring
+
+#### Introduction
+
+**Substring** means extracting a section of characters from a string based on a **begin index** and an **end index**.
+
+#### Attribute Description
+
+- Default attributes displayed on the block:
+   - In: The orignal string.
+   - Output: The resulting substring after extraction.
+- Double-click the block to set the following attributes:  
+   - Begin Index: The starting position of the substring (inclusive, counting from 0).
+   - End Index: The ending position of the substring (exclusive). If omitted, the substring goes to the end.
+   
+#### Example
+
+Here is an example of extracting a substring:
+
+1. Add a **Substring** block to the canvas.
+2. Set a string variable with the value `Hello, Smart Home!` and connect it to the **In** attribute of the Substring block.
+3. Set **Begin Index** to 0 and **End Index** to 5. This will extract characters from index 0 to index 4 (a total of 5 characters).
+4. After running, the block will output:
+   - **Output (Substring):** `Hello`
+
+If you want to extract another section, such as from index 7 to index 12, do the following:
+
+1. Set **Begin Index** to 7 and **End Index** to 12.
+2. After running, the block will output:
+   - **Output (Substring):** `Smart`
+
+From this example, you can see how to use the **Substring** logic block to extract a specific part of a string. If you want to extract until the end of the string, you can omit the End Index parameter.
+
+## String Trim
+
+#### Introduction
+
+String trim means removing whitespace from the start and end of a string. The content in the middle of the string is not affected.
+
+#### Attribute Description
+
+- **In**: The original string that needs to be trimmed.
+- **Output**: The trimmed string.
+
+#### Example
+
+For "String Trim", the steps are:
+
+1. Add a **String Trim** block to the canvas.
+2. Set a string variable with the value `   temperature=24   `, and connect it to the **Input** parameter of the block.
+3. After running, the block outputs:
+   - **Before trim:** `   temperature=24   `
+   - **After trim (spaces at both ends removed):** `temperature=24`

@@ -1,0 +1,224 @@
+# Modbus TCP
+
+This guide explains how to connect Modbus TCP devices to Aqara Studio.
+
+## Prerequisites
+
+Before you begin, please make sure:
+- Your Modbus TCP device, Aqara Gateway, and your computer are all on the same local network.
+- Your Modbus TCP device is properly configured for Modbus TCP communication. Please refer to your product manual or contact your device manufacturer for support if needed.
+
+## Add a Modbus TCP Device
+
+1. Click the **Device** page in the left sidebar.
+2. In the protocol directory on the left, click the “+” button, select `Modbus TCP` in the popup to add a `Modbus TCP` folder.
+3. Right-click the `Modbus TCP` folder, and choose **Add**. You will see a new `Modbus TCP Device` folder appear under it.
+4. Double-click the new folder. In the **Essential** tab, you can modify the device’s **Display Name**.
+5. Switch to the **Configuration** tab, open **Device Configuration**, and fill in the following parameters:
+
+    | Parameter Name | Required | Description |
+    | --- | --- | --- |
+    | Device Address | No | The slave device address (unit identifier), range 0~255. |
+    | IP Address | Yes | The IP address of this device. |
+    | Port | Yes | The Modbus TCP communication port, default is 502. |
+6. Expand **Advanced Configuration** and fill in the following parameters:
+
+    <table>
+    <thead>
+        <tr>
+        <th colspan="2">Parameter</th>
+        <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <td colspan="2">Rx Process Mode</td>
+        <td>Choose how received data is processed:<ul><li><strong>Byte</strong>: Byte stream mode.</li><li><strong>Packet</strong>: Packet mode.</li></ul></td>
+        </tr>  
+        <tr>
+        <td colspan="2">Use Force MultIPle Coil</td>
+        <td>Whether to use the "Force Multiple Coils" command to write multiple coils (Modbus function code 15).</td>
+        </tr>
+        <tr>
+        <td colspan="2">Use Preset Multiple Register</td>
+        <td>Whether to use the "Preset Multiple Registers" command to write multiple holding registers (Modbus function code 16).</td>
+        </tr>
+        <tr>
+        <td colspan="2">Float Byte Order</td>
+        <td>The byte order used for 32-bit float values. Only <code>Order1032</code> and <code>Order3210</code> are supported.</td>
+        </tr>
+        <tr>
+        <td colspan="2">Long Byte Order</td>
+        <td>The byte order for 64-bit long integer values. Only <code>Order1032</code> and <code>Order3210</code> are supported.</td>
+        </tr>
+        <tr>
+        <td rowspan="2">Input Register Base Address</td>
+        <td>Address Format</td>
+        <td>The format of input register (Modbus function code 04: Read Input Registers) offset address. Supported options:<ul><li>Hexadecimal</li><li>Decimal</li><li>Standard Modbus Address</li></ul>If you are not sure what an offset address is, please see <a href="#what-is-an-offset-address">What is an Offset Address?</a> below.</td>
+        </tr>
+        <tr>
+        <td>Address</td>
+        <td>The offset address.</td>
+        </tr>
+        <tr>
+        <td rowspan="2">Holding Register Base Address</td>
+        <td>Address Format</td>
+        <td>The format of holding register (Modbus function code 03: Read Holding Registers) offset address. The supported formats are the same as those for Input Register Offset Address.</td>
+        </tr>
+        <tr>
+        <td>Address</td>
+        <td>The offset address.</td>
+        </tr>
+        <tr>
+        <td rowspan="2">Coil Status Base Address</td>
+        <td>Address Format</td>
+        <td>The format of coil status (Modbus function code 01: Read Coils) offset address. Supported formats are the same as Input Register Offset Address.</td>
+        </tr>
+        <tr>
+        <td>Address</td>
+        <td>The offset address.</td>
+        </tr>
+        <tr>
+        <td rowspan="2">Input Status Base Address</td>
+        <td>Address Format</td>
+        <td>The format of discrete input (Modbus function code 02: Discrete Inputs) offset address. Supported formats are the same as Input Register Offset Address.</td>
+        </tr>
+        <tr>
+        <td>Address</td>
+        <td>The offset address.</td>
+        </tr>
+        <tr>
+        <td colspan="2">Enable/Disable Device</td>
+        <td>Note: If disabled, this device will not be available.</td>
+        </tr>  
+    </tbody>
+    </table>
+7. Switch to the **Point Add** tab. Click the **+** button in the “Type selection” area.
+8. Click the new point to set its type and configure it. When finished, click **OK**.
+
+   <table>
+     <colgroup>
+       <col />
+       <col />
+       <col />
+       <col />
+     </colgroup>
+     <thead>
+       <tr>
+         <th>Parameter Name</th>
+         <th>Required</th>
+         <th>Description</th>
+         <th>Example</th>
+       </tr>
+     </thead>
+     <tbody>
+       <tr>
+         <td>Point Name</td>
+         <td>Yes</td>
+         <td>Your custom name for the point.</td>
+         <td>-</td>
+       </tr>
+       <tr>
+         <td>Object Type</td>
+         <td>No</td>
+         <td>No need to modify; use the default value.</td>
+         <td></td>
+       </tr>
+       <tr>
+         <td>Status Type</td>
+         <td>Required for Boolean Point</td>
+         <td>
+           <p>Choose when the point is <strong>Boolean</strong>. Supported options:</p>
+           <ul>
+             <li><strong>Coil</strong></li>
+             <li><strong>Input</strong></li>
+           </ul>
+         </td>
+         <td>Coil</td>
+       </tr>
+       <tr>
+         <td>Reg Type</td>
+         <td>Required for Numeric Point</td>
+         <td>
+           <p>Supported options:</p>
+           <ul>
+             <li><strong>Holding</strong></li>
+             <li><strong>Input</strong></li>
+           </ul>
+         </td>
+         <td>Holding</td>
+       </tr>
+       <tr>
+         <td>Data Type</td>
+         <td>Required for Numeric Point</td>
+         <td>
+           <p>Supported options:</p>
+           <ul>
+             <li>Integer Type</li>
+             <li>Long Integer Type</li>
+             <li>Float Type</li>
+             <li>Signed Integer</li>
+             <li>Unsigned Long</li>
+           </ul>
+         </td>
+         <td>Integer Type</td>
+       </tr>
+       <tr>
+         <td>Poll Frequency</td>
+         <td>No</td>
+         <td>
+           <p>Supported options:</p>
+           <ul>
+             <li><strong>Fast</strong>: High frequency polling (for key control)</li>
+             <li><strong>Normal</strong>: Standard frequency</li>
+             <li><strong>Slow</strong>: Low frequency polling (for non-real-time status)</li>
+           </ul>
+         </td>
+         <td>Normal</td>
+       </tr>
+       <tr>
+         <td>Address Format</td>
+         <td>Yes</td>
+         <td>
+           <p>Type of address format. Supported options:</p>
+           <ul>
+             <li><strong>Hex</strong>: Hexadecimal, e.g., 0x0013.</li>
+             <li><strong>Decimal</strong>: e.g., 19.</li>
+             <li><strong>Modbus</strong>: Standard modbus address, e.g., 00001, 10001.</li>
+           </ul>
+         </td>
+         <td>Decimal</td>
+       </tr>
+       <tr>
+         <td>Address</td>
+         <td>Yes</td>
+         <td>
+           <p>Input value = Actual address – The offset address you set above</p>
+         </td>
+         <td>0</td>
+       </tr>
+       <tr>
+         <td>Device Type</td>
+         <td>Yes</td>
+         <td>The device type this point belongs to. This field is for display when you connect Modbus TCP devices to Aqara Home.</td>
+         <td>-</td>
+       </tr>
+     </tbody>
+   </table>
+
+
+### What is an Offset Address?
+
+In the Modbus protocol, each data item in the device (such as registers or coils) has a numbered address used for reading or writing.
+
+However, the addresses used in Modbus messages start from 0 internally, while users often see addresses starting from 1, 30001, 40001, and so on. Therefore, Aqara Studio asks for an “offset address” to help automatically convert these values.
+
+For example, imagine a point with a real address of 40001 (holding register). If you set the “Holding Register Offset Address” to 40000, then when you add this point, you only need to input a data address of 1. Aqara Studio will automatically add the offset and calculate:
+
+Final read address = Offset address + Data address = 40000 + 1 = 40001
+
+This helps you configure many points easily. Just use the relative address (like 1, 2, 3) instead of the full Modbus address each time. This is both simple and consistent.
+
+## Next Steps
+
+Now, you can [view details and control the device](./../device-management/basic-information.mdx), or [use the device in automation](./../automation.mdx).

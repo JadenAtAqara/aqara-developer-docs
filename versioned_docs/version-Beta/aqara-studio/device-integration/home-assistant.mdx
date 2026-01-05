@@ -1,0 +1,54 @@
+# Home Assistant
+
+Aqara Studio supports connecting IoT devices from the Home Assistant ecosystem. Currently, only [device types that follow the Aqara device specification](#supported-device-types) are supported.
+
+## Prerequisites
+
+Before you begin, make sure that:
+- Your Home Assistant ecosystem devices, your computer, and Aqara Studio are all connected to the same local network.
+- You have completed the following Home Assistant basic setup:
+  - Home Assistant is installed. Refer to the official Home Assistant [Installation](https://www.home-assistant.io/installation/) guide for details.
+  - Devices in the Home Assistant ecosystem have been discovered and integrated. For details, see the [Onboarding](https://www.home-assistant.io/getting-started/onboarding/) documentation.
+
+## How to Get a Home Assistant Token
+
+1. In your web browser, visit: `http://homeassistant.local:8123`. (If you have changed the Home Assistant port, use your actual port here.)
+2. Click your account icon at the bottom right of the page to enter your profile.
+3. In your profile, click the "Security" tab. Find "Long-Lived Access Tokens" and click "Create Token". This will generate a Home Assistant token, which you will use to [add Home Assistant ecosystem devices](#add-home-assistant-ecosystem-devices) in Aqara Studio.
+
+<img src="https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/en/HAIntegration-CreateHAToken.png" alt="Create Home Assistant Token" />
+
+## Add Home Assistant Ecosystem Devices
+
+1. On the left sidebar, click to enter the **Device** page.
+2. In the protocol directory on the left, click the "+" button. In the popup, select `Home Assistant` to add the `Home Assistant` folder.
+3. Double-click the `Home Assistant` folder to enter the Home Assistant management page.
+4. Go to the **Configuration** tab. In "Basic Configuration," type in the local IP address, port of your Home Assistant system, and the [token](#how-to-get-a-home-assistant-token).
+5. Go to the `Device Discovery` tab and click the "Discover" button. Aqara Studio will automatically find devices from your Home Assistant.
+6. Select the devices you need, then click the "+" button to add them.
+
+## Supported Device Types
+
+- Light
+- Media Player
+- Vacuum
+- Switch
+- Climate
+- Select
+- Binary Sensor
+- Lock
+- Sensor
+  - FlowSensor
+  - AirQualitySensor
+  - TemperatureSensor
+  - PressureSensor
+  - ParticulateMatterSensor (PM1, PM2.5, PM10)
+  - IlluminanceSensor
+  - HumiditySensor
+  - NaturalGasAlarm
+  - CO2Sensor
+  - AtmosphericPressureSensor
+
+## Next Steps
+
+Now, you can [view details and control the device](./../device-management/basic-information.mdx), or [use the device in automation](./../automation.mdx).

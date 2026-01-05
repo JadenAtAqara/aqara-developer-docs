@@ -1,0 +1,161 @@
+{
+  "aqaraStudioSidebar": [
+    {
+      "type": "category",
+      "label": "Overview",
+      "items": [
+        "aqara-studio/overview/introduction"
+      ]
+    },
+    "aqara-studio/quick-start",
+    {
+        "type": "category",
+        "label": "Build", 
+        "collapsed": false,
+        "items": [
+            "aqara-studio/space",
+            {
+                "type": "category",
+                "label": "Device Integration",
+                "link": {
+                  "type": "generated-index",
+                  "keywords": ["device-integration"]
+                },
+                "collapsed": false,
+                "items": [
+                  "aqara-studio/device-integration/aqara",
+                  "aqara-studio/device-integration/home-assistant",
+                  "aqara-studio/device-integration/modbus-tcp",
+                  "aqara-studio/device-integration/bacnet",
+                  "aqara-studio/device-integration/knx-ip"
+                ]
+              },
+              {
+                  "type": "category",
+                  "label": "Device Management",
+                  "link": {
+                    "type": "generated-index",
+                    "keywords": ["device-management"]
+                  },
+                  "items": [
+                    "aqara-studio/device-management/basic-information",
+                    "aqara-studio/device-management/point-information",
+                    "aqara-studio/device-management/alarms",
+                    "aqara-studio/device-management/tags",
+                    "aqara-studio/device-management/references"
+                  ]
+              },
+              {
+                "type": "category",
+                "label": "Automation",
+                "link": {
+                    "type": "doc",
+                    "id": "aqara-studio/automation"
+                },
+                "items": [
+                    "aqara-studio/ifttt", 
+                    {
+                      "type": "category",
+                      "label": "Flow",
+                      "link": {
+                          "type": "doc",
+                          "id": "aqara-studio/flow/flow-introduction"
+                      },
+                      "collapsed": true,
+                      "items": [
+                          "aqara-studio/flow/device-blocks",
+                          "aqara-studio/flow/timer-blocks",
+                          "aqara-studio/flow/process-blocks",
+                          "aqara-studio/flow/logic-blocks",
+                          "aqara-studio/flow/variables-blocks",
+                          "aqara-studio/flow/other-blocks",
+                          "aqara-studio/flow/data-conversion",
+                          "aqara-studio/flow/examples"
+                      ]
+                    },
+                    {
+                      "type": "category",
+                      "label": "Logic",
+                      "link": {
+                          "type": "doc",
+                          "id": "aqara-studio/logic/logic-introduction"
+                      },
+                      "collapsed": true,
+                      "items": [
+                          {
+                          "type": "category",
+                          "label": "Blocks",
+                          "link": {
+                              "type": "generated-index",
+                              "keywords": ["blocks"]
+                          },
+                          "collapsed": true,
+                          "items": [
+                              "aqara-studio/logic/blocks/variables-blocks",
+                              "aqara-studio/logic/blocks/logic-blocks",
+                              "aqara-studio/logic/blocks/math-blocks",
+                              "aqara-studio/logic/blocks/timer-blocks",
+                              "aqara-studio/logic/blocks/select-blocks",
+                              "aqara-studio/logic/blocks/other-blocks",
+                              "aqara-studio/logic/blocks/string-blocks",
+                              "aqara-studio/logic/blocks/script-blocks"
+                          ]
+                          }
+                      ]
+                    }
+                ]
+              },
+              {
+                "type": "category",
+                "label": "Graph",
+                "link": {
+                    "type": "doc",
+                    "id": "aqara-studio/graph/graph-introduction"
+                },
+                "items": [
+                  "aqara-studio/graph/components",
+                  "aqara-studio/graph/component-categories",
+                  "aqara-studio/graph/assets",
+                  "aqara-studio/graph/common-properties"
+                ]
+            }
+        ]       
+    },
+    {
+      "type": "category",
+      "label": "Operation",
+      "collapsed": false,
+      "items": [
+        "aqara-studio/energy-management-system",
+        "aqara-studio/alarm-management",
+        "aqara-studio/log-management"
+      ]
+    },
+    {
+        "type": "category",
+        "label": "Management",
+        "items": [
+          "aqara-studio/user",
+          "aqara-studio/cloud",  
+          "aqara-studio/backup-and-restore",
+          {
+            "type": "category",
+            "label": "Settings",
+            "items": [
+                "aqara-studio/remote-access"
+              ]
+          }
+        ]      
+    },
+    {
+      "type": "category",
+      "label": "Developer",
+      "items": [
+        "aqara-studio/developer-guide",
+        "aqara-studio/api-references/data-export-api-v1",
+        "aqara-studio/api-references/device-type",
+        "aqara-studio/api-references/trait-codes"
+      ]      
+    }
+  ]
+}

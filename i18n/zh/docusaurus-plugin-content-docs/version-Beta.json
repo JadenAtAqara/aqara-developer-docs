@@ -1,0 +1,58 @@
+{
+  "version.label": {
+    "message": "Beta(CURRENT)",
+    "description": "The label for version Beta"
+  },
+  "sidebar.aqaraStudioSidebar.category.Overview": {
+    "message": "概览",
+    "description": "The label for category 'Overview' in sidebar 'aqaraStudioSidebar'"
+  },
+  "sidebar.aqaraStudioSidebar.category.Build": {
+    "message": "构建",
+    "description": "The label for category 'Build' in sidebar 'aqaraStudioSidebar'"
+  },
+  "sidebar.aqaraStudioSidebar.category.Device Integration": {
+    "message": "设备接入",
+    "description": "The label for category 'Device Integration' in sidebar 'aqaraStudioSidebar'"
+  },
+  "sidebar.aqaraStudioSidebar.category.Device Management": {
+    "message": "设备管理",
+    "description": "The label for category 'Device Management' in sidebar 'aqaraStudioSidebar'"
+  },
+  "sidebar.aqaraStudioSidebar.category.Automation": {
+    "message": "自动化",
+    "description": "The label for category 'Automation' in sidebar 'aqaraStudioSidebar'"
+  },
+  "sidebar.aqaraStudioSidebar.category.Flow": {
+    "message": "高阶 Flow",
+    "description": "The label for category 'Flow' in sidebar 'aqaraStudioSidebar'"
+  },
+  "sidebar.aqaraStudioSidebar.category.Logic": {
+    "message": "Logic",
+    "description": "The label for category 'Logic' in sidebar 'aqaraStudioSidebar'"
+  },
+  "sidebar.aqaraStudioSidebar.category.Blocks": {
+    "message": "逻辑块",
+    "description": "The label for category 'Blocks' in sidebar 'aqaraStudioSidebar'"
+  },
+  "sidebar.aqaraStudioSidebar.category.Graph": {
+    "message": "可视化大屏",
+    "description": "The label for category 'Graph' in sidebar 'aqaraStudioSidebar'"
+  },
+  "sidebar.aqaraStudioSidebar.category.Operation": {
+    "message": "运维",
+    "description": "The label for category 'Operation' in sidebar 'aqaraStudioSidebar'"
+  },
+  "sidebar.aqaraStudioSidebar.category.Management": {
+    "message": "管理",
+    "description": "The label for category 'Management' in sidebar 'aqaraStudioSidebar'"
+  },
+  "sidebar.aqaraStudioSidebar.category.Developer": {
+    "message": "开发者",
+    "description": "The label for category 'Developer' in sidebar 'aqaraStudioSidebar'"
+  },
+  "sidebar.aqaraStudioSidebar.category.Settings": {
+    "message": "设置",
+    "description": "The label for category 'Settings' in sidebar 'aqaraStudioSidebar'"
+  }
+}

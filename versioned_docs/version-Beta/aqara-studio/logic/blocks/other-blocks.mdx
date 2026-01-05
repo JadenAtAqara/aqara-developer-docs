@@ -1,0 +1,58 @@
+# Other Blocks
+
+## Kit Batch Set
+
+#### Introduction
+
+The Kit Batch Set block lets you set the values of up to 8 different function points at the same time. This is useful for configuring many parameters in bulk or for device debugging. You can enter up to 8 values, and each one will be sent through a separate output port to your target function points. The batch setting will only take effect if the "Action" field receives "OK". This helps prevent mistakes and makes batch configuration more efficient and accurate.
+
+#### Attribute Description
+
+- **In A ~ In H**: Enter the values you want to set.
+    - You can type the value directly, or connect constants, variables, or outputs from other blocks.
+    - The default type is Number. If you want to change the type, double-click the top of the block to open the settings page, and edit the type for each input item.
+- **Out A ~ Out H**: The corresponding output ports send each input value to the target function point or logic block.
+    - Each input matches one output. For example, Input A outputs through Output A.
+- **Action**: Controls when the batch setting happens. The batch set only works if you input `OK` here. This helps avoid mistakes.
+
+#### Example
+
+Here’s how to use it to set different brightness levels for multiple bulbs at once:
+
+1. On the right side of the canvas, add several bulb brightness points, such as "Bulb 1 - Brightness," "Bulb 2 - Brightness," "Bulb 3 - Brightness," and "Bulb 4 - Brightness."
+2. Add a **Kit Batch Set** block.
+3. Set `In A` to 20, `In B` to 40, `In C` to 60, and `In D` to 80.
+4. Connect the right side of Out A, B, C, and D to the "Input" port of each bulb brightness point.
+5. Set the **Action** parameter to `OK`. This will batch set the brightness for each bulb: Bulb 1 to 20, Bulb 2 to 40, Bulb 3 to 60, and Bulb 4 to 80.
+
+## Min Max Avg
+
+#### Introduction
+
+This logic block can analyze multiple input values. It calculates the minimum, maximum, and average values automatically.
+
+#### Attribute Description
+
+The default attributes displayed on the block:
+- **In A ~ B**: You can set 2 numbers for analysis.
+- **Min Value**: Outputs the minimum value among all valid inputs.
+- **Max Value**: Outputs the maximum value among all valid inputs.
+- **Average Value**: Outputs the average of all valid inputs.
+
+To display more `In` inputs on the block, double-click to open the configuration panel, enable "Show" in the Flags for additional inputs, confirm your changes, and the new inputs will appear in the editor.
+
+## Random
+
+#### Introduction
+
+With this logic block, you can get a random number.
+
+#### Attribute Description
+
+The default attributes displayed on the block:
+- **Output**: Outputs a random number. You can connect this to a block o point that needs to use the value.
+
+To configure the random number parameters, double-click the block to open the configuration panel:
+- **Multiplier**: Determines the range of the random number. The result will be within `(Offset, Offset + Multiplier)`. For example, if Offset is 50 and Multiplier is 100, the random number will be between 50 and 150.
+- **Offset**: Sets the minimum value for the random number. The result will not be less than this value. Default is 50.
+- **Update Interval**: Controls how often a new random number is generated. If set to 1 second, a new random number will be output every second.

@@ -1,0 +1,75 @@
+# KNX IP
+
+This document explains how to connect KNX/IP devices to Aqara Studio.
+
+## Prerequisites
+
+Before you start, please make sure:
+- You have added the KNX/IP device in [ETS6](https://www.knx.org/knx-en/for-professionals/software/ets6/), assigned group addresses, and obtained the physical address and DPT (Data Point Type). For tutorials, see the [official ETS6 Professional documentation](https://support.knx.org/hc/en-us/sections/4404423716242-ETS6-Professional) or watch [ETS for beginners](https://www.youtube.com/playlist?list=PL9NWvz0cOjNOboCuten_R6gmMvKhhO3xZ), a video series released by KNX Association,.
+- Your Windows computer, KNX/IP device, and Aqara Gateway are all connected to the same local network.
+
+## Add a KNX/IP Device
+
+1. On the left sidebar, click to enter the **Device** page.
+2. In the protocol list on the left, click the "+" button. In the popup, choose `KNX IP` to add a `KNX IP` folder.
+3. Right-click the `KNX IP` folder and select **Add**. A new `KNX IP Device` folder will appear.
+4. Double-click this folder and go to the **Essential** tab, where you can edit the device **Display Name**.
+5. Switch to the **Configuration** tab. Expand **Device Configuration** and fill in the following parameters:
+
+   <table>
+     <thead>
+       <tr>
+         <th>Parameter</th>
+         <th>Description</th>
+       </tr>
+     </thead>
+     <tbody>
+       <tr>
+         <td>Device Address</td>
+         <td>The unique address of the KNX device in the KNX network. Enter the physical address set in ETS6, using a three-part format (e.g., 1.1.0).</td>
+       </tr>
+       <tr>
+         <td>Local IP</td>
+         <td>The IP address of your local device (client) for KNX network communication. By default, 0.0.0.0 means the system will auto-assign an IP.</td>
+       </tr>
+       <tr>
+         <td>Connection Type</td>
+         <td>Choose the supported connection mode:<ul><li><strong>Tunneling</strong>: For point-to-point connections (such as programming download, smart home system).</li><li><strong>Routing</strong>: For multicast connections (like monitoring bus traffic or group-control).</li></ul><strong>Tip:</strong> If you are unsure about the connection type, check your device manual or consult the technical supports of the manufacturer.</td>
+       </tr>
+       <tr>
+         <td>KNX Tunnel IP</td>
+         <td>The IP address of the KNX tunnel server, needed for KNX/IP tunneling connections. This device acts as a gateway between KNX and IP networks, forwarding KNX packets. Required for "Tunneling mode". Format: xxx.xxx.xxx.xxx (e.g., 192.168.1.100)</td>
+       </tr>
+       <tr>
+          <td>Router IP</td>
+          <td>The IP address of the KNX/IP router, required if using "Routing" mode. It acts as a network router and forwards KNX packets to target devices.</td>
+       </tr>
+       <tr>
+         <td>KNX Tunnel Port</td>
+         <td>The port number used by the KNX interface device. This is required for "Tunneling" mode. The default is 3671. If you have changed the port, please enter your custom value.</td>
+       </tr>
+     </tbody>
+   </table>
+
+6. Expand **Advanced Configuration** to decide if you want to enable this device.
+7. Switch to **Point Discovery** tab and **click to upload** the device's KNXPROJ file or group address XML file (both exported from ETS6). Once the file uploads, click **Discover Points**. The system will automatically parse the file and generate a list of available points.
+8. Select the points you want and click the blue **+** button to finish the addition.
+
+## Next Steps
+
+Now, you can [view details and control the device](./../device-management/basic-information.mdx), or [use the device in automation](./../automation.mdx).
+
+## FAQ
+
+### How to edit or manually add KNX points
+
+On the "Point Discovery" tab, if you need to change details of a discovered point, or want to add a new point manually, click "Add" or "Manually Add".
+
+You will see a popup. Provide the following information to complete the configuration:
+
+| Parameter   | Description |
+|------------------|-------------|
+| KNX Point Name   | Custom name for your point. |
+| KNX Group Address| The point's KNX group address, as set in ETS6. |
+| Data Point Type  | The DPT (data type) of the point, also set in ETS6. |
+| Aqara Object Type| The device type this point belongs to. This is shown when you add the KNX device to Aqara Home. |

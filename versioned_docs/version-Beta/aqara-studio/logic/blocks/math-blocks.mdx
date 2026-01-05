@@ -1,0 +1,36 @@
+# Math Blocks
+
+In automation logics, math blocks are used for a wide range of common mathematical operations on numeric input data. With these blocks, you can easily perform addition, subtraction, multiplication, division, find maximum/minimum values, calculate averages, logarithms, exponents, trigonometric functions, and more. This enables flexible threshold judgement, data transformation, and dynamic computation—helping to address even complex requirements.
+
+Math blocks are commonly used in the following scenarios:
+- Dynamic calculations and threshold checking for temperature, humidity, and other environmental data.
+- Aggregation and statistics with multiple data sources (for example, averaging, finding the maximum or minimum).
+- Proportional allocation, unit conversion, and other complex automation logic.
+- Advanced data processing and custom algorithms supported by trigonometric, logarithmic, and exponential functions.
+
+By dragging and configuring math blocks, you can build a flexible and powerful data calculation system without any coding. This supports a broader set of advanced automation scenarios.
+
+| Block | Description |
+|----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Add            | Adds multiple numeric inputs and outputs the sum. Commonly used for adding data from multiple sensors, energy statistics, and more. |
+| Subtract       | Subtracts the second input from the first and outputs $\text{Input A} - \text{Input B}$. Useful for monitoring temperature/humidity differences, energy changes, or trends. |
+| Multiply       | Multiplies up to 4 inputs. Suitable for area calculation, power amplification, or ratio conversion. |
+| Divide         | Divides two values and outputs $\frac{\text{Input A}}{\text{Input B}}$. Often used for per capita energy use or proportional allocation. Note: Divisor cannot be zero. |
+| Maximum        | Compares up to 4 inputs and outputs the largest value. Useful for multi-zone monitoring or maximum threshold detection. |
+| Minimum        | Compares up to 4 inputs and outputs the smallest value. Good for detecting lowest points or alerting on minimum values. |
+| Average        | Calculates the average of up to 4 inputs. Ideal for environmental analysis or unified strategies across sensors. |
+| Negative       | Outputs the negative of the input value. Used for getting relative values. |
+| Abs Value      | Outputs the absolute value of the input. Useful for analyzing data magnitude uniformly. |
+| Sine           | Outputs the sine value of the input number ($\sin X°$). |
+| Cosine         | Outputs the cosine value of the input number ($\cos X°$). |
+| Tangent        | Outputs the tangent value of the input number ($\tan X°$). |
+| Arc Sine       | Accepts input in $[-1, 1]$ and outputs the angle ($\arcsin X$). |
+| Arc Consine    | Accepts input in $[-1, 1]$ and outputs the angle ($\arccos X$). |
+| Arc Tangent    | Outputs the arctangent angle of the input ($\arctan X$). |
+| Exponential    | Calculates the exponential value using base $e$ ($e^x$). |
+| Fractorial     | Calculates the factorial for a positive integer input ($!x$). |
+| Log Base 10    | Calculates $\log_{10} x$, commonly used for level judgement or value grouping. |
+| Log Natural    | Calculates the natural logarithm of the input ($\ln x$). |
+| Modulus        | Outputs the remainder of dividing two inputs ($\text{Input A} \bmod \text{Input B}$). |
+| Power          | Outputs $\text{Input A}^\text{Input B}$, that is, base to the power of exponent. |
+| Square Root    | Outputs the square root of the input ($\sqrt{x}$). |
