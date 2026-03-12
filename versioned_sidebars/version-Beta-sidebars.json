@@ -152,11 +152,42 @@
       "label": "Developer",
       "items": [
         "aqara-studio/developer-guide",
-        "aqara-studio/api-references/data-export-api-v1",
-        "aqara-studio/api-references/device-type",
-        "aqara-studio/api-references/trait-codes",
-        "aqara-studio/set-up-mcp-server"        
-      ]      
+        {
+          "type": "category",
+          "label": "Data Export API",
+          "collapsed": false,
+          "link": {
+              "type": "doc",
+              "id": "aqara-studio/api-references/data-export-api-v1"
+          },
+          "items": [
+            {
+              "type": "category",
+              "label": "Device Function API",
+              "link": {
+                "type": "doc",
+                "id": "aqara-studio/api-references/trait-api"
+              },
+              "items": [
+                "aqara-studio/api-references/device-type",
+                "aqara-studio/api-references/trait-codes"
+              ]
+            },
+            {
+              "type": "category",
+              "label": "Automation API",
+              "link": {
+                "type": "doc",
+                "id": "aqara-studio/api-references/automation-api"
+              },
+              "items": [
+                "aqara-studio/api-references/json-automation-script"
+              ]
+            }
+          ]
+        },
+        "aqara-studio/set-up-mcp-server"
+      ]    
     }
   ]
 }
