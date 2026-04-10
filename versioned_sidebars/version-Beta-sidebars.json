@@ -4,10 +4,21 @@
       "type": "category",
       "label": "Overview",
       "items": [
-        "aqara-studio/overview/introduction"
+        "aqara-studio/overview/introduction",
+        "aqara-studio/overview/ai-native-architecture",
+        "aqara-studio/overview/core-concepts",
+        "aqara-studio/overview/compatible-aqara-devices",              
+        "aqara-studio/overview/features"
       ]
     },
-    "aqara-studio/quick-start",
+    {
+      "type": "category",
+      "label": "Deployment",
+      "collapsed": false,
+      "items": [
+        "aqara-studio/deployment/hub-integrated-model"
+      ]
+    },
     {
         "type": "category",
         "label": "Build", 
@@ -24,6 +35,7 @@
                 "collapsed": false,
                 "items": [
                   "aqara-studio/device-integration/aqara",
+                  "aqara-studio/device-integration/zigbee",
                   "aqara-studio/device-integration/home-assistant",
                   "aqara-studio/device-integration/modbus-tcp",
                   "aqara-studio/device-integration/bacnet",
@@ -40,9 +52,9 @@
                   "items": [
                     "aqara-studio/device-management/basic-information",
                     "aqara-studio/device-management/point-information",
+                    "aqara-studio/device-management/history",
                     "aqara-studio/device-management/alarms",
-                    "aqara-studio/device-management/tags",
-                    "aqara-studio/device-management/references"
+                    "aqara-studio/device-management/tags"
                   ]
               },
               {
@@ -63,14 +75,9 @@
                       },
                       "collapsed": true,
                       "items": [
-                          "aqara-studio/flow/device-blocks",
-                          "aqara-studio/flow/timer-blocks",
-                          "aqara-studio/flow/process-blocks",
-                          "aqara-studio/flow/logic-blocks",
-                          "aqara-studio/flow/variables-blocks",
-                          "aqara-studio/flow/other-blocks",
-                          "aqara-studio/flow/data-conversion",
-                          "aqara-studio/flow/examples"
+                          "aqara-studio/flow/trigger",
+                          "aqara-studio/flow/condition",
+                          "aqara-studio/flow/action"
                       ]
                     },
                     {
@@ -134,15 +141,19 @@
     {
         "type": "category",
         "label": "Management",
+        "collapsed": false,
         "items": [
           "aqara-studio/user",
-          "aqara-studio/cloud",  
           "aqara-studio/backup-and-restore",
           {
             "type": "category",
             "label": "Settings",
+            "collapsed": false,
             "items": [
-                "aqara-studio/remote-access"
+                "aqara-studio/cloud",  
+                "aqara-studio/remote-access",
+                "aqara-studio/system-update",
+                "aqara-studio/local-domain-name-access"
               ]
           }
         ]      
@@ -186,8 +197,10 @@
             }
           ]
         },
+        "aqara-studio/use-aqara-studio-skill-in-openclaw-web-ui",
         "aqara-studio/set-up-mcp-server"
-      ]    
-    }
+      ]      
+    },
+    "aqara-studio/faq"
   ]
 }

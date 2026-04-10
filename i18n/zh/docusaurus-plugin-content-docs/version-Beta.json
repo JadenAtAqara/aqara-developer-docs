@@ -7,6 +7,10 @@
     "message": "概览",
     "description": "The label for category 'Overview' in sidebar 'aqaraStudioSidebar'"
   },
+  "sidebar.aqaraStudioSidebar.category.Deployment": {
+    "message": "部署",
+    "description": "The label for category 'Deployment' in sidebar 'aqaraStudioSidebar'"
+  },
   "sidebar.aqaraStudioSidebar.category.Build": {
     "message": "构建",
     "description": "The label for category 'Build' in sidebar 'aqaraStudioSidebar'"
@@ -24,7 +28,7 @@
     "description": "The label for category 'Automation' in sidebar 'aqaraStudioSidebar'"
   },
   "sidebar.aqaraStudioSidebar.category.Flow": {
-    "message": "高阶 Flow",
+    "message": "Flow",
     "description": "The label for category 'Flow' in sidebar 'aqaraStudioSidebar'"
   },
   "sidebar.aqaraStudioSidebar.category.Logic": {
@@ -51,14 +55,6 @@
     "message": "开发者",
     "description": "The label for category 'Developer' in sidebar 'aqaraStudioSidebar'"
   },
-  "sidebar.aqaraStudioSidebar.category.Settings": {
-    "message": "设置",
-    "description": "The label for category 'Settings' in sidebar 'aqaraStudioSidebar'"
-  },
-  "sidebar.aqaraStudioSidebar.category.Developer": {
-    "message": "开发者",
-    "description": "The label for category 'Developer' in sidebar 'aqaraStudioSidebar'"
-  },
   "sidebar.aqaraStudioSidebar.category.Device Function API": {
     "message": "设备功能 API",
     "description": "The label for category 'Device Function API' in sidebar 'aqaraStudioSidebar'"
@@ -67,8 +63,16 @@
     "message": "自动化 API",
     "description": "The label for category 'Automation API' in sidebar 'aqaraStudioSidebar'"
   },
+  "sidebar.aqaraStudioSidebar.category.Settings": {
+    "message": "设置",
+    "description": "The label for category 'Settings' in sidebar 'aqaraStudioSidebar'"
+  },
   "sidebar.aqaraStudioSidebar.category.Data Export API": {
     "message": "数据转出 API",
     "description": "The label for category 'Data Export API' in sidebar 'aqaraStudioSidebar'"
+  },
+  "sidebar.aqaraStudioSidebar.category.Reference": {
+    "message": "参考信息",
+    "description": "The label for category 'Reference' in sidebar 'aqaraStudioSidebar'"
   }
 }

@@ -1,0 +1,29 @@
+# FAQ
+
+## What to do if I cannot log in to Aqara Studio?
+
+Please refer to the following troubleshooting guide according to whether you are a [local user](#local-user) or [remote user](#remote-user).
+
+#### Local User
+
+1. **Confirm whether the account exists:**
+    - If you do not have an account, please contact a local user with `Super Administrator` permissions to create one for you.
+    - If you already have an account, refer to the following information to recall your username and password:
+        - Common usernames include: `super` (i.e., `Super Administrator`), `admin`, `operator`, or other custom usernames you may have set.
+        - Password requirements: 8-16 characters, must include uppercase and lowercase letters, numbers, and special characters.
+2. **If you still cannot remember your password, please choose one of the following methods according to your user role:**
+    - `Super Administrator`: Please choose the following approach based on the running mode of Aqara Studio:
+        - **Gateway-Integrated Mode**: Refer to the device manual to perform a factory reset.
+        - **Edge-Deployed Mode**: Uninstall the current Aqara Studio and reinstall it.
+        :::tip
+        Factory reset will clear all data.
+        :::
+    - Other roles: Please contact the `Super Administrator` to [reset your password](./user.mdx#reset-local-user-password).
+
+#### Remote User
+
+If a remote user enters their Aqara Builder account and password on the login page and receives a login failure message, please do not continue trying. This is not the correct login method.
+
+The correct remote access method is: 
+- Log in to [Aqara Builder](https://builder.aqara.com/), find the Studio you have permission to access in the **Studios** section of the left menu.
+- Click the **Connect** button to remotely access that Aqara Studio.

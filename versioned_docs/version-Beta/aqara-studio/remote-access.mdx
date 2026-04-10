@@ -8,9 +8,58 @@ By default, you can only access Aqara Studio within your local area network (LAN
 
 Before using remote access, please ensure that you have logged in to your **Aqara Builder** account and bound a Workspace on the [Cloud Connect](./cloud.mdx) page.
 
-## How to Obtain a Remote Access Address
+## Steps to Access
 
 1. Open [Aqara Builder](https://builder.aqara.com) and select your bound workspace at the top left.
 2. In the left menu, click on **Studios**.
-3. In the **Studio Instances & Projects** list, find the device corresponding to your Aqara Studio IP and click on its **Connect** button.
-4. A new page will automatically open, displaying the remote access interface for your Aqara Studio. The URL shown in your browser’s address bar is the remote access address for that device.
+3. In the **Studio Instances & Projects** list, find the device corresponding to your Aqara Studio IP and click the **Connect** button. You will then be able to access the remote access interface of that Aqara Studio.
+
+    :::tip
+    You can also use an existing local user account to log in to the remote access address. The permissions granted will be exactly the same as those for local access. For details, please refer to [Local User Management - Local User Roles](./user.mdx#local-user-roles).
+    :::
+
+## Invite Other Users
+
+1. Visit [Aqara Builder](https://builder.aqara.com/), select your bound Aqara Workspace on the left, and click **Manage Workspaces**.
+
+    :::tip
+    To allow other Aqara Builder users to access your Aqara Studio, you need to connect to an Aqara Workspace that is not of type `Personal`.
+    :::
+
+2. In the **Manage Workspaces** popup, click the **Invite Members** button to open the invitation window.
+3. In the popup, enter the email address of an Aqara Builder user and assign a role (`Operator` or `Admin`). For details on role permissions, please refer to [Remote User Roles](#remote-user-roles).
+4. After accepting the invitation, the invited user can log in to [Aqara Builder](https://builder.aqara.com) and select the target Workspace from the top left.
+5. In the left menu, click on **Studios**, find the device you have access to, and click the **Connect** button to access that Aqara Studio.
+
+## Remote User Roles
+
+A remote user refers to a user who accesses Aqara Studio using an Aqara Builder account. Remote users can have either the operator or admin role. 
+
+The following table details the feature visibility and permissions for different remote user roles in Aqara Studio:
+
+:::tip
+- ✓ indicates that the role can use this feature.
+- ✗ indicates that the role cannot use this feature.
+:::
+
+| Primary Category | Secondary Category | Tertiary Category           | Operator (Remote) | Admin (Remote) |
+|------------------|-------------------|-----------------------------|-------------------|---------------|
+| Overview         | /                 | /                           | ✓                 | ✓             |
+| Build            | Space  | /                           | ✓                 | ✓             |
+|                  | Device | /                           | ✓                 | ✓             |
+|                  | Automation        | /                           | ✓                 | ✓             |
+| Operation      | Alarm Management  | /                           | ✓                 | ✓             |
+|                  | Energy Management System | /                           | ✓                 | ✓             |
+|                  | Log Management         | Device Logs / Link Logs     | ✓                 | ✓             |
+|                  |                   | User Operation Logs         | ✗                 | ✗             |
+|                  |                   | System Upgrade Logs         | ✗                 | ✗             |
+| Management       | User Management   | /                           | ✗                 | ✗             |
+|                  | Backup & Restore  | /                           | ✗                 | ✗             |
+| Settings         | Local Settings    | /                           | ✗                 | ✗             |
+|                  | Cloud Connection  | /                           | ✗                 | ✗             |
+|                  | Remote Access     | /                           | ✗                 | ✗             |
+|                  | System Update     | /                           | ✗                 | ✗             |
+|                  | Technical Support | /                           | ✗                 | ✗             |
+| About            | /                 | /                           | ✗                 | ✗             |
+| Extensions       | Developer         | /                           | ✗                 | ✗             |
+|                  | Plugin Management | /                           | ✗                 | ✗             |
