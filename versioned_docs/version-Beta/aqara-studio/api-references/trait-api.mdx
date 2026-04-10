@@ -1,6 +1,6 @@
 # Device Function API
 
-## Query Device IDs by Pages
+## Query Device Information by Pages
 
 You can query the list of devices in the Studio system with pagination. Filtering by device type, sorting, and paging are supported.
 
@@ -85,9 +85,9 @@ Below is an example of a `GetDeviceInfoResponse` response:
 }
 ```
 
-## Query All Device IDs
+## Query All Device Information
 
-This API is used to retrieve the complete list of device information. With this interface, you can obtain detailed information of all devices within Aqara Studio at once, including device ID, name, device type, time added, and online status. The request body supports filtering based on device type and sorting fields.
+This API is used to retrieve the complete list of device information. With this interface, you can obtain detailed information of all devices within Aqara Studio at once, including device ID, name, device type, time added, online status. The request body supports filtering based on device type and sorting fields.
 
 The response returns the device list as an array, without pagination information. It is suitable for scenarios where all device data needs to be obtained in a single request.
 
@@ -175,7 +175,7 @@ Query the spec configuration of devices by device ID.
 | version | String | Yes | API version. Must be `v1`. |
 | msgId | String | Yes | The request ID defined by you. |
 | data | Object | Yes | Request data object. |
-| data.deviceIds | Array of String | No | Pass the device ID list obtained from the [paginated query](#query-device-ids-by-pages) or the [complete query](#query-all-device-ids) of device IDs into this list as the target for querying the spec configuration of the devices. If this list is empty, the spec configuration for all devices will be queried. |
+| data.deviceIds | Array of String | No | Pass the device ID list obtained from the [paginated query](#query-device-information-by-pages) or the [complete query](#query-all-device-information) of device IDs into this list as the target for querying the spec configuration of the devices. If this list is empty, the spec configuration for all devices will be queried. |
 
 #### Request Example
 
@@ -382,7 +382,7 @@ Below is an example response for `GetDevicesResponse`:
 
 ## Control Device
 
-After you [get the device's spec configuration](#query-device-spec-configuration), you can control the device by passing the relevant fields for the trait you want to operate and calling this API.
+After you [get the device's spec configuration](./trait-api.mdx#query-device-spec-configuration), you can control the device by passing the relevant fields for the trait you want to operate and calling this API.
 
 #### Request Parameters
 
@@ -854,7 +854,7 @@ This structure applies if `eventType` is one of:
 
 :::tip
 
-If you receive a `DEVICE_TRAIT_PARAMETER_UPDATE` event, it is recommended to call `GetDevicesRequest` again to [get the updated device spec](#query-device-spec-configuration).
+If you receive a `DEVICE_TRAIT_PARAMETER_UPDATE` event, it is recommended to call `GetDevicesRequest` again to [get the updated device spec](./trait-api.mdx#query-device-spec-configuration).
 
 :::
 

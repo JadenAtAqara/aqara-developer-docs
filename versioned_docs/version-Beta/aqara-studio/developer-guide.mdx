@@ -14,6 +14,11 @@ Follow these steps:
 1. Log in to Aqara Studio. Click into the "Developer" page from the left sidebar.
 2. In the **Data Export API** section, you can directly find the local IP address.
 3. **Enable** the Data Export API, then click the **Get Token** button to copy your Token.
+3. **Enable** the Data Export API, locate the Access Token, and click the copy icon to obtain your Access Token.
+
+    :::tip
+    The Access Token is valid for 7 days. After expiration, please [refresh the Access Token](#refresh-the-access-token).
+    :::
 
 ## Call the API
 
@@ -24,3 +29,80 @@ With the complete API, you can programmatically obtain device data, control devi
 - Develop a customized device management experience.
 
 Please refer to the [API documentation](./api-references/data-export-api-v1.mdx) for detailed API descriptions and usage instructions.
+
+
+## Refresh the Access Token
+
+Aqara Studio provides two ways to refresh your Access Token: [refresh by API](#refresh-by-api) or [manual refresh](#manual-refresh).
+
+### Refresh by API
+
+You can call the following API to obtain a new Access Token.
+
+**Request URL**
+
+The request URL format varies depending on whether [Remote Access](./remote-access.mdx) is enabled:   
+- When Remote Access is disabled: `http://<local_LAN_IP>/open/api/v1/auth/refresh-token`
+- When Remote Access is enabled: `https://<remote_access_address>/open/api/v1/auth/refresh-token`
+
+**HTTP Method:** POST
+
+**Request Headers**
+
+| Name          | Type   | Required | Description |
+| ------------- | ------ | -------- | ------------------------------------------------------------ |
+| Authorization | String | Yes      | The token for user authentication.<br />Format: `Bearer <token>`, replace `<token>` with the Access Token obtained from Aqara Studio. (If the token you get from Aqara Studio already includes the Bearer prefix, use it as is. For details on how to obtain it, refer to [Developer Guide - Obtain Required Information](#obtain-required-information).) |
+| Content-Type  | String | Yes      | Default is `application/json`.  |
+
+**Request Body**
+
+| Name         | Type   | Required | Description |
+| ------------ | ------ | -------- | ------------------------------------------------------------ |
+| refreshToken | String | Yes      | Refresh token, used to refresh your Access Token. It can be obtained directly in the **Developer > Data Export API** area of Aqara Studio. |
+
+**Request Example**
+
+```json
+{
+    "refreshToken": "eyJhbGciO9..."
+}
+```
+
+**Response Parameters**
+
+| Name                | Type     | Description                                                                                 |
+| ------------------- | -------- | ------------------------------------------------------------------------------------------ |
+| type                | String   | Response type, usually `"response"`.                                                        |
+| version             | String   | API version, e.g., `"v1"`.                                                                  |
+| msgId               | String   | Unique identifier for this request.                                                         |
+| code                | Number   | Business status code, 0 indicates success, non-0 means failure.                             |
+| message             | String   | Description of the request result.                                                          |
+| data                | Object   | Data payload.                                                                               |
+| data.accessToken    | String   | The new Access Token, used for subsequent API authentication.                               |
+| data.refreshToken   | String   | The new Refresh Token, used for the next Access Token refresh. Its validity is 30 days beyond the current `expiresIn`. |
+| data.expiresIn      | Number   | Validity period of the new Access Token, in seconds. For example, 86400 means 1 day.        |
+
+**Response Example**
+
+```json
+{
+    "type": "response",
+    "version": "v1",
+    "msgId": "a1b2c3d4-e5f6-7890-abcd-000000000003",
+    "code": 0,
+    "message": "success",
+    "data": {
+        "accessToken": "newAccessToken...",
+        "refreshToken": "newRefreshToken...",
+        "expiresIn": 86400
+    }
+}
+```
+
+### Manual Refresh
+
+In the **Data Export API** area, click the **Refresh Token** button to immediately obtain a new Access Token and Refresh Token.
+
+:::tip
+Refreshing will immediately invalidate your previous Access Token and Refresh Token. Please operate with caution.
+:::

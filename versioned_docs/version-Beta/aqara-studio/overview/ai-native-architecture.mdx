@@ -1,0 +1,20 @@
+# AI Native Architecture
+
+Aqara Studio’s technical foundation is based on an **integrated AI-native architecture**, consisting of [four tightly coupled layers](#four-tightly-coupled-technical-layers)—**Ontology Layer, Graph Layer, Skill Layer, Telemetry Layer**—that together form the “intelligent core” of the system. Externally, the architecture presents [three product forms](#three-product-forms): **Studio Core (Core Layer), Web (Interaction Layer), Plugin (Plugin Layer)**. The four-layer foundation provides essential support for these three forms, creating a system where core technology is tightly closed at the base while capabilities are open at higher levels, ensuring robust stability, scalability, and customizability.
+
+## Four Tightly Coupled Technical Layers
+
+These four technical layers enable the system’s fundamental closed loop—**perception, reasoning, action, and continuous optimization**—with each layer tightly interconnected and data flowing seamlessly between them:
+
+- **Ontology Layer (Semantic Definition)**: The fundamental core of the system. Using the ORAP model (Object, Relation, Action, Policy), it defines a unified spatial semantic model, abstracting heterogeneous devices, protocols, and data into consistent, machine-interpretable forms. The focus is on spatial concepts—such as rooms, zones, functions, intents—instead of device-level specifics.
+- **Graph Layer (Status & Structure)**: The concrete manifestation of spatial ontology, functioning as the single source of truth for spatial structures, device topology, real-time status, and operational constraints. Provides consistent, queryable, and subscribable models spanning device, edge, and cloud, ensuring end-to-end consistency, traceability, and interpretability.
+- **Skill Layer (Governed Execution)**: The “action gateway” of the system. All actions are performed through standardized “skills,” with control, automation, and configuration encapsulated within strict policy constraints. This governance ensures skills are secure, auditable, and reversible.
+- **Telemetry Layer (Feedback & Learning)**: The driving force for system evolution. This layer captures the complete lifecycle—from user intent and context through execution to outcomes—enabling continuous feedback, optimization, and AI-powered learning cycles. The system progressively adapts and improves through this closed-loop mechanism.
+
+## Three Product Forms
+
+Building on this four-layer technical foundation, Aqara Studio delivers **three easy-to-use, extensible product forms** for users, covering the full spectrum from foundational capabilities to interaction to extensibility:
+
+- **Studio Core (Core Layer)**: The “computing brain” of the product, supporting ontology modeling, spatial graph construction, protocol parsing, logic execution, data processing, and device management. It forms the unified capability backbone for UI and plugins, ensuring overall stability and consistency.
+- **Plugin (Plugin Layer)**: Extends system capabilities through flexible plugin combinations, including four types: standard built-in plugins (Aqara official), continuously iterated public plugins (Aqara official), customer-customized private plugins (jointly developed by Aqara/customers), and Builder co-created plugins (community developers). This allows highly personalized adaptation for a wide range of scenarios.
+- **Web (Interaction Layer)**: A browser-based interactive experience based on B/S (Browser/Server) architecture—no client installation needed. Supports multi-terminal access, enabling users to perform spatial modeling, device management, automation building, O&M monitoring, and full system management, serving as the main interaction gateway between users and the core system.

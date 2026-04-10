@@ -1,0 +1,47 @@
+# Core Concepts
+
+Aqara Studio is distinguished by four core technological pillars: [Spatial Ontology and ORAP Model](#spatial-ontology-and-the-orap-model), [Spatial Graph](#spatial-graph), [MCP Protocol](#mcp-protocol), and [Distributed Computing and Data Processing](#distributed-computing-and-data-processing). These foundations enable Aqara Studio to deliver [four core capabilities of spatial intelligence](#four-core-capabilities-of-spatial-intelligence).
+
+## Spatial Ontology and the ORAP Model
+
+Spatial Ontology is the technical foundation of Aqara Studio. By leveraging the four elements of ORAP—**Object, Relation, Action, and Policy**—it establishes a unified and explicit semantic model for physical space, abstracting the structure, equipment, behaviors, and rules of spaces into a language machines can understand. This breaks from traditional IoT's "device-driven" paradigm, achieving intelligent management that is "space-driven".
+
+- **Object**: Any type of entity within the physical space, including spatial areas (such as rooms, floors, buildings), physical devices (like sensors, controllers, actuators), and virtual entities (such as scenes and modes).
+- **Relation**: The various associations between objects, including containment (e.g., "the light is in the living room"), linkage (e.g., "sensor linked with air conditioner"), and control mappings (e.g., "switch controls light").
+- **Action**: The set of executable commands associated with objects, such as device power on/off, dimming, temperature adjustment, or spatial scene switching (e.g., "meeting mode", "away mode").
+- **Policy**: The rules and logical constraints that govern object actions, covering trigger conditions, execution permissions, operation scope, and security—these provide the essential underpinning for automation.
+
+## Spatial Graph
+
+The spatial graph is the concrete carrier of the spatial ontology. It unifies spatial structure, device topology, real-time state, and operational constraints, serving as the **single source of truth** for the entire system, with key capabilities including:
+
+- **Unified Semantic Modeling**: Visually represent the 3D structure, device positions, attributes, and their associations, creating a digital twin of the physical space.
+- **Real-Time State Synchronization**: Collect device states and environmental data in real-time, keeping the graph highly consistent with the actual physical space and providing precise data for decisions.
+- **Full-Scope Data Sharing**: Provide consistent, queryable, and subscribable models across device, edge, and cloud layers. Supports real-time multi-terminal synchronization and ensures system-wide data consistency.
+- **Behavior Interpretability**: Every device action, scene linkage, and alert can be traced back to objects and relationships in the graph, making all system behaviors interpretable, auditable, and traceable.
+
+## MCP Protocol
+
+The MCP Protocol is the standard interface that exposes the capabilities of the Aqara Studio Skill Layer to external parties. Acting as a bridge between the system, AI tools, third-party systems, and automation scripts, it enables unified semantic interactions with the spatial graph. Key benefits and capabilities include:
+
+- **Semantic-Level Interaction**: External systems can access and control spaces and devices directly using the semantic model of the spatial ontology, without concerning themselves with underlying protocols or device model differences, greatly lowering integration thresholds.
+- **Governed Execution**: External operations must obey built-in policy constraints, ensuring all access and control are secure, auditable, and reversible—preserving system stability.
+- **Multi-Endpoint Ecosystem Compatibility**: Supports integration with AI tools (such as ChatGPT, Cursor, Manus), automation scripts, and third-party systems, enabling deep fusion between AI and spatial intelligence.
+
+## Distributed Computing and Data Processing
+
+To solve common IoT/IIoT problems such as high bandwidth usage, high CPU load, storage read-write contention, and mass data point access, Aqara Studio adopts a distributed architecture featuring **Supervisor Studio (central server)** and **Control Studio (edge node)**:
+
+- **Control Studio (Edge Node)**: Deployed close to devices, responsible for high-frequency data collection, local history, alarm analysis, and logic control, alleviating network bandwidth and avoiding read-write conflicts with historical data.
+- **Supervisor Studio (Central Server)**: Handles long-term data archiving, big data analysis, and report generation. Archiving occurs off-peak, and queries are read-only, ensuring system efficiency.
+
+This architecture scales horizontally to support hundreds of thousands or even millions of data points—without the need for expensive servers—and is robust enough for scenarios from smart homes to large commercial parks.
+
+## Four Core Capabilities of Spatial Intelligence
+
+Built on the above core technologies, Aqara Studio enables four core spatial intelligence capabilities—spanning the entire process from "perceiving physical spaces" to "remodelling physical environments" and making spatial intelligence truly practical:
+
+- **Identification & Perception**: Accurately recognizes and senses people, objects, and environmental states in real time via multi-protocol sensors, cameras, and other devices.
+- **Cognition & Decision-Making**: Uses spatial ontology and spatial graphs for semantic analysis and reasoning, then makes intelligent decisions based on preset policies.
+- **Execution & Remolding**: Converts decisions into device actions and scene switching through standardized skills, realizing intelligent reshaping of the environment.
+- **Connection & Fusion**: Breaks the barriers across devices, protocols, and systems to enable cross-device, cross-system, and cross-scenario integration—making spatial intelligence a unified, organic whole.
