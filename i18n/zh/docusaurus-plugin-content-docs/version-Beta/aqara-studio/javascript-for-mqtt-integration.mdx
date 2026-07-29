@@ -1,0 +1,382 @@
+# JavaScript 脚本（适用于 MQTT）
+
+本文件介绍了如何通过 JavaScript 脚本在 Aqara Studio 中自定义添加 MQTT 设备功能点及其解析方法。
+
+## 脚本介绍
+
+本脚本**必须**包含以下 4 个 JavaScript 方法：
+- [parseDiscoveryResponse](#parsediscoveryresponse)
+- [parseDiscoverPointsResponse](#parsediscoverpointsresponse)
+- [parseReportRequest](#parsereportrequest)
+- [buildWriteRequest](#buildwriterequest)
+
+:::tip
+请勿更改方法的参数及其输入输出结构。
+:::
+
+## 控制台日志
+
+脚本支持使用 `console.log`、`console.info`、`console.debug`、`console.warn` 和 `console.error` 输出调试日志。多个参数会以空格拼接，`warn` 和 `error` 日志分别带有 `[warn]` 和 `[error]` 前缀。日志显示在协议配置页的只读字段 `Console Content` 中，最多保留 2048 个字符；超出限制时旧内容会被替换。每个脚本解析器每秒最多接收 20 条日志，超出部分会被忽略并在下一时间窗口输出汇总提示；单条日志最多保留 512 个字符并转换前 16 个参数。请勿在循环或高频报文处理函数中无条件输出日志，调试时应使用条件开关或采样输出。
+
+## parseDiscoveryResponse
+
+该方法 `parseDiscoveryResponse` 主要用于向 Aqara Studio 声明需要接入的 MQTT 设备的基本配置信息。
+
+您需要以**对象数组**的形式返回待接入设备的基本信息，详情请参考 [设备对象结构](#设备对象结构)。
+
+Aqara Studio 会调用此方法以发现所有可用设备，实现自动接入与管理。
+
+### 设备对象结构
+
+| 字段名称 | 是否必填 | 说明 |
+| --- | --- | --- |
+| deviceName | 可选 | 设备名称。 |
+| deviceId   | 必填 | 设备 ID。 |
+| brokerEndpoint | 必填 | MQTT Broker 的地址。 |
+| brokerPort | 必填 | MQTT Broker 的端口。 |
+| connectionType | 必填 | 连接类型。支持以下取值：<ul><li>0：匿名</li><li>1：通过 SSL 匿名</li><li>2：通过 SSL 用户登录</li><li>3：用户登录无 SSL</li></ul> |
+| username | 条件必填 | 用户名，按 `connectionType` 决定是否需要。 |
+| password | 条件必填 | 密码，按 `connectionType` 决定是否需要。 |
+
+字段必填说明：
+- `deviceId`、`brokerEndpoint`、`brokerPort`、`connectionType` 必填。
+- `brokerPort` 默认端口为 `1883`，`connectionType` 默认值为 `3`。
+- `username`/`password` 按 `connectionType` 决定是否需要。
+- `deviceName` 可选，为空时使用空字符串。
+
+### 示例 
+
+```javascript
+function parseDiscoveryResponse() {
+	return [
+		{
+			deviceName: "TestDevice",
+			deviceId: "device-001",
+			brokerEndpoint: "127.0.0.1",
+			brokerPort: 1883,
+			connectionType: 3,
+			username: "admin",
+			password: "public"
+		}
+	];
+}
+```
+
+## parseDiscoverPointsResponse
+
+该方法负责向 Aqara Studio 声明“该设备具备哪些功能点”。Aqara Studio 调用该函数时会把 `deviceId` 作为第一个参数传入。
+
+您需要在返回数组中填写一个或多个待发现功能点结构（如 `pointId` 等，详情请见 [point 对象结构](#point-对象结构)）。这样，Aqara Studio 才能在功能点发现流程中会调用该函数，解析返回值，从而识别设备具备的所有功能点，实现功能点无缝接入和控制。
+
+### point 对象结构
+
+| 字段名称    | 是否必填 | 说明                                                                                     |
+|-----------| --- |-------------------------------------------------------------------------------------------|
+| pointId   | 必填 | 功能点 ID。请咨询设备厂商获取功能点的真实 ID，以便 Aqara Studio 发现该点。                                                    |
+| pointName | 必填 | 您自定义的功能点名称。                                                                              |
+| devType | 条件必填 | 对应 Aqara 物模型规范的 `deviceType`。基于 Aqara Spec 定义功能点时填写，具体可用值请阅读 [设备类型](../aqara-developer/aqara-data-model-specification/device-types.mdx)。                                  |
+| functionCode | 条件必填 | 对应 Aqara 物模型规范的 `functionCode`。基于 Aqara Spec 定义功能点时填写，具体可用值请阅读 [功能代码](../aqara-developer/aqara-data-model-specification/function-codes.mdx)。                                  |
+| traitCode   | 条件必填 | 对应 Aqara 物模型规范的 `traitCode`。基于 Aqara Spec 定义功能点时填写，具体可用值请阅读 [功能点代码](../aqara-developer/aqara-data-model-specification/trait-codes.mdx)。                                      |
+| dataType  | 条件必填 | 通用功能点必填。功能点数据类型，支持以下取值：<ul><li><code>bool</code>：布尔型</li><li><code>numerical</code>：数值型</li><li><code>enum</code>：枚举型</li><li><code>text</code>：文本型</li></ul> |
+| enumRange | 条件必填 | 枚举选项数组。仅当通用功能点的 `dataType` 为 `enum` 时必填。数组不能为空；每项包含整数类型的 `value` 和字符串类型的 `label`，`value` 和 `label` 均不可重复，且 `label` 不可为空。 |
+| trueText / falseText | 可选 | 布尔型通用功能点的显示文案。仅当 `dataType` 为 `bool` 时生效；未配置时默认 `trueText` 为 `开`，`falseText` 为 `关`。仅在需要自定义文案时配置，例如 `启用` / `禁用`。也可使用 `activeText` / `onText` 和 `inactiveText` / `offText` 作为别名。 |
+| min | 可选 | 数值型通用功能点的最小值。仅当 `dataType` 为 `numerical` 时生效；也可使用 `minimum` 作为别名。 |
+| max | 可选 | 数值型通用功能点的最大值。仅当 `dataType` 为 `numerical` 时生效；也可使用 `maximum` 作为别名。 |
+| step | 可选 | 数值型通用功能点的步长，必须大于 0。仅当 `dataType` 为 `numerical` 时生效；也可使用 `resolution` 作为别名。 |
+| precision | 可选 | 数值型通用功能点的精度值，必须大于等于 0。仅当 `dataType` 为 `numerical` 时生效。 |
+| decimals | 可选 | 数值型通用功能点的小数位数，必须为大于等于 0 的整数。仅当 `dataType` 为 `numerical` 时生效。 |
+| unit / units | 可选 | 数值型通用功能点的单位。仅当 `dataType` 为 `numerical` 时生效；建议填写系统已注册的单位名称，例如 `kilowatt hour`、`watt`、`volt`、`ampere`、`celsius`、`percent`。Studio 会展示对应符号，例如 `kWh`、`W`、`V`、`A`、`°C`、`%`。完整映射请参见 [脚本支持的单位名称与符号](./script-supported-unit-symbols.mdx)。系统也可匹配已注册的单位符号。 |
+| access    | 条件必填 | 通用功能点必填。读写能力标识，<ul><li>1：可读</li><li>2：可写</li><li>3：可读可写</li></ul>                                 |
+| subTopic  | 条件必填 | （**仅适用于 MQTT 设备**）可读或可上报功能点需配置。Aqara Studio 通过订阅该 Topic 获取功能点的最新数据。具体 Topic 请根据设备协议或厂商文档填写；需要同时接收多个上行主题时，可按 MQTT 规范填写 `+` 或 `#` 通配符。  |
+| pubTopic  | 条件必填 | （**仅适用于 MQTT 设备**）可写功能点需配置。Aqara Studio 通过向此 Topic 发送消息数据控制功能点。具体 Topic 请根据设备协议或厂商文档填写。（对于仅可读的功能点，此字段留空）        |
+
+:::note
+对于 `numerical` 点，Aqara Studio 在写值调用 `buildWriteRequest` 时会优先依据 `decimals` 格式化数值；未配置 `decimals` 时会依据 `step` / `resolution` 推导小数位。为了避免 `0.3` 被二进制浮点误差表现为 `0.30000030249357224`，建议需要小数写入的点显式配置 `decimals` 或 `step`。`precision` 仅用于描述精度，不作为写值报文的小数位截断规则。
+
+如果数值点会被能耗统计或其他依赖单位的功能使用，请配置 `unit` 或 `units`，例如累计电量使用 `kilowatt hour`（显示 `kWh`），当前功率使用 `watt`（显示 `W`），电压使用 `volt`（显示 `V`），电流使用 `ampere`（显示 `A`），温度使用 `celsius`（显示 `°C`）。单位名称请按 [脚本支持的单位名称与符号](./script-supported-unit-symbols.mdx) 中的原文填写，大小写和空格保持一致。
+:::
+
+:::tip
+您可以根据实际情况选择以下任意方式构造功能点的数据结构：   
+- **基于 Aqara Spec**：需填写 `devType`、`functionCode`、`traitCode` 等字段，这可以将设备的功能点关联到 Aqara 物模型规范协议中的对应功能点。
+- **通用方式**：需填写 `dataType`、`access` 等基本字段。
+:::
+
+### 示例
+
+```javascript
+function parseDiscoverPointsResponse(deviceId) {
+	return [
+		// 基于 Aqara 物模型规范接入功能点
+		{
+			pointId: "1#冷机运行状态",
+			pointName: "1#冷机运行状态",
+			devType: "AirConditioner",
+			functionCode: "Output",
+			traitCode: "OnOff",
+			subTopic: "/WEI-iEdge/realdata/7a1dd258f32940d95a542c68",
+			pubTopic: "/WEI-iEdge/write/req/7a1dd258f32940d95a542c68"
+		},
+		// 基于通用方式接入功能点
+		{
+			pointId: "1#冷机关机/开机读",
+			pointName: "1#冷机关机/开机读",
+			dataType: "bool",
+			access: 1,
+			subTopic: "/WEI-iEdge/realdata/7a1dd258f32940d95a542c68",
+			pubTopic: "/WEI-iEdge/write/req/7a1dd258f32940d95a542c68"
+		},
+		{
+			pointId: "1#冷机运行模式",
+			pointName: "1#冷机运行模式",
+			dataType: "enum",
+			enumRange: [
+				{ value: 0, label: "关闭" },
+				{ value: 1, label: "制冷" }
+			],
+			access: 3,
+			subTopic: "/WEI-iEdge/realdata/7a1dd258f32940d95a542c68",
+			pubTopic: "/WEI-iEdge/write/req/7a1dd258f32940d95a542c68"
+		},
+		{
+			pointId: "1#冷机出水温度设定读",
+			pointName: "1#冷机出水温度设定读",
+			dataType: "numerical",
+			min: -20,
+			max: 50,
+			step: 0.1,
+			precision: 0.1,
+			decimals: 1,
+			unit: "celsius",
+			access: 2,
+			subTopic: "/WEI-iEdge/realdata/7a1dd258f32940d95a542c68",
+			pubTopic: "/WEI-iEdge/write/req/7a1dd258f32940d95a542c68"
+		},
+		{
+			pointId: "1#冷机制冷量百分比",
+			pointName: "1#冷机制冷量百分比",
+			dataType: "numerical",
+			min: 0,
+			max: 100,
+			step: 1,
+			precision: 1,
+			decimals: 0,
+			unit: "percent",
+			access: 2,
+			subTopic: "/WEI-iEdge/realdata/7a1dd258f32940d95a542c68",
+			pubTopic: "/WEI-iEdge/write/req/7a1dd258f32940d95a542c68"
+		}
+	];
+}
+```
+
+## parseReportRequest
+
+该方法负责从设备上报的数据解析出指定功能点（`pointId`）的当前值。
+
+当 Aqara Studio 收到设备上报消息时，会调用此函数并传入功能点 ID 和原始消息字符串。您需要在本函数中实现从其中的 `values` 字段提取出对应 `pointId` 的值。这样 Aqara Studio 才能实时更新与展示功能点值。
+
+:::tip
+请结合设备的实际数据上报协议，自定义解析逻辑，确保能准确从原始消息中提取 `pointId` 对应的数值（例如示例中的 `obj["values"][pointId]`）。
+:::
+
+### 示例
+
+```javascript
+// 以下为解析 MQTT 设备上报 JSON 消息字符串的示例
+function parseReportRequest(pointId, jsonStr) {
+	try {
+		const obj = JSON.parse(jsonStr);
+		return obj["values"][pointId]?.toString();
+	} catch (e) {
+		return null;
+	}
+}
+```
+
+## buildWriteRequest
+
+该方法负责根据要控制的功能点 ID 和设定的值，构造向设备下发控制指令的字符串。
+
+当 Aqara Studio 需要向设备发送控制命令（如开关、设定温度）时，会调用此函数，传入设备 ID、目标功能点 ID 和要设置的数值。函数需返回一个字符串，该字符串需符合设备协议的控制指令格式，通常包含设备标识、时间戳和具体的值字段。
+
+请根据设备实际可接受的报文格式，在函数内部合理构建对象结构。例如，以 MQTT 设备为例，可包含 `node`、`group`、`timestamp` 等字段，并将 `pointId` 对应的值被写入 `values` 字段。
+
+### 示例
+
+```javascript
+// 以通过 JSON 字符串控制 MQTT 设备为例
+// value 参数由 Aqara Studio 自动传入，无需手动声明或赋值
+function buildWriteRequest(deviceId, pointId, value) {
+	try {
+		const obj = {
+			"node": "冷机",
+			"group": "1#冷机",
+			"timestamp": 1768204054654,
+			"values": {
+				
+			},
+			"errors": {
+				
+			},
+			"metas": {
+				
+			}
+		};
+		obj.values[pointId] = parseFloat(value);
+		return JSON.stringify(obj);
+	} catch (e) {
+		return null;
+	}
+}
+```
+
+## 完整示例
+
+下面是一个添加 MQTT 设备功能点的完整示例：
+
+示例中的 `globalThis` 注册是动态的：脚本实际实现了哪些函数，就只注册哪些函数；未实现的函数不需要注册。
+
+:::note
+下面示例只展示常见 MQTT 接入流程：订阅一个包含多类上行消息的 Topic、按消息类型解析状态/事件/指令回复，并在下发命令时用请求 ID 关联回复。实际 Topic、字段名和枚举值请按设备协议替换。
+:::
+
+```javascript
+(function() {
+	var DEVICE_ID = "device-001";
+	var SUB_TOPIC = "/example/" + DEVICE_ID + "/+/json";
+	var PUB_TOPIC = "/example/" + DEVICE_ID + "/cmd/json";
+	var nextRequestIdValue = 1;
+	var pendingWrites = {};
+
+	function parseDiscoveryResponse() {
+		return [
+			{
+				deviceName: "示例 MQTT 设备",
+				deviceId: DEVICE_ID,
+				brokerEndpoint: "127.0.0.1",
+				brokerPort: 1883,
+				connectionType: 3,
+				username: "username",
+				password: "password"
+			}
+		];
+	}
+
+	function parseDiscoverPointsResponse(deviceId) {
+		return [
+			{
+				pointId: "switch.on",
+				pointName: "开关",
+				dataType: "bool",
+				access: 3,
+				subTopic: SUB_TOPIC,
+				pubTopic: PUB_TOPIC
+			}
+		];
+	}
+
+	function parseReportRequest(pointId, jsonStr) {
+		try {
+			var obj = JSON.parse(jsonStr);
+			if (pointId !== "switch.on") {
+				return null;
+			}
+
+			return parseStatusReport(obj)
+				|| parseEventReport(obj)
+				|| parseCommandResponse(obj);
+		} catch (e) {
+			return null;
+		}
+	}
+
+	function parseStatusReport(obj) {
+		if (obj.type !== "status") {
+			return null;
+		}
+		return toBoolString(obj.values && obj.values["switch.on"]);
+	}
+
+	function parseEventReport(obj) {
+		if (obj.type !== "event" || obj.pointId !== "switch.on") {
+			return null;
+		}
+		return toBoolString(obj.value);
+	}
+
+	function parseCommandResponse(obj) {
+		if (obj.type !== "response" || obj.requestId === undefined) {
+			return null;
+		}
+
+		var key = String(obj.requestId);
+		var pending = pendingWrites[key];
+		delete pendingWrites[key];
+
+		if (!pending || obj.success !== true) {
+			return null;
+		}
+		return pending.value;
+	}
+
+	function buildWriteRequest(deviceId, pointId, value) {
+		try {
+			if (pointId !== "switch.on") {
+				return null;
+			}
+
+			var writeValue = toBoolString(value);
+			if (writeValue === null) {
+				return null;
+			}
+
+			var requestId = nextRequestId();
+			pendingWrites[String(requestId)] = {
+				pointId: pointId,
+				value: writeValue
+			};
+
+			var values = {};
+			values[pointId] = writeValue === "1";
+
+			return JSON.stringify({
+				type: "command",
+				requestId: requestId,
+				values: values
+			});
+		} catch (e) {
+			return null;
+		}
+	}
+
+	function toBoolString(value) {
+		if (value === true || value === 1) {
+			return "1";
+		}
+		if (value === false || value === 0) {
+			return "0";
+		}
+
+		var text = String(value).toLowerCase();
+		if (text === "true" || text === "on" || text === "1") {
+			return "1";
+		}
+		if (text === "false" || text === "off" || text === "0") {
+			return "0";
+		}
+		return null;
+	}
+
+	function nextRequestId() {
+		nextRequestIdValue += 1;
+		return nextRequestIdValue;
+	}
+
+	globalThis.parseDiscoveryResponse = parseDiscoveryResponse;
+	globalThis.parseDiscoverPointsResponse = parseDiscoverPointsResponse;
+	globalThis.buildWriteRequest = buildWriteRequest;
+	globalThis.parseReportRequest = parseReportRequest;
+	return null;
+})();
+```
