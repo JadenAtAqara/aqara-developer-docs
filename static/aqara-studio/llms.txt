@@ -1,0 +1,66 @@
+# Aqara Studio
+> Spatial intelligence documentation for deployment, integration, automation, operation, and developer tooling.
+
+## Recommended starting points
+- Introduction: https://docs.aqara.com/docs/aqara-studio/overview/introduction
+- Core Concepts: https://docs.aqara.com/docs/aqara-studio/overview/core-concepts
+- Developer Guide: https://docs.aqara.com/docs/aqara-studio/developer-guide
+- Connect to Aqara Studio MCP Server: https://docs.aqara.com/docs/aqara-studio/set-up-mcp-server
+
+## All sidebar-listed docs
+- Introduction: https://docs.aqara.com/docs/aqara-studio/overview/introduction
+- AI Native Architecture: https://docs.aqara.com/docs/aqara-studio/overview/ai-native-architecture
+- Core Concepts: https://docs.aqara.com/docs/aqara-studio/overview/core-concepts
+- Compatible Aqara Devices: https://docs.aqara.com/docs/aqara-studio/overview/compatible-aqara-devices
+- M300 Features: https://docs.aqara.com/docs/aqara-studio/overview/features
+- Hub-integrated Model: https://docs.aqara.com/docs/aqara-studio/deployment/hub-integrated-model
+- Space Management: https://docs.aqara.com/docs/aqara-studio/space
+- Aqara Hub: https://docs.aqara.com/docs/aqara-studio/device-integration/aqara
+- Zigbee: https://docs.aqara.com/docs/aqara-studio/device-integration/zigbee
+- Matter: https://docs.aqara.com/docs/aqara-studio/device-integration/matter
+- Home Assistant: https://docs.aqara.com/docs/aqara-studio/device-integration/home-assistant
+- Modbus TCP: https://docs.aqara.com/docs/aqara-studio/device-integration/modbus-tcp
+- BACnet: https://docs.aqara.com/docs/aqara-studio/device-integration/bacnet
+- KNX IP: https://docs.aqara.com/docs/aqara-studio/device-integration/knx-ip
+- View and Edit Basic Information: https://docs.aqara.com/docs/aqara-studio/device-management/basic-information
+- View and Control Function Points: https://docs.aqara.com/docs/aqara-studio/device-management/point-information
+- Display History: https://docs.aqara.com/docs/aqara-studio/device-management/history
+- Configure Point Alarms: https://docs.aqara.com/docs/aqara-studio/device-management/alarms
+- Add Tags: https://docs.aqara.com/docs/aqara-studio/device-management/tags
+- Automation: https://docs.aqara.com/docs/aqara-studio/automation
+- Classic: https://docs.aqara.com/docs/aqara-studio/classic-automation
+- Flow: https://docs.aqara.com/docs/aqara-studio/flow/flow-introduction
+- Trigger: https://docs.aqara.com/docs/aqara-studio/flow/trigger
+- Condition: https://docs.aqara.com/docs/aqara-studio/flow/condition
+- Action: https://docs.aqara.com/docs/aqara-studio/flow/action
+- Graph Web: https://docs.aqara.com/docs/aqara-studio/graph/graph-introduction
+- Components: https://docs.aqara.com/docs/aqara-studio/graph/components
+- Component Categories: https://docs.aqara.com/docs/aqara-studio/graph/component-categories
+- Materials: https://docs.aqara.com/docs/aqara-studio/graph/assets
+- Common Properties of Components and Materials: https://docs.aqara.com/docs/aqara-studio/graph/common-properties
+- Energy Management System: https://docs.aqara.com/docs/aqara-studio/energy-management-system
+- Alarm Management: https://docs.aqara.com/docs/aqara-studio/alarm-management
+- Log Management: https://docs.aqara.com/docs/aqara-studio/log-management
+- User: https://docs.aqara.com/docs/aqara-studio/user
+- Backup and Restore: https://docs.aqara.com/docs/aqara-studio/backup-and-restore
+- Wireless Connection: https://docs.aqara.com/docs/aqara-studio/wireless-connection
+- Cloud Connect: https://docs.aqara.com/docs/aqara-studio/cloud
+- Remote Access: https://docs.aqara.com/docs/aqara-studio/remote-access
+- System Update: https://docs.aqara.com/docs/aqara-studio/system-update
+- Technical Support: https://docs.aqara.com/docs/aqara-studio/technical-support
+- Host Access Domain Name Access: https://docs.aqara.com/docs/aqara-studio/local-domain-name-access
+- Developer Guide: https://docs.aqara.com/docs/aqara-studio/developer-guide
+- Data Export API v1: https://docs.aqara.com/docs/aqara-studio/api-references/data-export-api-v1
+- Device Function API: https://docs.aqara.com/docs/aqara-studio/api-references/trait-api
+- Device Types: https://docs.aqara.com/docs/aqara-studio/api-references/device-type
+- Trait Codes: https://docs.aqara.com/docs/aqara-studio/api-references/trait-codes
+- Automation API: https://docs.aqara.com/docs/aqara-studio/api-references/automation-api
+- JSON Automation Script: https://docs.aqara.com/docs/aqara-studio/api-references/json-automation-script
+- Use Aqara Studio Skill in OpenClaw Web UI: https://docs.aqara.com/docs/aqara-studio/use-aqara-studio-skill-in-openclaw-web-ui
+- Connect to Aqara Studio MCP Server: https://docs.aqara.com/docs/aqara-studio/set-up-mcp-server
+- FAQ: https://docs.aqara.com/docs/aqara-studio/faq
+- JavaScript Script for MQTT Integration: https://docs.aqara.com/docs/aqara-studio/javascript-for-mqtt-integration
+- JavaScript for HTTP Integration: https://docs.aqara.com/docs/aqara-studio/javascript-for-http-integration
+- JavaScript Script for UDP and TCP Integration: https://docs.aqara.com/docs/aqara-studio/javascript-for-udp-tcp-integration
+- Unit Names and Symbols Supported by Scripts: https://docs.aqara.com/docs/aqara-studio/script-supported-unit-symbols
+
