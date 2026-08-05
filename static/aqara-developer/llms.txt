@@ -28,6 +28,8 @@
 - Control Devices by Traits: https://docs.aqara.com/docs/aqara-developer/data-export-api/execute-device-trait
 - Query Trait Values: https://docs.aqara.com/docs/aqara-developer/data-export-api/get-trait-values
 - Control Devices by Commands: https://docs.aqara.com/docs/aqara-developer/data-export-api/execute-device-command
+- Send Command to Device and Wait for Response: https://docs.aqara.com/docs/aqara-developer/data-export-api/execute-device-command-await
+- Add A Virtual Device: https://docs.aqara.com/docs/aqara-developer/data-export-api/add-virtual-device
 - Automation: https://docs.aqara.com/docs/aqara-developer/data-export-api/automation
 - List Endpoint Capabilities for Automation: https://docs.aqara.com/docs/aqara-developer/data-export-api/get-automation-capabilities
 - Create An Automation: https://docs.aqara.com/docs/aqara-developer/data-export-api/create-automation
@@ -41,6 +43,7 @@
 - Execute A Manual Trigger: https://docs.aqara.com/docs/aqara-developer/data-export-api/execute-automation-manual-trigger
 - Studio: https://docs.aqara.com/docs/aqara-developer/data-export-api/studio
 - Get Studio Statistics: https://docs.aqara.com/docs/aqara-developer/data-export-api/get-studio-statistics
+- Infrared Device Integration: https://docs.aqara.com/docs/aqara-developer/local-studio-development/features/infrared-device-integration
 - Introduction: https://docs.aqara.com/docs/aqara-developer/aiot-api/introduction
 - Getting Started with the AIOT API: https://docs.aqara.com/docs/aqara-developer/aiot-api/getting-started-with-the-aiot-api
 - Try API Online: https://docs.aqara.com/docs/aqara-developer/aiot-api/try-api-online
