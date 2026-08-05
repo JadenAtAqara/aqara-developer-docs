@@ -28,6 +28,8 @@
 - 通过 Trait 控制设备: https://docs.aqara.com/zh/docs/aqara-developer/data-export-api/execute-device-trait
 - 查询 Trait 值: https://docs.aqara.com/zh/docs/aqara-developer/data-export-api/get-trait-values
 - 通过 Command 控制设备: https://docs.aqara.com/zh/docs/aqara-developer/data-export-api/execute-device-command
+- 向设备下发 Command 并等待响应: https://docs.aqara.com/zh/docs/aqara-developer/data-export-api/execute-device-command-await
+- 添加虚拟设备: https://docs.aqara.com/zh/docs/aqara-developer/data-export-api/add-virtual-device
 - Automation: https://docs.aqara.com/zh/docs/aqara-developer/data-export-api/automation
 - 查询支持自动化的端点能力列表: https://docs.aqara.com/zh/docs/aqara-developer/data-export-api/get-automation-capabilities
 - 创建自动化: https://docs.aqara.com/zh/docs/aqara-developer/data-export-api/create-automation
@@ -41,6 +43,7 @@
 - 执行手动触发器: https://docs.aqara.com/zh/docs/aqara-developer/data-export-api/execute-automation-manual-trigger
 - Studio: https://docs.aqara.com/zh/docs/aqara-developer/data-export-api/studio
 - 获取 Studio 统计信息: https://docs.aqara.com/zh/docs/aqara-developer/data-export-api/get-studio-statistics
+- 红外设备接入: https://docs.aqara.com/zh/docs/aqara-developer/local-studio-development/features/infrared-device-integration
 - AIOT API 简介: https://docs.aqara.com/zh/docs/aqara-developer/aiot-api/introduction
 - AIOT API 入门: https://docs.aqara.com/zh/docs/aqara-developer/aiot-api/getting-started-with-the-aiot-api
 - 在线体验 API: https://docs.aqara.com/zh/docs/aqara-developer/aiot-api/try-api-online
