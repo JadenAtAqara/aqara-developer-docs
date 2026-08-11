@@ -61,7 +61,7 @@ const productSectionTabsConfigs: ProductSectionTabsConfig[] = [
           zh: '快速开始',
         },
         to: '/docs/aqara-studio/overview/introduction',
-      },
+      }
     ],
   },
 ];
