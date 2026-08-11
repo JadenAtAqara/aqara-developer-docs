@@ -394,6 +394,14 @@
                   ]
                 }
               ]
+            },
+            {
+              "type": "category",
+              "label": "WebSocket",
+              "key": "local-api-websocket",
+              "items": [
+                "aqara-developer/data-export-api/websocket-api/websocket-api"
+              ]
             }
           ]
         },

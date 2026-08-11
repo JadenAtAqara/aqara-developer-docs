@@ -43,6 +43,7 @@
 - 执行手动触发器: https://docs.aqara.com/zh/docs/aqara-developer/data-export-api/execute-automation-manual-trigger
 - Studio: https://docs.aqara.com/zh/docs/aqara-developer/data-export-api/studio
 - 获取 Studio 统计信息: https://docs.aqara.com/zh/docs/aqara-developer/data-export-api/get-studio-statistics
+- WebSocket API Playground: https://docs.aqara.com/zh/docs/aqara-developer/data-export-api/websocket-api/websocket-api
 - 红外设备接入: https://docs.aqara.com/zh/docs/aqara-developer/local-studio-development/features/infrared-device-integration
 - AIOT API 简介: https://docs.aqara.com/zh/docs/aqara-developer/aiot-api/introduction
 - AIOT API 入门: https://docs.aqara.com/zh/docs/aqara-developer/aiot-api/getting-started-with-the-aiot-api
