@@ -18,6 +18,7 @@
 - 创建空间: https://docs.aqara.com/zh/docs/aqara-developer/data-export-api/create-space
 - 修改空间名称: https://docs.aqara.com/zh/docs/aqara-developer/data-export-api/update-space-name
 - Gateway: https://docs.aqara.com/zh/docs/aqara-developer/data-export-api/gateway
+- 查询网关列表: https://docs.aqara.com/zh/docs/aqara-developer/data-export-api/get-gateways
 - 开启网关子设备添加模式: https://docs.aqara.com/zh/docs/aqara-developer/data-export-api/join-subdevice
 - 关闭网关子设备添加模式: https://docs.aqara.com/zh/docs/aqara-developer/data-export-api/stop-subdevice-join
 - 查询子设备入网结果: https://docs.aqara.com/zh/docs/aqara-developer/data-export-api/get-device-bind-result
@@ -29,7 +30,9 @@
 - 查询 Trait 值: https://docs.aqara.com/zh/docs/aqara-developer/data-export-api/get-trait-values
 - 通过 Command 控制设备: https://docs.aqara.com/zh/docs/aqara-developer/data-export-api/execute-device-command
 - 向设备下发 Command 并等待响应: https://docs.aqara.com/zh/docs/aqara-developer/data-export-api/execute-device-command-await
+- 删除设备点位: https://docs.aqara.com/zh/docs/aqara-developer/data-export-api/delete-device-point
 - 添加虚拟设备: https://docs.aqara.com/zh/docs/aqara-developer/data-export-api/add-virtual-device
+- 设备解绑: https://docs.aqara.com/zh/docs/aqara-developer/data-export-api/unbind-device
 - Automation: https://docs.aqara.com/zh/docs/aqara-developer/data-export-api/automation
 - 查询支持自动化的端点能力列表: https://docs.aqara.com/zh/docs/aqara-developer/data-export-api/get-automation-capabilities
 - 创建自动化: https://docs.aqara.com/zh/docs/aqara-developer/data-export-api/create-automation
