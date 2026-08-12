@@ -18,6 +18,7 @@
 - Create A Space: https://docs.aqara.com/docs/aqara-developer/data-export-api/create-space
 - Update A Space Name: https://docs.aqara.com/docs/aqara-developer/data-export-api/update-space-name
 - Gateway: https://docs.aqara.com/docs/aqara-developer/data-export-api/gateway
+- List Gateways: https://docs.aqara.com/docs/aqara-developer/data-export-api/get-gateways
 - Enable Sub-device Joining: https://docs.aqara.com/docs/aqara-developer/data-export-api/join-subdevice
 - Disable Sub-device Joining: https://docs.aqara.com/docs/aqara-developer/data-export-api/stop-subdevice-join
 - Query Sub-device Joining Results: https://docs.aqara.com/docs/aqara-developer/data-export-api/get-device-bind-result
@@ -29,7 +30,9 @@
 - Query Trait Values: https://docs.aqara.com/docs/aqara-developer/data-export-api/get-trait-values
 - Control Devices by Commands: https://docs.aqara.com/docs/aqara-developer/data-export-api/execute-device-command
 - Send Command to Device and Wait for Response: https://docs.aqara.com/docs/aqara-developer/data-export-api/execute-device-command-await
+- Delete A Function: https://docs.aqara.com/docs/aqara-developer/data-export-api/delete-device-point
 - Add A Virtual Device: https://docs.aqara.com/docs/aqara-developer/data-export-api/add-virtual-device
+- Unbind A Device: https://docs.aqara.com/docs/aqara-developer/data-export-api/unbind-device
 - Automation: https://docs.aqara.com/docs/aqara-developer/data-export-api/automation
 - List Endpoint Capabilities for Automation: https://docs.aqara.com/docs/aqara-developer/data-export-api/get-automation-capabilities
 - Create An Automation: https://docs.aqara.com/docs/aqara-developer/data-export-api/create-automation
