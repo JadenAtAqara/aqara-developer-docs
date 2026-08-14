@@ -22,6 +22,7 @@
 - Modbus TCP: https://docs.aqara.com/docs/aqara-studio/device-integration/modbus-tcp
 - BACnet: https://docs.aqara.com/docs/aqara-studio/device-integration/bacnet
 - KNX IP: https://docs.aqara.com/docs/aqara-studio/device-integration/knx-ip
+- MQTT: https://docs.aqara.com/docs/aqara-studio/device-integration/mqtt
 - View and Edit Basic Information: https://docs.aqara.com/docs/aqara-studio/device-management/basic-information
 - View and Control Function Points: https://docs.aqara.com/docs/aqara-studio/device-management/point-information
 - Display History: https://docs.aqara.com/docs/aqara-studio/device-management/history
@@ -56,6 +57,7 @@
 - Trait Codes: https://docs.aqara.com/docs/aqara-studio/api-references/trait-codes
 - Automation API: https://docs.aqara.com/docs/aqara-studio/api-references/automation-api
 - JSON Automation Script: https://docs.aqara.com/docs/aqara-studio/api-references/json-automation-script
+- Data Export by MQTT: https://docs.aqara.com/docs/aqara-studio/data-export-by-mqtt
 - Use Aqara Studio Skill in OpenClaw Web UI: https://docs.aqara.com/docs/aqara-studio/use-aqara-studio-skill-in-openclaw-web-ui
 - Connect to Aqara Studio MCP Server: https://docs.aqara.com/docs/aqara-studio/set-up-mcp-server
 - FAQ: https://docs.aqara.com/docs/aqara-studio/faq
@@ -63,4 +65,5 @@
 - JavaScript for HTTP Integration: https://docs.aqara.com/docs/aqara-studio/javascript-for-http-integration
 - JavaScript Script for UDP and TCP Integration: https://docs.aqara.com/docs/aqara-studio/javascript-for-udp-tcp-integration
 - Unit Names and Symbols Supported by Scripts: https://docs.aqara.com/docs/aqara-studio/script-supported-unit-symbols
+- Numerical Mapping Functions: https://docs.aqara.com/docs/aqara-studio/numerical-mapping-functions
 

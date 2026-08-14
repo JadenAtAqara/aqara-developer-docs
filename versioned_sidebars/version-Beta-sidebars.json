@@ -40,7 +40,8 @@
                   "aqara-studio/device-integration/home-assistant",
                   "aqara-studio/device-integration/modbus-tcp",
                   "aqara-studio/device-integration/bacnet",
-                  "aqara-studio/device-integration/knx-ip"
+                  "aqara-studio/device-integration/knx-ip",
+                  "aqara-studio/device-integration/mqtt"
                 ]
               },
               {
@@ -169,6 +170,7 @@
             }
           ]
         },
+        "aqara-studio/data-export-by-mqtt",
         "aqara-studio/use-aqara-studio-skill-in-openclaw-web-ui",
         "aqara-studio/set-up-mcp-server"
       ]      
@@ -187,7 +189,8 @@
             "aqara-studio/javascript-for-udp-tcp-integration",
             "aqara-studio/script-supported-unit-symbols"
           ]
-        }
+        },
+        "aqara-studio/numerical-mapping-functions"
       ]
     }
   ],
