@@ -1,0 +1,109 @@
+---
+title: "MQTT 设备接入"
+description: "本文说明如何通过编写 JS 脚本，将 MQTT 协议设备接入 Aqara Studio 以及将设备功能点按照 Aqara 物模型规范 完成映射，实现设备的发现、添加及功能点控制等操作。"
+keywords: ["Aqara 文档", "Aqara Studio", "设备接入", "MQTT 设备接入"]
+---
+# MQTT 设备接入
+
+本文将指导您如何通过编写 JS 脚本，将 MQTT 协议设备接入 Aqara Studio 以及将设备功能点按照 **Aqara 物模型规范** 完成映射，实现设备的发现、添加及功能点控制等操作。
+
+## 前提条件
+
+在开始之前，请确保待接入的 MQTT 设备已接入 1 个 MQTT Broker。
+
+## 学习并编写 JavaScript 脚本
+
+请参考 [JavaScript 脚本（适用于 MQTT）](./../javascript-for-mqtt-integration.mdx) 的编写方法，编写符合 **Aqara 物模型规范** 的 JavaScript 脚本。此脚本将用于指导 Aqara Studio 如何发现设备、添加与控制功能点等。
+
+## 添加 MQTT 设备
+
+1. 在左侧侧边栏点击进入**设备管理**页面。在左侧 **协议和设备** 单击 **...** 按钮，选择 **添加协议**。
+
+    <img src="https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/zh/Devices-AddProtocol.png" alt="添加协议" /> 
+
+2. 在弹窗中选择 `MQTT`，以添加一个 MQTT 节点。
+
+    <img src="https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/zh/Devices-SelectMQTT.png" alt="添加 MQTT" style={{width: '70%'}} /> 
+
+3. 选择 MQTT，进入管理界面。点击 **协议配置** 按钮。
+
+    <img src="https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/zh/MQTT-ProtocolConfiguration.png" alt="协议配置" /> 
+
+4. 在弹窗中单击 **脚本配置** 按钮。
+
+    <img src="https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/zh/MQTT-ScriptConfiguration.png" alt="脚本配置" style={{width: '60%'}} /> 
+
+5. 将 [编写好的 JavaScript 脚本](#学习并编写-javascript-脚本) 粘贴到代码框中，确保 MQTT 设备及其功能点能被 Aqara Studio 正确识别和管理。完成后点击 **保存**。
+
+    <img src="https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/zh/MQTT-ScriptEditor.png" alt="代码粘贴至脚本编辑器" style={{width: '60%'}} /> 
+
+6. 返回 MQTT 管理页面，单击 **添加设备** 按钮。
+
+    <img src="https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/zh/MQTT-AddDevice.png" alt="单击添加设备按钮" /> 
+
+7. 在弹窗中选择 **自动发现** 作为接入方式，并选择 **开始接入设备** 进入下一步。
+
+    <img src="https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/zh/MQTT-SelectAutoDiscovery.png" alt="选择自动发现作为接入方式" style={{width: '60%'}} /> 
+
+8. 选择 **发现设备** 按钮。
+
+    <img src="https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/zh/MQTT-DiscoverDevices.png" alt="选择发现设备按钮" /> 
+
+9. 选择需接入的设备，点击中间“+”按钮。
+
+    <img src="https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/zh/MQTT-AddDiscoveredDevices.png" alt="新增发现设备" /> 
+
+    新增设备会出现在右侧的已添加设备列表。单击 **完成** 按钮，退出添加设备流程。
+
+    <img src="https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/zh/MQTT-AddedDeviceList.png" alt="已添加设备列表" /> 
+
+10. 此时，您将在左侧 **协议和设备** 的 MQTT 节点下，以及该 MQTT 管理页面的设备列表中，看到已成功添加的设备。
+
+    <img src="https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/zh/MQTT-CheckAddedDevices.png" alt="设备已添加至" /> 
+
+
+## 添加功能点
+
+1. 在 MQTT 节点下选择一个 MQTT 设备，单击 **添加功能点** 按钮。
+
+    <img src="https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/zh/MQTT-SelectDeviceAndAddPoint.png" alt="选择设备并添加功能点" /> 
+
+2. 选择 **发现功能点** 按钮。
+
+    <img src="https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/zh/MQTT-DiscoverPoints.png" alt="发现功能点" /> 
+
+3. 在 **发现功能点列表** 勾选需要的点，单击中间 **+** 按钮。
+
+    <img src="https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/zh/MQTT-AddDiscoveredPoints.png" alt="新增发现功能点" />
+    
+    新增功能点会出现在右侧的**已添加功能点**列表。单击 **完成** 按钮，退出添加设备流程。
+
+    <img src="https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/zh/MQTT-AddedPoints.png" alt="已添加功能点" /> 
+
+4. 此时，您将在该 MQTT 设备的管理页面中，看到已成功添加的功能点。
+
+    <img src="https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/zh/MQTT-CheckPoints.png" alt="已添加功能点" /> 
+
+## 下一步
+
+接下来，您可以直接 [查看该设备的详情和控制该设备](./../device-management/basic-information.mdx)，还可以利用该设备 [编排自动化逻辑](./../automation.mdx) 了。
+
+## 常见问题
+
+### 如何处理 Aqara Studio 无法发现 MQTT 设备功能点的问题
+
+若 Aqara Studio 未发现您需要的功能点，请在“添加功能点”的页面单击“手动添加”按钮，在“添加点”弹窗中传入点的各项参数，完成手动添加点。
+
+具体参数说明如下表所示：
+
+| 参数 | 是否必填 | 说明 |
+| --- | --- | --- |
+| Friendly Name | ✔ | 功能点 ID。请咨询设备厂商获取功能点的真实 ID，以便 Aqara Studio 发现该点。 |
+| Point Name | ✘ | 您自定义的功能点名称。 |
+| Dev Type | ✘ | 对应 Aqara 物模型规范的 `deviceType`。基于 Aqara Spec 定义功能点时填写，具体可用值请阅读 [设备类型](../../aqara-developer/aqara-data-model-specification/device-types.mdx)。 |
+| Function Code | ✘ | 对应 Aqara 物模型规范的 `functionCode`。基于 Aqara Spec 定义功能点时填写，具体可用值请阅读 [功能代码](../../aqara-developer/aqara-data-model-specification/function-codes.mdx)。 |
+| Trait Code | ✘ | 对应 Aqara 物模型规范的 `traitCode`。基于 Aqara Spec 定义功能点时填写，具体可用值请阅读 [功能点代码](../../aqara-developer/aqara-data-model-specification/trait-codes.mdx)。 |
+| Data Type | ✘ | 功能点数据类型，支持以下取值：<ul><li><code>bool</code>：布尔型</li><li><code>numerical</code>：数值型</li><li><code>text</code>：文本型</li></ul>  |
+| Access | ✘ | 读写类型，<ul><li>1：仅可读</li><li>2：可读可写</li></ul> |
+| Sub Topic | ✘ | Aqara Studio 通过订阅该 Topic 获取功能点的最新数据。具体 Topic 请根据设备协议或厂商文档填写。 |
+| Pub Topic | ✘ | Aqara Studio 通过向此 Topic 发送消息数据控制功能点。具体 Topic 请根据设备协议或厂商文档填写。（对于仅可读的功能点，此字段留空） |

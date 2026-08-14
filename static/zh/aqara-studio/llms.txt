@@ -22,6 +22,7 @@
 - Modbus TCP 设备接入: https://docs.aqara.com/zh/docs/aqara-studio/device-integration/modbus-tcp
 - BACnet 设备接入: https://docs.aqara.com/zh/docs/aqara-studio/device-integration/bacnet
 - KNX IP 设备接入: https://docs.aqara.com/zh/docs/aqara-studio/device-integration/knx-ip
+- MQTT 设备接入: https://docs.aqara.com/zh/docs/aqara-studio/device-integration/mqtt
 - 查看和修改基本信息: https://docs.aqara.com/zh/docs/aqara-studio/device-management/basic-information
 - 查看和控制功能点: https://docs.aqara.com/zh/docs/aqara-studio/device-management/point-information
 - 展示历史数据: https://docs.aqara.com/zh/docs/aqara-studio/device-management/history
@@ -56,6 +57,7 @@
 - 功能点代码一览: https://docs.aqara.com/zh/docs/aqara-studio/api-references/trait-codes
 - 自动化 API: https://docs.aqara.com/zh/docs/aqara-studio/api-references/automation-api
 - JSON 自动化脚本定义: https://docs.aqara.com/zh/docs/aqara-studio/api-references/json-automation-script
+- 以 MQTT 转出设备数据: https://docs.aqara.com/zh/docs/aqara-studio/data-export-by-mqtt
 - 在 OpenClaw Web UI 中使用 Aqara Studio Skill: https://docs.aqara.com/zh/docs/aqara-studio/use-aqara-studio-skill-in-openclaw-web-ui
 - 连接至 Aqara Studio MCP Server: https://docs.aqara.com/zh/docs/aqara-studio/set-up-mcp-server
 - 常见问题: https://docs.aqara.com/zh/docs/aqara-studio/faq
@@ -63,4 +65,5 @@
 - JavaScript 脚本（适用于 HTTP）: https://docs.aqara.com/zh/docs/aqara-studio/javascript-for-http-integration
 - JavaScript 脚本（适用于 UDP 和 TCP）: https://docs.aqara.com/zh/docs/aqara-studio/javascript-for-udp-tcp-integration
 - 脚本支持的单位名称与符号: https://docs.aqara.com/zh/docs/aqara-studio/script-supported-unit-symbols
+- 数值映射函数: https://docs.aqara.com/zh/docs/aqara-studio/numerical-mapping-functions
 
