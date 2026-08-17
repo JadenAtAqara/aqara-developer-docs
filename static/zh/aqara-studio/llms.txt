@@ -23,6 +23,9 @@
 - BACnet 设备接入: https://docs.aqara.com/zh/docs/aqara-studio/device-integration/bacnet
 - KNX IP 设备接入: https://docs.aqara.com/zh/docs/aqara-studio/device-integration/knx-ip
 - MQTT 设备接入: https://docs.aqara.com/zh/docs/aqara-studio/device-integration/mqtt
+- HTTP 设备接入: https://docs.aqara.com/zh/docs/aqara-studio/device-integration/http
+- TCP 设备接入: https://docs.aqara.com/zh/docs/aqara-studio/device-integration/tcp
+- UDP 设备接入: https://docs.aqara.com/zh/docs/aqara-studio/device-integration/udp
 - 查看和修改基本信息: https://docs.aqara.com/zh/docs/aqara-studio/device-management/basic-information
 - 查看和控制功能点: https://docs.aqara.com/zh/docs/aqara-studio/device-management/point-information
 - 展示历史数据: https://docs.aqara.com/zh/docs/aqara-studio/device-management/history
