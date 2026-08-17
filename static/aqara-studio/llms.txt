@@ -23,6 +23,9 @@
 - BACnet: https://docs.aqara.com/docs/aqara-studio/device-integration/bacnet
 - KNX IP: https://docs.aqara.com/docs/aqara-studio/device-integration/knx-ip
 - MQTT: https://docs.aqara.com/docs/aqara-studio/device-integration/mqtt
+- HTTP: https://docs.aqara.com/docs/aqara-studio/device-integration/http
+- TCP: https://docs.aqara.com/docs/aqara-studio/device-integration/tcp
+- UDP: https://docs.aqara.com/docs/aqara-studio/device-integration/udp
 - View and Edit Basic Information: https://docs.aqara.com/docs/aqara-studio/device-management/basic-information
 - View and Control Function Points: https://docs.aqara.com/docs/aqara-studio/device-management/point-information
 - Display History: https://docs.aqara.com/docs/aqara-studio/device-management/history
