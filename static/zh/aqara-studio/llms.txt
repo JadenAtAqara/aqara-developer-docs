@@ -84,7 +84,6 @@
 - JavaScript 脚本（适用于 UDP 和 TCP）: https://docs.aqara.com/zh/docs/aqara-studio/javascript-for-udp-tcp-integration
 - 脚本支持的单位名称与符号: https://docs.aqara.com/zh/docs/aqara-studio/script-supported-unit-symbols
 - 数值映射函数: https://docs.aqara.com/zh/docs/aqara-studio/numerical-mapping-functions
-- 参考格式: https://docs.aqara.com/zh/docs/aqara-studio/product-knowledge/reference
 - Studio 网关功能一览: https://docs.aqara.com/zh/docs/aqara-studio/product-knowledge/gateways/studio-hub-comparison
 - 通用资料: https://docs.aqara.com/zh/docs/aqara-studio/product-knowledge/gateways/general
 - 智慧边端 M300: https://docs.aqara.com/zh/docs/aqara-studio/product-knowledge/gateways/edge-hub-m300

@@ -242,13 +242,6 @@
       ]
     },
     {
-      "type": "doc",
-      "id": "aqara-studio/product-knowledge/reference",
-      "customProps": {
-        "tab": "product-knowledge"
-      }
-    },
-    {
       "type": "category",
       "label": "Gateways",
       "customProps": {

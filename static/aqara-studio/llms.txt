@@ -84,7 +84,6 @@
 - JavaScript Script for UDP and TCP Integration: https://docs.aqara.com/docs/aqara-studio/javascript-for-udp-tcp-integration
 - Unit Names and Symbols Supported by Scripts: https://docs.aqara.com/docs/aqara-studio/script-supported-unit-symbols
 - Numerical Mapping Functions: https://docs.aqara.com/docs/aqara-studio/numerical-mapping-functions
-- 参考格式: https://docs.aqara.com/docs/aqara-studio/product-knowledge/reference
 - Studio Hub Comparison: https://docs.aqara.com/docs/aqara-studio/product-knowledge/gateways/studio-hub-comparison
 - General: https://docs.aqara.com/docs/aqara-studio/product-knowledge/gateways/general
 - Edge Hub M300: https://docs.aqara.com/docs/aqara-studio/product-knowledge/gateways/edge-hub-m300
