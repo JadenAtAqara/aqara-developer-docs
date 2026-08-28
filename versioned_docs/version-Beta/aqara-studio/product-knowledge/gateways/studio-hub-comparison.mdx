@@ -1,0 +1,325 @@
+---
+title: "Studio Hub Comparison"
+description: "This document provides reader with a comprehensive and clear guide for Aqara Studio Hub, helping to efficiently build stable, scalable, and project-oriented smart space control systems."
+keywords: ["Aqara Docs", "Aqara Studio", "Overview", "Studio Hub Comparison", "studio hub comparison"]
+---
+# Studio Hub Comparison
+
+This document provides reader with a comprehensive and clear guide for Aqara Studio Hub, helping to efficiently build stable, scalable, and project-oriented smart space control systems.
+
+The following is a comparative overview of the core Aqara Studio series devices (structured by product positioning and capability dimensions):
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+export const DocIcon = ({ title }) => (
+  <span className="aqara-doc-tooltip">
+    <span className="aqara-doc-tooltip__icon" tabIndex={0} role="button" aria-label="View details">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+        <polyline points="14 2 14 8 20 8" />
+        <line x1="16" y1="13" x2="8" y2="13" />
+        <line x1="16" y1="17" x2="8" y2="17" />
+        <line x1="10" y1="9" x2="8" y2="9" />
+      </svg>
+    </span>
+    <span className="aqara-doc-tooltip__bubble" role="tooltip">
+      {title}
+    </span>
+  </span>
+);
+
+export const DocIconAuto = ({ title }) => {
+  const [isOpen, setIsOpen] = React.useState(false);
+  const [placement, setPlacement] = React.useState('top');
+  const [bubbleStyle, setBubbleStyle] = React.useState(null);
+  const iconRef = React.useRef(null);
+  const bubbleRef = React.useRef(null);
+
+  const recompute = React.useCallback(() => {
+    const icon = iconRef.current;
+    const bubble = bubbleRef.current;
+    if (!icon || !bubble) return;
+
+    const iconRect = icon.getBoundingClientRect();
+    const bubbleRect = bubble.getBoundingClientRect();
+
+    const gap = 10;
+    const viewportPadding = 12;
+    const sidebar = document.querySelector('aside.theme-doc-sidebar-container');
+    const sidebarRect = sidebar?.getBoundingClientRect();
+    const leftSafe = Math.max(
+      viewportPadding,
+      sidebarRect ? sidebarRect.right + viewportPadding : viewportPadding
+    );
+
+    const canPlaceTop = iconRect.top >= bubbleRect.height + gap + viewportPadding;
+    const nextPlacement = canPlaceTop ? 'top' : 'bottom';
+    setPlacement(nextPlacement);
+
+    const desiredLeft = iconRect.left + iconRect.width / 2 - bubbleRect.width / 2;
+    const minLeft = leftSafe;
+    const maxLeft = window.innerWidth - viewportPadding - bubbleRect.width;
+    const left = Math.min(Math.max(desiredLeft, minLeft), maxLeft);
+
+    const top =
+      nextPlacement === 'top'
+        ? iconRect.top - gap - bubbleRect.height
+        : iconRect.bottom + gap;
+
+    const iconCenterX = iconRect.left + iconRect.width / 2;
+    const arrowX = Math.min(Math.max(iconCenterX - left, 14), bubbleRect.width - 14);
+
+    setBubbleStyle({
+      left,
+      top,
+      ['--aqara-doc-tooltip-arrow-x']: `${arrowX}px`,
+    });
+  }, []);
+
+  const open = React.useCallback(() => {
+    setIsOpen(true);
+  }, []);
+
+  const close = React.useCallback(() => {
+    setIsOpen(false);
+    setPlacement('top');
+    setBubbleStyle(null);
+  }, []);
+
+  React.useLayoutEffect(() => {
+    if (!isOpen) return;
+    recompute();
+  }, [isOpen, title, recompute]);
+
+  React.useEffect(() => {
+    if (!isOpen) return;
+    const handler = () => recompute();
+    window.addEventListener('scroll', handler, true);
+    window.addEventListener('resize', handler);
+    return () => {
+      window.removeEventListener('scroll', handler, true);
+      window.removeEventListener('resize', handler);
+    };
+  }, [isOpen, recompute]);
+
+  return (
+    <span className="aqara-doc-tooltip">
+      <span
+        className="aqara-doc-tooltip__icon"
+        ref={iconRef}
+        tabIndex={0}
+        role="button"
+        aria-label="View details"
+        onMouseEnter={open}
+        onMouseLeave={close}
+        onFocus={open}
+        onBlur={close}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+          <polyline points="14 2 14 8 20 8" />
+          <line x1="16" y1="13" x2="8" y2="13" />
+          <line x1="16" y1="17" x2="8" y2="17" />
+          <line x1="10" y1="9" x2="8" y2="9" />
+        </svg>
+      </span>
+      {isOpen &&
+        ReactDOM.createPortal(
+          <span
+            ref={bubbleRef}
+            className={[
+              'aqara-doc-tooltip__bubble',
+              'aqara-doc-tooltip__bubble--portal',
+              placement === 'bottom' ? 'aqara-doc-tooltip__bubble--bottom' : '',
+            ]
+              .filter(Boolean)
+              .join(' ')}
+            style={bubbleStyle || undefined}
+            role="tooltip"
+          >
+            {title}
+          </span>,
+          document.body
+        )}
+    </span>
+  );
+};
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="2">Comparison Item</th>
+      <th><a href="./din-rail-hub-ax100m">AX100M</a></th>
+      <th><a href="./hub-ax200m">AX200M</a></th>
+      <th><a href="./edge-hub-m300">M300</a></th>
+      <th>GX300M</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="2">Product Type</td>
+      <td>Aqara Studio<br />Sub-hub</td>
+      <td>Aqara Studio<br />Sub-hub</td>
+      <td>Aqara Studio<br />Primary Hub</td>
+      <td>Aqara Studio<br />Primary Hub</td>
+    </tr>
+    <tr>
+      <td rowspan="8">Hardware Specs</td>
+      <td>2.4G/5G Dual-band Wi-Fi</td>
+      <td>√</td>
+      <td>√</td>
+      <td>√</td>
+      <td>√</td>
+    </tr>
+    <tr>
+      <td>DDR</td>
+      <td>128MB</td>
+      <td>128MB</td>
+      <td>1GB</td>
+      <td>1GB</td>
+    </tr>
+    <tr>
+      <td>Nand Flash / EMMC</td>
+      <td>256MB Nand Flash</td>
+      <td>256MB Nand Flash</td>
+      <td>64GB EMMC</td>
+      <td>64GB EMMC</td>
+    </tr>
+    <tr>
+      <td>Expandable Storage</td>
+      <td>×</td>
+      <td>×</td>
+      <td>Micro SD (up to 512GB)</td>
+      <td>Micro SD (up to 512GB)</td>
+    </tr>
+    <tr>
+      <td>RJ45</td>
+      <td>1</td>
+      <td>1 (PoE Supported)</td>
+      <td>1 (PoE Supported)</td>
+      <td>1 (PoE Supported)</td>
+    </tr>
+    <tr>
+      <td>USB</td>
+      <td>USB-A</td>
+      <td>1×USB-A<br />1×USB-C</td>
+      <td>1×USB-C</td>
+      <td>1×USB-C</td>
+    </tr>
+    <tr>
+      <td>RS485</td>
+      <td>1</td>
+      <td>×</td>
+      <td>×</td>
+      <td>×</td>
+    </tr>
+    <tr>
+      <td>Recommended Mounting</td>
+      <td>DIN Rail</td>
+      <td>Flat/Wall/Ceiling</td>
+      <td>Flat/Wall/Ceiling</td>
+      <td>Flat/Wall/Ceiling</td>
+    </tr>
+    <tr>
+      <td rowspan="10">Software Features</td>
+      <td><a href="./../device-integration/matter">Matter Controller, Thread Border Router</a></td>
+      <td>√</td>
+      <td>√</td>
+      <td>√</td>
+      <td>√</td>
+    </tr>
+    <tr>
+      <td><a href="./../device-integration/zigbee">Zigbee hub</a></td>
+      <td>√</td>
+      <td>√</td>
+      <td>√</td>
+      <td>√</td>
+    </tr>
+    <tr>
+      <td><a href="./../device-integration/zigbee">Matter Bridge for Aqara Zigbee Devices</a></td>
+      <td>×</td>
+      <td>×</td>
+      <td>√</td>
+      <td>√</td>
+    </tr>
+    <tr>
+      <td><a href="./../device-integration/aqara-rs-485">AqaraModbus hub,<br />RS485 Bus Connection</a></td>
+      <td>√</td>
+      <td>×</td>
+      <td>×</td>
+      <td>×</td>
+    </tr>
+    <tr>
+      <td><a href="./../device-integration/virtual/infrared-equipment">Universal IR Remote</a></td>
+      <td>×</td>
+      <td>√</td>
+      <td>√</td>
+      <td>√</td>
+    </tr>
+    <tr>
+      <td><a href="./../compatible-aqara-devices">Connect B-end exclusive<br />Sub-devices</a></td>
+      <td>√</td>
+      <td>√</td>
+      <td>×</td>
+      <td>√</td>
+    </tr>
+    <tr>
+      <td>Set Static IP<DocIconAuto title="During project delivery, if a static IP needs to be set for the hub before networking, a dedicated tool is required. Please contact Aqara technical support." /></td>
+      <td>√</td>
+      <td>√</td>
+      <td>√</td>
+      <td>√</td>
+    </tr>
+    <tr>
+      <td><a href="./../automation">Local Automation</a><DocIconAuto title="If all devices involved are connected to the same sub-gateway (including Zigbee/Thread/Aqara RS-485/IR), the automation is offloaded to that sub-gateway. Even if the connection between the sub-gateway and Studio is unstable, the automation will reliably run locally." /></td>
+      <td>Supports automation offloading to sub-hub</td>
+      <td>Supports automation offloading to sub-hub</td>
+      <td>Supports creating local automation</td>
+      <td>Supports creating local automation</td>
+    </tr>
+    <tr>
+      <td>Automation<br />Capabilities</td>
+      <td>Trigger:<br />Anti-mis-deletion<br />notification trigger<br />Action:<br />-</td>
+      <td>Trigger:<br />Anti-mis-deletion<br />notification trigger<br />Action:<br />Voice playback<br />IR remote control</td>
+      <td>Trigger:<br />Anti-mis-deletion<br />notification trigger<br />Action:<br />Voice playback<br />IR remote control</td>
+      <td>Trigger:<br />Anti-mis-deletion<br />notification trigger<br />Action:<br />Voice playback<br />IR remote control</td>
+    </tr>
+    <tr>
+      <td>Recommended<br />Connected<br />Sub-devices</td>
+      <td>40 Aqara Zigbee<br />+ 40 Thread<br />+ 32 Aqara RS-485</td>
+      <td>40 Aqara Zigbee<br />+ 40 Thread</td>
+      <td>Up to 300</td>
+      <td>Up to 300</td>
+    </tr>
+  </tbody>
+</table>
+
+# Selection Recommendations
+
+- **M300 / GX300M:** As Aqara Studio official standard hosts, pre-installed with Aqara Studio OS and built-in Hub, delivering out-of-the-box local deployment and operation. With stable edge computing capabilities, they are perfectly suited for smart home and small commercial project needs.
+- **AX100M / AX200M:** As Aqara Studio sub-hubs, they need to connect to M300/GX300M or other official standard hosts running Aqara Studio. Primarily used to expand Zigbee and Thread wireless network coverage and device access capacity. Suitable for scenarios requiring distributed deployment, multi-area signal extension, or protocol bridging (e.g., infrared control).

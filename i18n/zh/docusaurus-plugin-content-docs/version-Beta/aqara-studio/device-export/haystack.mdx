@@ -1,0 +1,42 @@
+---
+title: "以 Haystack 框架转出"
+description: "本文将详细介绍如何将已集成在 Aqara Studio 中的智能设备，以 Haystack 框架转出，帮助您实现在第三方智能家居平台上灵活管理和控制您的设备。"
+keywords: ["Aqara 文档", "Aqara Studio", "设备导出", "以 Haystack 框架转出"]
+---
+
+# 以 Haystack 框架转出
+
+本文将详细介绍如何将已集成在 Aqara Studio 中的智能设备，以 Haystack 框架转出，帮助您实现在第三方智能家居平台上灵活管理和控制您的设备。
+
+## 前提条件
+
+在开始之前，请使用您的 Aqara Home App 账号 [登录 Aqara Cloud，选择账号所属国家或地区，并绑定至 Aqara Home App 中的一个家庭](./../cloud.mdx)。
+
+## 安装插件
+
+请参考 [插件市场](./../plugin-center.mdx) 文档：
+1. 前往 [Aqara Builder](https://builder.aqara.com) 获取 `Haystack Export` 插件。
+2. 将其分配到 Aqara Studio。
+3. 并前往 Aqara Studio 的 **插件中心** 安装该插件。
+
+## 转出流程
+
+1. 在 **插件中心** 找到 `Haystack Export` 插件，点击 **转出** 按钮。
+
+    ![点击转出按钮](https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/zh/Haystack-TransferOut.png)
+
+2. Aqara Studio 会自动跳转至 **开发者中心**，找到 **Haystack 转出**，你可以看到有一个默认账号和密码，可用于转出 Aqara Studio 内的所有设备。
+
+    ![默认账号和密码](https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/zh/Haystack-DefaultAccount.png)
+
+3. 如果您只希望转出某个网关下的设备，请单击 **新建服务**。
+
+    :::tip
+    目前仅支持单独将 [配电箱网关 AX100M（Studio 版）](./../product-knowledge/gateways/din-rail-hub-ax100m.mdx) 和 [智慧网关 AX200M（Studio 版）](./../product-knowledge/gateways/hub-ax200m.mdx) 网关下的设备导出。
+    :::
+
+    ![新建服务](https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/zh/Haystack-NewService.png)
+
+4. 在弹窗中选择目标网关，设置账号和密码，单击 **确定** 按钮。
+
+5. 如此，您可以看到 **Haystack 转出** 下新增了一个账号和密码，可用于转出该网关下的所有设备。

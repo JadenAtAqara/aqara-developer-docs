@@ -16,7 +16,8 @@
 - Hub-integrated Model: https://docs.aqara.com/docs/aqara-studio/deployment/hub-integrated-model
 - Space Management: https://docs.aqara.com/docs/aqara-studio/space
 - Aqara Hub: https://docs.aqara.com/docs/aqara-studio/device-integration/aqara
-- Zigbee: https://docs.aqara.com/docs/aqara-studio/device-integration/zigbee
+- Aqara RS-485: https://docs.aqara.com/docs/aqara-studio/device-integration/aqara-rs-485
+- Aqara Zigbee: https://docs.aqara.com/docs/aqara-studio/device-integration/zigbee
 - Matter: https://docs.aqara.com/docs/aqara-studio/device-integration/matter
 - Home Assistant: https://docs.aqara.com/docs/aqara-studio/device-integration/home-assistant
 - Modbus TCP: https://docs.aqara.com/docs/aqara-studio/device-integration/modbus-tcp
@@ -26,11 +27,20 @@
 - HTTP: https://docs.aqara.com/docs/aqara-studio/device-integration/http
 - TCP: https://docs.aqara.com/docs/aqara-studio/device-integration/tcp
 - UDP: https://docs.aqara.com/docs/aqara-studio/device-integration/udp
+- Sonos: https://docs.aqara.com/docs/aqara-studio/device-integration/sonos
+- Aqara Coap: https://docs.aqara.com/docs/aqara-studio/device-integration/aqara-coap
+- Infrared Equipment: https://docs.aqara.com/docs/aqara-studio/device-integration/virtual/infrared-equipment
+- Light Box: https://docs.aqara.com/docs/aqara-studio/device-integration/virtual/light-box
+- Export to Aqara Home App: https://docs.aqara.com/docs/aqara-studio/device-export/aiot
+- Export via Haystack Framework: https://docs.aqara.com/docs/aqara-studio/device-export/haystack
 - View and Edit Basic Information: https://docs.aqara.com/docs/aqara-studio/device-management/basic-information
+- Firmware Upgrade: https://docs.aqara.com/docs/aqara-studio/device-management/firmware-upgrade
 - View and Control Function Points: https://docs.aqara.com/docs/aqara-studio/device-management/point-information
 - Display History: https://docs.aqara.com/docs/aqara-studio/device-management/history
-- Configure Point Alarms: https://docs.aqara.com/docs/aqara-studio/device-management/alarms
 - Add Tags: https://docs.aqara.com/docs/aqara-studio/device-management/tags
+- Lights: https://docs.aqara.com/docs/aqara-studio/device-management/aqara-device-configuration/lights
+- Light Boxes: https://docs.aqara.com/docs/aqara-studio/device-management/aqara-device-configuration/light-boxes
+- Screens: https://docs.aqara.com/docs/aqara-studio/device-management/aqara-device-configuration/screens
 - Automation: https://docs.aqara.com/docs/aqara-studio/automation
 - Classic: https://docs.aqara.com/docs/aqara-studio/classic-automation
 - Flow: https://docs.aqara.com/docs/aqara-studio/flow/flow-introduction
@@ -47,12 +57,17 @@
 - Log Management: https://docs.aqara.com/docs/aqara-studio/log-management
 - User: https://docs.aqara.com/docs/aqara-studio/user
 - Backup and Restore: https://docs.aqara.com/docs/aqara-studio/backup-and-restore
+- Static IP: https://docs.aqara.com/docs/aqara-studio/static-ip
 - Wireless Connection: https://docs.aqara.com/docs/aqara-studio/wireless-connection
 - Cloud Connect: https://docs.aqara.com/docs/aqara-studio/cloud
 - Remote Access: https://docs.aqara.com/docs/aqara-studio/remote-access
 - System Update: https://docs.aqara.com/docs/aqara-studio/system-update
 - Technical Support: https://docs.aqara.com/docs/aqara-studio/technical-support
+- Local Firmware Library: https://docs.aqara.com/docs/aqara-studio/local-firmware-library
 - Host Access Domain Name Access: https://docs.aqara.com/docs/aqara-studio/local-domain-name-access
+- Factory Reset: https://docs.aqara.com/docs/aqara-studio/factory-reset
+- Plugin Center: https://docs.aqara.com/docs/aqara-studio/plugin-center
+- AIOT Data Migration: https://docs.aqara.com/docs/aqara-studio/plugin-center/aiot-data-migration
 - Developer Guide: https://docs.aqara.com/docs/aqara-studio/developer-guide
 - Data Export API v1: https://docs.aqara.com/docs/aqara-studio/api-references/data-export-api-v1
 - Device Function API: https://docs.aqara.com/docs/aqara-studio/api-references/trait-api
@@ -69,4 +84,23 @@
 - JavaScript Script for UDP and TCP Integration: https://docs.aqara.com/docs/aqara-studio/javascript-for-udp-tcp-integration
 - Unit Names and Symbols Supported by Scripts: https://docs.aqara.com/docs/aqara-studio/script-supported-unit-symbols
 - Numerical Mapping Functions: https://docs.aqara.com/docs/aqara-studio/numerical-mapping-functions
+- 参考格式: https://docs.aqara.com/docs/aqara-studio/product-knowledge/reference
+- Studio Hub Comparison: https://docs.aqara.com/docs/aqara-studio/product-knowledge/gateways/studio-hub-comparison
+- General: https://docs.aqara.com/docs/aqara-studio/product-knowledge/gateways/general
+- Edge Hub M300: https://docs.aqara.com/docs/aqara-studio/product-knowledge/gateways/edge-hub-m300
+- DIN Rail Hub AX100M: https://docs.aqara.com/docs/aqara-studio/product-knowledge/gateways/din-rail-hub-ax100m
+- Hub AX200M: https://docs.aqara.com/docs/aqara-studio/product-knowledge/gateways/hub-ax200m
+- Presence Sensor PR330P: https://docs.aqara.com/docs/aqara-studio/product-knowledge/sensors/presence-sensor-pr330p
+- Spatial Multi-Sensor FP400: https://docs.aqara.com/docs/aqara-studio/product-knowledge/sensors/spatial-multi-sensor-fp400
+- Spatial Multi-Sensor FP400 Pro: https://docs.aqara.com/docs/aqara-studio/product-knowledge/sensors/spatial-multi-sensor-fp400-pro
+- DIN Rail Module (4 Channels) AW110K: https://docs.aqara.com/docs/aqara-studio/product-knowledge/controllers/din-rail-module-4-channels-aw110k
+- Panel Hub AX150S: https://docs.aqara.com/docs/aqara-studio/product-knowledge/screens/panel-hub-ax150s
+- Lighting Scene Controller AW100L: https://docs.aqara.com/docs/aqara-studio/product-knowledge/lighting/lighting-scene-controller-aw100l
+- Pastel Light Module H1: https://docs.aqara.com/docs/aqara-studio/product-knowledge/lighting/pastel-light-module-h1
+- Pastel Light Board H1: https://docs.aqara.com/docs/aqara-studio/product-knowledge/lighting/pastel-light-board-h1
+- Pastel Light Strip Controller H1: https://docs.aqara.com/docs/aqara-studio/product-knowledge/lighting/pastel-light-strip-controller-h1
+- Pastel LED Strip H1: https://docs.aqara.com/docs/aqara-studio/product-knowledge/lighting/pastel-led-strip-h1
+- Pastel Spotlight/Downlight H1: https://docs.aqara.com/docs/aqara-studio/product-knowledge/lighting/pastel-spotlight-downlight-h1
+- Track Light V1 Series: https://docs.aqara.com/docs/aqara-studio/product-knowledge/lighting/track-light-v1-series
+- Spotlight/Downlight T2 Pro Series: https://docs.aqara.com/docs/aqara-studio/product-knowledge/lighting/spotlight-downlight-t2-pro-series
 
