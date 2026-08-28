@@ -61,7 +61,15 @@ const productSectionTabsConfigs: ProductSectionTabsConfig[] = [
           zh: '快速开始',
         },
         to: '/docs/aqara-studio/overview/introduction',
-      }
+      },
+      {
+        key: 'product-knowledge',
+        label: {
+          en: 'Product Knowledge',
+          zh: '产品资料库',
+        },
+        to: '/docs/aqara-studio/product-knowledge/gateways/studio-hub-comparison',
+      },
     ],
   },
 ];

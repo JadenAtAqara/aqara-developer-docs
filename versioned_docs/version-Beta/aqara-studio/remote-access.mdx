@@ -7,34 +7,69 @@ keywords: ["Aqara Docs", "Aqara Studio", "Remote Access"]
 
 ## Feature Overview
 
-By default, you can only access Aqara Studio within your local area network (LAN). When you need to connect from an external network, you can enable **remote access** to securely manage your smart home devices and control systems from anywhere.
+By default, you can only access Aqara Studio within your local area network (LAN). When you need to connect from an external network, you can use **remote access** to securely manage your smart home devices and control systems from anywhere.
 
 ## Prerequisites
 
-Before using remote access, please ensure that you have logged in to your **Aqara Builder** account and bound a Workspace on the [Cloud Connect](./cloud.mdx) page.
+Before using remote access, please ensure that you have [connected to Aqara Cloud](./cloud.mdx).
 
 ## Steps to Access
 
-1. Open [Aqara Builder](https://builder.aqara.com) and select your bound workspace at the top left.
-2. In the left menu, click on **Studios**.
-3. In the **Studio Instances & Projects** list, find the device corresponding to your Aqara Studio IP and click the **Connect** button. You will then be able to access the remote access interface of that Aqara Studio.
+1. Visit the [Aqara Builder](https://builder.aqara.com) website, and navigate to **Builder Lab** from the left sidebar.
+
+    ![Enter Builder Lab](https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/en/PluginCenter-EnterBuilderLab.png)
+
+2. Select your avatar in the top navigation bar, then select **Studio Manager** from the dropdown list.
+
+    ![Select Studio Manager](https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/en/RemoteAccess-EnterStudioManager.png)
+
+3. Select the **Region** you chose when logging in with your Aqara account during [Cloud Connect](./cloud.mdx).
+
+    <img src="https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/en/RemoteAccess-SelectARegion.png" alt="Select a region" style={{width: "60%"}} />
+
+4. After entering Studio Manager, switch to the **Studios** tab. Click the Aqara Studio that you want to access remotely.
+
+    ![Connect to Aqara Studio](https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/en/RemoteAccess-SwitchToStudiosAndSelectAStudio.png)
+
+5. In the popup, click **Console** to remotely access the Aqara Studio.
+
+    ![Click the Console button](https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/en/RemoteAccess-ClickConsole.png)
+
+    ![Aqara Studio remote access console](https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/en/RemoteAccess-RealAccess.png)
 
     :::tip
     You can also use an existing local user account to log in to the remote access address. The permissions granted will be exactly the same as those for local access. For details, please refer to [Local User Management - Local User Roles](./user.mdx#local-user-roles).
     :::
 
-## Invite Other Users
+## Share with Other Aqara Users
 
-1. Visit [Aqara Builder](https://builder.aqara.com/), select your bound Aqara Workspace on the left, and click **Manage Workspaces**.
+To invite other Aqara users to remotely access your Aqara Studio, follow these steps:
 
-    :::tip
-    To allow other Aqara Builder users to access your Aqara Studio, you need to connect to an Aqara Workspace that is not of type `Personal`.
-    :::
+1. After entering Studio Manager, switch to the **Studio** tab. Click the Aqara Studio that you want to share for remote access.
 
-2. In the **Manage Workspaces** popup, click the **Invite Members** button to open the invitation window.
-3. In the popup, enter the email address of an Aqara Builder user and assign a role (`Operator` or `Admin`). For details on role permissions, please refer to [Remote User Roles](#remote-user-roles).
-4. After accepting the invitation, the invited user can log in to [Aqara Builder](https://builder.aqara.com) and select the target Workspace from the top left.
-5. In the left menu, click on **Studios**, find the device you have access to, and click the **Connect** button to access that Aqara Studio.
+    ![Connect to Aqara Studio](https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/en/RemoteAccess-SwitchToStudiosAndSelectAStudio.png)
+
+2. In the popup, click the **Share** button.
+
+    ![Click the Share button](https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/en/RemoteAccess-ClickShare.png)
+
+3. In the popup, select the role to assign to the invited user and the expiration time of the invitation link.
+
+    ![Select a role and expiration date](https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/en/RemoteAccess-SelectARoleAndExpirationDate.png)
+
+4. Click **Copy** to share the link with other Aqara users.
+
+    <img src="https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/en/RemoteAccess-CopyTheLink.png" alt="Copy the link" style={{width: "60%"}} />
+
+5. After the invited user clicks the link, they will see a page for requesting access and need to click **Request**.
+
+    <img src="https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/en/RemoteAccess-Request.png" alt="Request access" style={{width: "60%"}} />
+
+6. In Studio Manager, open the Studio details again, view **Studio Member**, find the request, and click **Approve**.
+
+    ![Approve the request](https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/en/RemoteAccess-ApproveRequest.png)
+
+7. The invited user can then see the Aqara Studio under the **Studio Manager > Studio** tab and remotely access it. For details, see [Steps to Access](#steps-to-access).
 
 ## Remote User Roles
 
@@ -47,24 +82,159 @@ The following table details the feature visibility and permissions for different
 - ✗ indicates that the role cannot use this feature.
 :::
 
-| Primary Category | Secondary Category | Tertiary Category           | Operator (Remote) | Admin (Remote) |
-|------------------|-------------------|-----------------------------|-------------------|---------------|
-| Overview         | /                 | /                           | ✓                 | ✓             |
-| Build            | Space  | /                           | ✓                 | ✓             |
-|                  | Device | /                           | ✓                 | ✓             |
-|                  | Automation        | /                           | ✓                 | ✓             |
-| Operation      | Alarm Management  | /                           | ✓                 | ✓             |
-|                  | Energy Management System | /                           | ✓                 | ✓             |
-|                  | Log Management         | Device Logs / Link Logs     | ✓                 | ✓             |
-|                  |                   | User Operation Logs         | ✗                 | ✗             |
-|                  |                   | System Upgrade Logs         | ✗                 | ✗             |
-| Management       | User Management   | /                           | ✗                 | ✗             |
-|                  | Backup & Restore  | /                           | ✗                 | ✗             |
-| Settings         | Local Settings    | /                           | ✗                 | ✗             |
-|                  | Cloud Connection  | /                           | ✗                 | ✗             |
-|                  | Remote Access     | /                           | ✗                 | ✗             |
-|                  | System Update     | /                           | ✗                 | ✗             |
-|                  | Technical Support | /                           | ✗                 | ✗             |
-| About            | /                 | /                           | ✗                 | ✗             |
-| Extensions       | Developer         | /                           | ✗                 | ✗             |
-|                  | Plugin Management | /                           | ✗                 | ✗             |
+<table>
+  <thead>
+    <tr>
+      <th rowspan="2">Primary Category</th>
+      <th rowspan="2">Secondary Category</th>
+      <th rowspan="2">Tertiary Category</th>
+      <th colspan="2">Permissions</th>
+    </tr>
+    <tr>
+      <th>Operator (Remote)</th>
+      <th>Admin (Remote)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="1">Overview</td>
+      <td>/</td>
+      <td>/</td>
+      <td>✓</td>
+      <td>✓</td>
+    </tr>
+    <tr>
+      <td rowspan="4">Build</td>
+      <td>Space</td>
+      <td>/</td>
+      <td>✓</td>
+      <td>✓</td>
+    </tr>
+    <tr>
+      <td>Device</td>
+      <td>/</td>
+      <td>✓</td>
+      <td>✓</td>
+    </tr>
+    <tr>
+      <td>Firmware Upgrade</td>
+      <td>/</td>
+      <td>✗</td>
+      <td>✗</td>
+    </tr>
+    <tr>
+      <td>Automation</td>
+      <td>/</td>
+      <td>✓</td>
+      <td>✓</td>
+    </tr>
+    <tr>
+      <td rowspan="8">Operation</td>
+      <td>Alarm Management</td>
+      <td>/</td>
+      <td>✓</td>
+      <td>✓</td>
+    </tr>
+    <tr>
+      <td>Energy Management</td>
+      <td>/</td>
+      <td>✓</td>
+      <td>✓</td>
+    </tr>
+    <tr>
+      <td rowspan="6">Log Audit</td>
+      <td>Device Logs / Link Logs</td>
+      <td>✓</td>
+      <td>✓</td>
+    </tr>
+    <tr>
+      <td>Gateway Operation Logs</td>
+      <td>✗</td>
+      <td>✗</td>
+    </tr>
+    <tr>
+      <td>Plugin Operation Logs</td>
+      <td>✓</td>
+      <td>✓</td>
+    </tr>
+    <tr>
+      <td>User Operation Logs</td>
+      <td>✗</td>
+      <td>✗</td>
+    </tr>
+    <tr>
+      <td>System Upgrade Logs</td>
+      <td>✗</td>
+      <td>✗</td>
+    </tr>
+    <tr>
+      <td>Firmware Upgrade Logs</td>
+      <td>✗</td>
+      <td>✗</td>
+    </tr>
+    <tr>
+      <td rowspan="2">Management</td>
+      <td>User Management</td>
+      <td>/</td>
+      <td>✗</td>
+      <td>✗</td>
+    </tr>
+    <tr>
+      <td>Backup &amp; Restore</td>
+      <td>/</td>
+      <td>✗</td>
+      <td>✗</td>
+    </tr>
+    <tr>
+      <td rowspan="5">Settings</td>
+      <td>Cloud Connection</td>
+      <td>/</td>
+      <td>✗</td>
+      <td>✗</td>
+    </tr>
+    <tr>
+      <td>Remote Access</td>
+      <td>/</td>
+      <td>✗</td>
+      <td>✗</td>
+    </tr>
+    <tr>
+      <td>System Update</td>
+      <td>/</td>
+      <td>✗</td>
+      <td>✗</td>
+    </tr>
+    <tr>
+      <td>Local Firmware Library</td>
+      <td>/</td>
+      <td>✗</td>
+      <td>✗</td>
+    </tr>
+    <tr>
+      <td>Technical Support</td>
+      <td>/</td>
+      <td>✗</td>
+      <td>✗</td>
+    </tr>
+    <tr>
+      <td>About</td>
+      <td>/</td>
+      <td>/</td>
+      <td>✗</td>
+      <td>✗</td>
+    </tr>
+    <tr>
+      <td rowspan="2">Extensions</td>
+      <td>Developer</td>
+      <td>/</td>
+      <td>✗</td>
+      <td>✗</td>
+    </tr>
+    <tr>
+      <td>Plugin Management</td>
+      <td>/</td>
+      <td>✗</td>
+      <td>✗</td>
+    </tr>
+  </tbody>
+</table>

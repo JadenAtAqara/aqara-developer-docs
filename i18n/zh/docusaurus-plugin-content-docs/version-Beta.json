@@ -19,9 +19,21 @@
     "message": "设备接入",
     "description": "The label for category 'Device Integration' in sidebar 'aqaraStudioSidebar'"
   },
-  "sidebar.aqaraStudioSidebar.category.Device Management": {
+  "sidebar.aqaraStudioSidebar.category.Virtual": {
+    "message": "虚拟设备接入",
+    "description": "The label for category 'Virtual' in sidebar 'aqaraStudioSidebar'"
+  },
+  "sidebar.aqaraStudioSidebar.category.Device Export": {
+    "message": "设备转出",
+    "description": "The label for category 'Data Export' in sidebar 'aqaraStudioSidebar'"
+  },
+    "sidebar.aqaraStudioSidebar.category.Device Management": {
     "message": "设备管理",
     "description": "The label for category 'Device Management' in sidebar 'aqaraStudioSidebar'"
+  },
+  "sidebar.aqaraStudioSidebar.category.Aqara Device Configuration": {
+    "message": "Aqara 设备配置",
+    "description": "The label for category 'Aqara Device Configuration' in sidebar 'aqaraStudioSidebar'"
   },
   "sidebar.aqaraStudioSidebar.category.Automation": {
     "message": "自动化",
@@ -46,6 +58,10 @@
   "sidebar.aqaraStudioSidebar.category.Management": {
     "message": "管理",
     "description": "The label for category 'Management' in sidebar 'aqaraStudioSidebar'"
+  },
+  "sidebar.aqaraStudioSidebar.category.Plugin Center": {
+    "message": "插件中心",
+    "description": "The label for category 'Plugin Center' in sidebar 'aqaraStudioSidebar'"
   },
   "sidebar.aqaraStudioSidebar.category.Developer": {
     "message": "开发者",
@@ -75,9 +91,25 @@
     "message": "设备集成脚本",
     "description": "The label for category 'JavaScript for Integration' in sidebar 'aqaraStudioSidebar'"
   },
-  "sidebar.aqaraStudioSidebar.category.Gateway": {
+  "sidebar.aqaraStudioSidebar.category.Gateways": {
     "message": "网关",
-    "description": "The label for category 'Gateway' in sidebar 'aqaraStudioSidebar'"
+    "description": "The label for category 'Gateways' in sidebar 'aqaraStudioSidebar'"
+  },
+  "sidebar.aqaraStudioSidebar.category.Sensors": {
+    "message": "传感器",
+    "description": "The label for category 'Sensors' in sidebar 'aqaraStudioSidebar'"
+  },
+  "sidebar.aqaraStudioSidebar.category.Controllers": {
+    "message": "控制器",
+    "description": "The label for category 'Controllers' in sidebar 'aqaraStudioSidebar'"
+  },
+  "sidebar.aqaraStudioSidebar.category.Screens": {
+    "message": "屏",
+    "description": "The label for category 'Screens' in sidebar 'aqaraStudioSidebar'"
+  },
+  "sidebar.aqaraStudioSidebar.category.Lighting": {
+    "message": "调光照明",
+    "description": "The label for category 'Lighting' in sidebar 'aqaraStudioSidebar'"
   },
   "sidebar.aqaraDeveloperSidebar.category.Local API for Studio": {
     "message": "Studio 本地 API",
@@ -134,6 +166,22 @@
   "sidebar.aqaraDeveloperSidebar.category.Features": {
     "message": "功能",
     "description": "The label for category 'Features' in sidebar 'aqaraDeveloperSidebar'"
+  },
+  "sidebar.aqaraBuilderSidebar.category.Builder Lab": {
+    "message": "Builder 工坊",
+    "description": "The label for category 'Builder Lab' in sidebar 'aqaraBuilderSidebar'"
+  },
+  "sidebar.aqaraBuilderSidebar.category.Space Plan": {
+    "message": "空间规划",
+    "description": "The label for category 'Space Plan' in sidebar 'aqaraBuilderSidebar'"
+  },
+  "sidebar.aqaraBuilderSidebar.category.Layout and Device Placement": {
+    "message": "户型与点位设计",
+    "description": "The label for category 'Layout and Device Placement' in sidebar 'aqaraBuilderSidebar'"
+  },
+  "sidebar.aqaraBuilderSidebar.category.Application UI": {
+    "message": "界面设计",
+    "description": "The label for category 'Application UI' in sidebar 'aqaraBuilderSidebar'"
   },
   "sidebar.aqaraOpenLinkSidebar.category.Aqara Standard Protocol Modules": {
     "message": "Aqara 标准协议模组",

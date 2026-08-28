@@ -1,0 +1,70 @@
+---
+title: "Aqara Coap"
+description: "This document explains how to connect an Aqara Gateway (excluding Aqara Studio Sub-hubs and Aqara Studio Primary Hubs) into Aqara Studio."
+keywords: ["Aqara Docs", "Aqara Studio", "Device Integration", "Aqara Coap"]
+---
+# Aqara Coap
+
+This document explains how to connect an Aqara Gateway (excluding Aqara Studio Sub-hubs and Aqara Studio Primary Hubs) into Aqara Studio.
+
+Once the Aqara Gateway is integrated with Aqara Studio, you only need to pair its sub-devices. The sub-devices will be synchronized and connected automatically—there’s no need to add them individually.
+
+## Prerequisites
+
+Before you begin, please ensure you have an Aqara Gateway device.
+
+## Install Plugin
+
+Please refer to the [Plugin Market](./../plugin-center.mdx) instruction and go to [Aqara Builder](https://builder.aqara.com) to install the `AqaraCoap Protocol Access` plugin.
+
+
+## Import the Five-Tuple
+
+1. Click the **Devices** page in the left sidebar. In the device tree on the left, click the "+" button.   
+    ![Click the addition button](https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/en/Devices-ClickAddButton.png)
+
+2. In the pop-up, choose `AqaraCoap`.
+3. On the left sidebar, select `AqaraCoap` and switch to the **Five-Tuple Import** tab.
+4. Contact **Aqara business staff** to obtain the five-tuple information file (JSON) for the **gateway itself** to be integrated into Aqara Studio.
+    :::tip
+    Only the gateway's five-tuple information is needed. Information for its sub-devices is not required.
+    :::
+4. Contact **Aqara business staff** and provide the **device ID** or **MAC address** of the gateway to be integrated into Aqara Studio, in order to obtain its five-tuple information file (JSON).
+    :::tip
+    You only need to obtain the five-tuple information for the gateway itself, not its sub-devices.
+    :::
+5. Upload this file. Aqara Studio will automatically parse its contents and wait for the device to join the network.
+
+## Download Aqara Tool
+
+Please use [this link](https://cdn.aqara.com/cdn/luoshu/mainland/static/app/AqaraTool_v6.0.4.100_20260601-aqaraSysH5Main-release.apk) to download and install the Aqara Studio Tool App (currently supported only on Android).
+
+## Add an Aqara Coap Device
+
+1. Launch Aqara Tool and fill in the required network login information:
+    | Parameter    | Description | Example |
+    | -- | -- | ----------------------------------------- |
+    | BaseUrl      | Always contains the protocol (such as http:// or https://), followed by the host (IP address or domain name), and may include port and path. It’s the complete endpoint address. | `http://10.10.24.83:8000` (IP address + port，usually 8000)<br/>`https://xxx.yyy.com/zzz/` (domain name + path) |
+    | FastLinkUrl  | Always contains only the host (IP address or domain name); does NOT include protocol, port, or path. Used as a simplified identifier, often combined with default configurations like protocol and port for quick internal access. | `10.10.24.83` (IP address)<br/>`xxx.yyy.com` (domain name) |
+    | CountryCode  | Country code, e.g., for the United States it's `US`. To get a full list of country codes, please check WiFi Country Code. | `US` |
+    
+    <img src="https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/en/AqaraCoap-ToolLogin.jpg" alt="Aqara Tool Login" style={{width: '50%'}} />
+
+3. After a successful login, search for the Aqara Gateway that you want to integrate.
+
+    Select the gateway, and follow the prompts on the page to add the Aqara Gateway.
+
+    :::tip
+    If the Aqara Tool App appears to freeze during the device network configuration process, please pay attention to the gateway's indicator light. 
+    
+    If the indicator light changes to the normal working state described in the user manual (for example, for model M200, it is solid blue), this means the gateway has successfully joined the network. 
+    
+    At this point, you can refresh the Aqara Studio web page and check under **Devices > AqaraCoap** to see if the gateway appears.
+    :::
+    
+4. After the gateway is added, put it into pairing mode according to its user manual.
+5. When the sub-devices have joined successfully, their information will automatically appear in the <code>AqaraCoap</code> directory of the right sidebar. There is no need to manually add function points—Aqara Studio will recognize them automatically.
+
+## Next Steps
+
+Now, you can [view details and control the device](./../device-management/basic-information.mdx), or [use the device in automation](./../automation.mdx).

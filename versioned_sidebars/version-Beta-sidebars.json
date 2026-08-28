@@ -7,7 +7,7 @@
         "aqara-studio/overview/introduction",
         "aqara-studio/overview/ai-native-architecture",
         "aqara-studio/overview/core-concepts",
-        "aqara-studio/overview/compatible-aqara-devices",              
+        "aqara-studio/overview/compatible-aqara-devices",
         "aqara-studio/overview/features"
       ]
     },
@@ -35,6 +35,7 @@
                 "collapsed": false,
                 "items": [
                   "aqara-studio/device-integration/aqara",
+                  "aqara-studio/device-integration/aqara-rs-485",
                   "aqara-studio/device-integration/zigbee",
                   "aqara-studio/device-integration/matter",
                   "aqara-studio/device-integration/home-assistant",
@@ -44,7 +45,23 @@
                   "aqara-studio/device-integration/mqtt",
                   "aqara-studio/device-integration/http",
                   "aqara-studio/device-integration/tcp",
-                  "aqara-studio/device-integration/udp"
+                  "aqara-studio/device-integration/udp",
+                  "aqara-studio/device-integration/sonos",
+                  "aqara-studio/device-integration/aqara-coap",
+                  "aqara-studio/device-integration/virtual/infrared-equipment",
+                  "aqara-studio/device-integration/virtual/light-box"
+                ]
+              },
+              {
+                "type": "category",
+                "label": "Device Export",
+                "link": {
+                  "type": "generated-index",
+                  "keywords": ["device-export"]
+                },
+                "items": [
+                  "aqara-studio/device-export/aiot",
+                  "aqara-studio/device-export/haystack"
                 ]
               },
               {
@@ -56,10 +73,23 @@
                   },
                   "items": [
                     "aqara-studio/device-management/basic-information",
+                    "aqara-studio/device-management/firmware-upgrade",
                     "aqara-studio/device-management/point-information",
                     "aqara-studio/device-management/history",
-                    "aqara-studio/device-management/alarms",
-                    "aqara-studio/device-management/tags"
+                    "aqara-studio/device-management/tags",
+                    {
+                      "type": "category",
+                      "label": "Aqara Device Configuration",
+                      "link": {
+                        "type": "generated-index",
+                        "keywords": ["aqara-device-configuration"]
+                      },
+                      "items": [
+                        "aqara-studio/device-management/aqara-device-configuration/lights",
+                        "aqara-studio/device-management/aqara-device-configuration/light-boxes",
+                        "aqara-studio/device-management/aqara-device-configuration/screens"
+                      ]
+                    }
                   ]
               },
               {
@@ -125,15 +155,30 @@
             "label": "Settings",
             "collapsed": false,
             "items": [
+              "aqara-studio/static-ip",
               "aqara-studio/wireless-connection",
-                "aqara-studio/cloud",  
-                "aqara-studio/remote-access",
-                "aqara-studio/system-update",
-                "aqara-studio/technical-support",
-                "aqara-studio/local-domain-name-access"
+              "aqara-studio/cloud",  
+              "aqara-studio/remote-access",
+              "aqara-studio/system-update",
+              "aqara-studio/technical-support",
+              "aqara-studio/local-firmware-library",
+              "aqara-studio/local-domain-name-access",
+              "aqara-studio/factory-reset"
               ]
           }
         ]      
+    },
+    {
+      "type": "category",
+      "label": "Plugin Center",
+      "collapsed": false,
+      "link": {
+          "type": "doc",
+          "id": "aqara-studio/plugin-center"
+      },
+      "items": [
+        "aqara-studio/plugin-center/aiot-data-migration"
+      ]
     },
     {
       "type": "category",
@@ -194,6 +239,76 @@
           ]
         },
         "aqara-studio/numerical-mapping-functions"
+      ]
+    },
+    {
+      "type": "doc",
+      "id": "aqara-studio/product-knowledge/reference",
+      "customProps": {
+        "tab": "product-knowledge"
+      }
+    },
+    {
+      "type": "category",
+      "label": "Gateways",
+      "customProps": {
+        "tab": "product-knowledge"
+      },
+      "items": [
+        "aqara-studio/product-knowledge/gateways/studio-hub-comparison",
+        "aqara-studio/product-knowledge/gateways/general",
+        "aqara-studio/product-knowledge/gateways/edge-hub-m300",
+        "aqara-studio/product-knowledge/gateways/din-rail-hub-ax100m",
+        "aqara-studio/product-knowledge/gateways/hub-ax200m"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Sensors",
+      "customProps": {
+        "tab": "product-knowledge"
+      },
+      "items": [
+        "aqara-studio/product-knowledge/sensors/presence-sensor-pr330p",
+        "aqara-studio/product-knowledge/sensors/spatial-multi-sensor-fp400",
+        "aqara-studio/product-knowledge/sensors/spatial-multi-sensor-fp400-pro"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Controllers",
+      "customProps": {
+        "tab": "product-knowledge"
+      },
+      "items": [
+        "aqara-studio/product-knowledge/controllers/din-rail-module-4-channels-aw110k"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Screens",
+      "customProps": {
+        "tab": "product-knowledge"
+      },
+      "items": [
+        "aqara-studio/product-knowledge/screens/panel-hub-ax150s"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Lighting",
+      "customProps": {
+        "tab": "product-knowledge"
+      },
+      "items": [
+        "aqara-studio/product-knowledge/lighting/lighting-scene-controller-aw100l",
+        "aqara-studio/product-knowledge/lighting/pastel-light-module-h1",
+        "aqara-studio/product-knowledge/lighting/pastel-light-board-h1",
+        "aqara-studio/product-knowledge/lighting/pastel-light-strip-controller-h1",
+        "aqara-studio/product-knowledge/lighting/pastel-led-strip-h1",
+        "aqara-studio/product-knowledge/lighting/pastel-spotlight-downlight-h1",
+        "aqara-studio/product-knowledge/lighting/track-light-v1-series",
+        "aqara-studio/product-knowledge/lighting/spotlight-downlight-t2-pro-series"
       ]
     }
   ],
@@ -539,8 +654,94 @@
       ]
     }
   ],
+  "aqaraBuilderSidebar": [
+    "aqara-builder/overview",
+    {
+      "type": "category",
+      "label": "Builder Lab",
+      "link": {
+        "type": "generated-index",
+        "keywords": ["builder-lab"]
+      },
+      "items": [
+        {
+          "type": "category",
+          "label": "Space Plan",
+          "link": {
+            "type": "generated-index",
+            "keywords": ["space-plan"]
+          },
+          "items": [
+            "aqara-builder/builder-lab/space-plan/create-a-space-plan",
+            {
+              "type": "category",
+              "label": "Layout and Device Placement",
+              "link": {
+                "type": "generated-index",
+                "keywords": ["layout-and-device-placement"]
+              },
+              "items": [
+                "aqara-builder/builder-lab/space-plan/draw-the-floor-plan-and-rooms",
+                "aqara-builder/builder-lab/space-plan/add-furniture-and-smart-devices",
+                "aqara-builder/builder-lab/space-plan/add-light-strips",
+                "aqara-builder/builder-lab/space-plan/add-switches"
+              ]
+            },
+            "aqara-builder/builder-lab/space-plan/design-scenes-and-automations",
+            "aqara-builder/builder-lab/space-plan/deploy-a-space-plan"
+          ]
+        },
+        {
+          "type": "category",
+          "label": "Application UI",
+          "link": {
+            "type": "generated-index",
+            "keywords": ["application-ui"]
+          },
+          "items": [
+            "aqara-builder/builder-lab/application-ui/create-and-edit-an-application-ui",
+            "aqara-builder/builder-lab/application-ui/deploy-an-application-ui"
+          ]
+        },
+        "aqara-builder/builder-lab/builder-lab-faq"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Studio Manager",
+      "link": {
+        "type": "generated-index",
+        "keywords": ["studio-manager"]
+      },
+      "items": [
+        "aqara-builder/studio-manager/manage-projects",
+        "aqara-builder/studio-manager/move-studio",
+        "aqara-builder/studio-manager/manage-studio-members",
+        "aqara-builder/studio-manager/view-deployed-studio-resources",
+        "aqara-builder/studio-manager/manage-the-ui-used-by-members",
+        "aqara-builder/studio-manager/disconnect-a-studio-from-the-cloud",
+        "aqara-builder/studio-manager/studio-manager-faq"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Builder Agent",
+      "items": [
+        "aqara-builder/builder-agent/overview",
+        "aqara-builder/builder-agent/spatial-parsing-foundation",
+        "aqara-builder/builder-agent/device-recommendation-agent",
+        "aqara-builder/builder-agent/scene-generation-agent",
+        "aqara-builder/builder-agent/automation-generation-agent",
+        "aqara-builder/builder-agent/scene-vs-automation-key-differences",
+        "aqara-builder/builder-agent/from-request-to-solution-end-to-end-workflow"
+      ]
+    }
+  ],
   "aqaraLifeSidebar": [
-    "aqara-life/overview"
+    "aqara-life/overview",
+    "aqara-life/feature-overview",
+    "aqara-life/future-of-the-plugin-based-architecture",
+    "aqara-life/life-agent/overview"
   ],
   "aqaraOpenLinkSidebar": [
     "aqara-openlink/overview",
@@ -559,5 +760,5 @@
         }
       ]
     }
-  ]  
+  ]
 }
