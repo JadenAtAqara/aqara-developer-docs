@@ -16,7 +16,8 @@
 - 网关融合形态: https://docs.aqara.com/zh/docs/aqara-studio/deployment/hub-integrated-model
 - 空间管理: https://docs.aqara.com/zh/docs/aqara-studio/space
 - Aqara Hub 接入: https://docs.aqara.com/zh/docs/aqara-studio/device-integration/aqara
-- Zigbee 设备接入: https://docs.aqara.com/zh/docs/aqara-studio/device-integration/zigbee
+- Aqara RS-485 设备接入: https://docs.aqara.com/zh/docs/aqara-studio/device-integration/aqara-rs-485
+- Aqara Zigbee 设备接入: https://docs.aqara.com/zh/docs/aqara-studio/device-integration/zigbee
 - Matter 设备接入: https://docs.aqara.com/zh/docs/aqara-studio/device-integration/matter
 - Home Assistant 生态集成: https://docs.aqara.com/zh/docs/aqara-studio/device-integration/home-assistant
 - Modbus TCP 设备接入: https://docs.aqara.com/zh/docs/aqara-studio/device-integration/modbus-tcp
@@ -26,11 +27,20 @@
 - HTTP 设备接入: https://docs.aqara.com/zh/docs/aqara-studio/device-integration/http
 - TCP 设备接入: https://docs.aqara.com/zh/docs/aqara-studio/device-integration/tcp
 - UDP 设备接入: https://docs.aqara.com/zh/docs/aqara-studio/device-integration/udp
+- Sonos 设备接入: https://docs.aqara.com/zh/docs/aqara-studio/device-integration/sonos
+- Aqara Coap 设备接入: https://docs.aqara.com/zh/docs/aqara-studio/device-integration/aqara-coap
+- 红外设备接入: https://docs.aqara.com/zh/docs/aqara-studio/device-integration/virtual/infrared-equipment
+- 灯箱设备接入: https://docs.aqara.com/zh/docs/aqara-studio/device-integration/virtual/light-box
+- 转出至 Aqara Home App: https://docs.aqara.com/zh/docs/aqara-studio/device-export/aiot
+- 以 Haystack 框架转出: https://docs.aqara.com/zh/docs/aqara-studio/device-export/haystack
 - 查看和修改基本信息: https://docs.aqara.com/zh/docs/aqara-studio/device-management/basic-information
+- 固件升级: https://docs.aqara.com/zh/docs/aqara-studio/device-management/firmware-upgrade
 - 查看和控制功能点: https://docs.aqara.com/zh/docs/aqara-studio/device-management/point-information
 - 展示历史数据: https://docs.aqara.com/zh/docs/aqara-studio/device-management/history
-- 配置功能点告警: https://docs.aqara.com/zh/docs/aqara-studio/device-management/alarms
 - 添加标签: https://docs.aqara.com/zh/docs/aqara-studio/device-management/tags
+- 灯: https://docs.aqara.com/zh/docs/aqara-studio/device-management/aqara-device-configuration/lights
+- 灯箱: https://docs.aqara.com/zh/docs/aqara-studio/device-management/aqara-device-configuration/light-boxes
+- 屏: https://docs.aqara.com/zh/docs/aqara-studio/device-management/aqara-device-configuration/screens
 - 自动化: https://docs.aqara.com/zh/docs/aqara-studio/automation
 - Classic: https://docs.aqara.com/zh/docs/aqara-studio/classic-automation
 - Flow: https://docs.aqara.com/zh/docs/aqara-studio/flow/flow-introduction
@@ -47,12 +57,17 @@
 - 日志管理: https://docs.aqara.com/zh/docs/aqara-studio/log-management
 - 本地用户管理: https://docs.aqara.com/zh/docs/aqara-studio/user
 - 备份与还原: https://docs.aqara.com/zh/docs/aqara-studio/backup-and-restore
+- 静态 IP: https://docs.aqara.com/zh/docs/aqara-studio/static-ip
 - 无线连接: https://docs.aqara.com/zh/docs/aqara-studio/wireless-connection
 - 云端连接: https://docs.aqara.com/zh/docs/aqara-studio/cloud
 - 远程访问: https://docs.aqara.com/zh/docs/aqara-studio/remote-access
 - 系统更新: https://docs.aqara.com/zh/docs/aqara-studio/system-update
 - 技术支持: https://docs.aqara.com/zh/docs/aqara-studio/technical-support
+- 本地固件库: https://docs.aqara.com/zh/docs/aqara-studio/local-firmware-library
 - 通过主机访域名访问: https://docs.aqara.com/zh/docs/aqara-studio/local-domain-name-access
+- 恢复出厂设置: https://docs.aqara.com/zh/docs/aqara-studio/factory-reset
+- 插件中心: https://docs.aqara.com/zh/docs/aqara-studio/plugin-center
+- AIOT 数据迁移: https://docs.aqara.com/zh/docs/aqara-studio/plugin-center/aiot-data-migration
 - 开发者指南: https://docs.aqara.com/zh/docs/aqara-studio/developer-guide
 - 数据转出 API v1: https://docs.aqara.com/zh/docs/aqara-studio/api-references/data-export-api-v1
 - 设备功能 API: https://docs.aqara.com/zh/docs/aqara-studio/api-references/trait-api
@@ -69,4 +84,23 @@
 - JavaScript 脚本（适用于 UDP 和 TCP）: https://docs.aqara.com/zh/docs/aqara-studio/javascript-for-udp-tcp-integration
 - 脚本支持的单位名称与符号: https://docs.aqara.com/zh/docs/aqara-studio/script-supported-unit-symbols
 - 数值映射函数: https://docs.aqara.com/zh/docs/aqara-studio/numerical-mapping-functions
+- 参考格式: https://docs.aqara.com/zh/docs/aqara-studio/product-knowledge/reference
+- Studio 网关功能一览: https://docs.aqara.com/zh/docs/aqara-studio/product-knowledge/gateways/studio-hub-comparison
+- 通用资料: https://docs.aqara.com/zh/docs/aqara-studio/product-knowledge/gateways/general
+- 智慧边端 M300: https://docs.aqara.com/zh/docs/aqara-studio/product-knowledge/gateways/edge-hub-m300
+- 配电箱网关 AX100M: https://docs.aqara.com/zh/docs/aqara-studio/product-knowledge/gateways/din-rail-hub-ax100m
+- 智慧网关 AX200M: https://docs.aqara.com/zh/docs/aqara-studio/product-knowledge/gateways/hub-ax200m
+- 人在传感器 PR330P: https://docs.aqara.com/zh/docs/aqara-studio/product-knowledge/sensors/presence-sensor-pr330p
+- AI 空间传感器 FP400: https://docs.aqara.com/zh/docs/aqara-studio/product-knowledge/sensors/spatial-multi-sensor-fp400
+- AI 空间传感器 FP400 Pro: https://docs.aqara.com/zh/docs/aqara-studio/product-knowledge/sensors/spatial-multi-sensor-fp400-pro
+- 四路控制模块 AW110K: https://docs.aqara.com/zh/docs/aqara-studio/product-knowledge/controllers/din-rail-module-4-channels-aw110k
+- 妙控场景屏 AX150S: https://docs.aqara.com/zh/docs/aqara-studio/product-knowledge/screens/panel-hub-ax150s
+- 灯光场景控制器 AW100L: https://docs.aqara.com/zh/docs/aqara-studio/product-knowledge/lighting/lighting-scene-controller-aw100l
+- 臻彩光四色光源模组 H1: https://docs.aqara.com/zh/docs/aqara-studio/product-knowledge/lighting/pastel-light-module-h1
+- 臻彩光四色光源板 H1: https://docs.aqara.com/zh/docs/aqara-studio/product-knowledge/lighting/pastel-light-board-h1
+- 臻彩光灯带驱动控制器 H1: https://docs.aqara.com/zh/docs/aqara-studio/product-knowledge/lighting/pastel-light-strip-controller-h1
+- 臻彩光四色裸板灯带 H1: https://docs.aqara.com/zh/docs/aqara-studio/product-knowledge/lighting/pastel-led-strip-h1
+- 臻彩光筒射灯 H1: https://docs.aqara.com/zh/docs/aqara-studio/product-knowledge/lighting/pastel-spotlight-downlight-h1
+- 轨道灯 V1 系列: https://docs.aqara.com/zh/docs/aqara-studio/product-knowledge/lighting/track-light-v1-series
+- 筒射灯 T2 Pro 系列: https://docs.aqara.com/zh/docs/aqara-studio/product-knowledge/lighting/spotlight-downlight-t2-pro-series
 
