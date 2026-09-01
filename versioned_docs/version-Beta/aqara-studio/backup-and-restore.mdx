@@ -74,7 +74,9 @@ You can restore user data using either of the following methods:
 
 ### Can Aqara Studio backups be migrated and restored across different Edge Hub M300 devices?
 
-Yes. Simply **download** the backup file from the source M300 to your local computer, and then use the **Restore from file** feature to import the backup into the target M300. This allows you to complete data migration easily.
+Yes, but please ensure that both Aqara Studio versions of the source and target M300 are `1.2.3_37` or later.
+
+Simply **download** the backup file from the source M300 to your local computer, and then use the **Restore from file** feature to import the backup into the target M300. This allows you to complete data migration easily.
 
 After importing, the target M300 will acquire all data from the source M300 (including device information, automation configurations, etc.), so you do not need to add sub-devices again and can directly control the original sub-devices.
 
