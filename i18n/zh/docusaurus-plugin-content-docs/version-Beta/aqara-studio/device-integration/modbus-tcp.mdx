@@ -43,8 +43,7 @@ keywords: ["Aqara 文档", "Aqara Studio", "设备接入", "Modbus TCP 设备接
 
     <img src="https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/zh/ModbusTCP-AddDeviceStep1.png" alt="添加设备步骤 1" />
 
-  - 设备配置：
-
+  - 设备配置：   
     | 参数名称 | 是否必填 | 说明 |
     | --- | --- | --- |
     | 设备名称 | ✔ | 您自定义的设备名称。  |
@@ -53,9 +52,7 @@ keywords: ["Aqara 文档", "Aqara Studio", "设备接入", "Modbus TCP 设备接
     | 端口 | ✔ | Modbus TCP 通信端口，默认 502。 |
     | TCP 帧模式 | ✘ | 支持以下值：<ul><li>Modbus TCP</li><li>RTU Over TCP</li><li>ASCII Over TCP</li></ul> |
 
-
-  - 高级配置：
-  
+  - 高级配置：   
     | 参数名称 | 是否必填 | 说明 |
     | --- | --- | --- |
     | 是否启用批量写入线圈指令 | ✔ | 是否使用 "Force Multiple Coils" 指令写多个线圈（对应 Modbus 协议中的功能码 15）。 |
@@ -104,8 +101,9 @@ keywords: ["Aqara 文档", "Aqara Studio", "设备接入", "Modbus TCP 设备接
             | Aqara Spec | - | ✔ | 用于将此点位关联到 Aqara Spec 协议中的对应功能点，实现标准化控制与管理。 | 门窗传感器/接触/接触状态 |
             | 功能取值（布尔）| true 文本 | ✔ | 在此配置当布尔型功能点取值为 true 时显示的文本。 | 已关上 |
             | | false 文本 | ✔ | 在此配置当布尔型功能点取值为 false 时显示的文本。 | 已打开 |
-    - **数据映射规则**：
-   
+    - **数据映射规则**：开启后可对读取到的原始物理数值进行二次逻辑计算与状态映射。
+        - 当点的**寄存器类型**与 **Aqara Spec 类型**不一致时（如数值型需要映射为布尔型，或布尔型需要映射为数值型），请开启此选项，实现物理值与标准功能点类型之间的转换与映射。
+        - 若点的**寄存器类型**与 **Aqara Spec 类型**一致，则无需开启本选项。
 
 ### 什么是偏移地址？
 
