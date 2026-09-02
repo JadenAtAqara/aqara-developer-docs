@@ -25,7 +25,7 @@ Before you begin, please make sure:
 3. In the left **Protocols and Devices** tree, select the newly added **Modbus TCP** node, click the **Protocol Configuration** button, you can set the advanced configuration. Once the configuration is complete, click the **Close** button:   
     ![Click Protocol Configuration Button](https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/en/ModbusTCP-ClickProtocolConfiguration.png)
 
-    <img src="https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/en/ModbusTCP-AdvancedConfiguration.png" alt="Advanced Configuration" style={{ width: '60%' }} />
+    <img src="https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/en/ModbusTCP-AdvancedConfiguration.png" alt="Advanced Configuration" style={{ width: '70%' }} />
 
     | Parameter             | Description |
     |-----------------------|-------------|
@@ -87,7 +87,7 @@ Before you begin, please make sure:
         | Beginning Bit  | Required for numeric points | If a group of consecutive bits in a 16-bit register represents a value or state enum, fill in the start bit of this data segment. Numbered from 0, range 0-15, where 0 is the least significant bit. | 0 |
         | Number of Bits      | Required for numeric points | If a group of consecutive bits in a 16-bit register represents a value or state enum, fill in the number of consecutive bits starting from the start bit. Range: 1-16; start bit + number of bits must not exceed 16. Currently only supports extracting consecutive segments from a single 16-bit register. | 1 |
     - **Type Setting**:
-        - When the register type is **Holding Register** or **Input Register**:
+        - When the register type is **Holding Register** or **Input Register**:   
             | Parameter Type  | Parameter Name | Required | Description | Example Configuration |
             |----------------|---------------|----------|-------------|----------------------|
             | Aqara Spec     | -             | ✔        | Associates this point with the corresponding function point in the Aqara Spec protocol for standardized control and management. | Air Conditioner/Heater Cooler/Set temperature |
@@ -96,27 +96,21 @@ Before you begin, please make sure:
             |                | Step          | ✔        | The step of the value range for this point. | 1 |
             |                | Unit          | ✔        | The unit of the value range for this point. | Celsius (℃) |
             |                | Precision     | ✔        | The precision of the value range for this point. Supported: <ul><li>Integer</li><li>1 decimal place</li><li>2 decimal places</li><li>3 decimal places</li></ul> | Integer |
-        - When the register type is **Discrete Coil** or **Discrete Input**:
+        - When the register type is **Discrete Coil** or **Discrete Input**:   
             | Parameter Type  | Parameter Name | Required | Description | Example Configuration |
             |----------------|---------------|----------|-------------|----------------------|
             | Aqara Spec     | -             | ✔        | Associates this point with the corresponding function point in the Aqara Spec protocol for standardized control and management. | Door and Window Sensor/Contact/Contact Status |
             | Point Value (Boolean) | True text | ✔   | Display text when the boolean function point value is `true`. | Closed |
             |                | False text    | ✔        | Display text when the boolean function point value is `false`. | Open |
-    - **Data Mapping Rules**: After enabled, the original physical value can be recalculated and mapped to a status
+    - **Data Mapping Rules**: After enabled, the original physical value can be recalculated and mapped to a status. Please refer to [Numerical Mapping Functions](./../numerical-mapping-functions.mdx) for more details.
         - When the **data area type** of the point is different from the **Aqara Spec type** (for example, a numeric type needs to be mapped to a boolean type, or a boolean type needs to be mapped to a numeric type), please enable this option to achieve conversion and mapping between the physical value and the standard function point type.
         - If the **data area type** of the point and the **Aqara Spec type** are the same, you do not need to enable this option.
-   
-### What is an Offset Address?
 
-In the Modbus protocol, each data item in the device (such as registers or coils) has a numbered address used for reading or writing.
+6. After completing the point addition, return to the **Devices** page, and you can see the newly added Modbus TCP device under the Modbus TCP node.
 
-However, the addresses used in Modbus messages start from 0 internally, while users often see addresses starting from 1, 30001, 40001, and so on. Therefore, Aqara Studio asks for an “offset address” to help automatically convert these values.
+    Select this device, and you can see the newly added points in the **Points** list in the device details page.
 
-For example, imagine a point with a real address of 40001 (holding register). If you set the “Holding Register Offset Address” to 40000, then when you add this point, you only need to input a data address of 1. Aqara Studio will automatically add the offset and calculate:
-
-Final read address = Offset address + Data address = 40000 + 1 = 40001
-
-This helps you configure many points easily. Just use the relative address (like 1, 2, 3) instead of the full Modbus address each time. This is both simple and consistent.
+    <img src="https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/en/ModbusTCP-CheckNewDeviceAndPoint.png" alt="Device Details" />
 
 ## Next Steps
 
