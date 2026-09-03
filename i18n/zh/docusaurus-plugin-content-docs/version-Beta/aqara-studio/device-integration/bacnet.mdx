@@ -22,9 +22,13 @@ keywords: ["Aqara 文档", "Aqara Studio", "设备接入", "BACnet 设备接入"
 2. 在弹窗中选择 `BACnet IP`，以添加 `BACnet IP`。   
     <img src="https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/en/Protocols-ChooseBACnetIP.png" alt="选择 BACnet IP" style={{ width: '60%' }} /> 
 
-3. 选择 `BACnet IP`，进入 `协议配置` 选项卡，您需要配置该协议的参数。
+3. 选择 `BACnet IP`，单击 `协议配置` 按钮。
 
-    ![Configure Protocol](https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/zh/Bacnet-ProtocolConfiguration.png)
+    ![Click Protocol Configuration Button](https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/zh/BACnetIP-ClickProtocolConfiguration.png)
+
+    您可以配置以下类型的参数：**基础配置**、**工作模式配置**、**高级配置**。
+
+    <img src="https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/zh/BACnetIP-ProtocolConfiguration.png" alt="Configure Protocol" style={{ width: '70%' }} />
 
     相关参数如下表所示：
 
@@ -94,8 +98,8 @@ keywords: ["Aqara 文档", "Aqara Studio", "设备接入", "BACnet 设备接入"
                 <td rowspan="6">高级配置</td>
                 <td>可接收的最大APDU长度（单位：字节）</td>
                 <td>✘</td>
-                <td>支持的最大 APDU（Application Protocol Data Unit，应用层协议数据单元）数据长度，单位为字节，建议不大于 1476。</td>
-                <td>1076</td>
+                <td>支持的最大 APDU（Application Protocol Data Unit，应用层协议数据单元）数据长度，单位为字节，不大于 1476。</td>
+                <td>1476</td>
             </tr>
             <tr>
                 <td>是否支持报文分段</td>
@@ -118,7 +122,7 @@ keywords: ["Aqara 文档", "Aqara Studio", "设备接入", "BACnet 设备接入"
             <tr>
                 <td>字符编码集</td>
                 <td>✘</td>
-                <td>使用的字符编码集，用于确保设备间文本信息的正确编码与解码。支持选项：ISO_10646_UTF8、IBM_MICROSOFT_DBCS、JIS_X0208、ISO_10646_UCS4、ISO_10646_UCS2、ISO_8859_1、UNKNOWN。</td>
+                <td>使用的字符编码集，用于确保设备间文本信息的正确编码与解码。支持选项：<ul><li>ISO_10646_UTF8</li><li>IBM_MICROSOFT_DBCS</li><li>JIS_X0208</li><li>ISO_10646_UCS4</li><li>ISO_10646_UCS2</li><li>ISO_8859_1</li><li>未知</li></ul></td>
                 <td>ISO_10646_UTF8</td>
             </tr>
             <tr>
@@ -130,9 +134,17 @@ keywords: ["Aqara 文档", "Aqara Studio", "设备接入", "BACnet 设备接入"
         </tbody>
     </table>
 
-4. （可选）切换至“添加设备”单选项卡，单击 ⚙ 按钮，即可设置设备发现规则。
+4. 单击 **添加设备** 按钮。
 
-    ![设置设备发现规则](https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/zh/Bacnet-SetDiscoveryRule.png)
+    ![单击添加设备按钮](https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/zh/BACnetIP-ClickAddDevice.png)
+
+    在弹窗中选择 **自动发现**，并单击 **开始接入设备**。
+
+    <img src="https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/zh/BACnetIP-SelectAutoDiscovery.png" alt="开始接入设备" style={{ width: '60%' }} />
+
+5. （可选）单击 **⚙** 按钮，即可设置设备发现规则。
+
+    ![设置设备发现规则](https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/zh/BACnetIP-SetDiscoveryRule.png)
 
     字段说明如下：
 
@@ -160,6 +172,10 @@ keywords: ["Aqara 文档", "Aqara Studio", "设备接入", "BACnet 设备接入"
                 <td>等待响应时间</td>
                 <td>发现过程持续时长，单位为 s。<br /><strong>说明：</strong>如果扫描失败或未扫描到部分设备，可根据当前网络情况，调整此字段。</td>
             </tr>
+            <tr>
+                <td>Max Wait Time</td>
+                <td>发现过程的最大等待时间，单位为 s。默认值为 10 秒。</td>
+            </tr>
         </tbody>
     </table>
    
@@ -169,11 +185,20 @@ keywords: ["Aqara 文档", "Aqara Studio", "设备接入", "BACnet 设备接入"
     如果本系统没有发现您的 BACnet 设备，您也可以 [手动添加该设备](#如何处理-aqara-studio-无法发现-bacnet-设备的问题)。
     :::
 
-    ![Discover Devices](https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/zh/Bacnet-DiscoverDevices.png)
+    ![Discover Devices](https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/zh/BACnetIP-ClickDiscoverDevices.png)
 
-6. 选择需接入的设备后，点击中间“+”按钮，新增设备会出现在右侧的**已添加设备列表**，并同步显示在左侧设备树的 BACnet IP 下。
+6. 选择需接入的设备后，点击中间“+”按钮。
 
-    ![添加一个 Bacnet 设备](https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/zh/Bacnet-AddADevice.png)
+    ![添加一个 Bacnet 设备](https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/zh/BACnetIP-SelectAndAddDevices.png)
+
+    新增设备会出现在右侧的已添加设备列表。单击 完成 按钮，退出添加设备流程。
+
+    <img src="https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/zh/BACnetIP-AddedDeviceList.png" alt="已添加设备列表" /> 
+
+7. 此时，您将在左侧 **协议和设备** 的 BACnet IP 节点下，以及该 BACnet IP 管理页面的设备列表中，看到已成功添加的设备。
+
+    <img src="https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/zh/BACnetIP-CheckAddedDevices.png" alt="设备已添加至 BACnet IP 下" /> 
+
 
 ## 添加功能点
 
@@ -220,7 +245,7 @@ keywords: ["Aqara 文档", "Aqara Studio", "设备接入", "BACnet 设备接入"
 | 地址类型 | ✘ | 指定 MAC 地址的格式和协议类型：<ul><li>UNKNOWN：未知类型；</li><li>ETHERNET：以太网 MAC 地址，6 字节，格式：AA:BB:CC:DD:EE:FF；</li><li>IP：IP 地址，4-6 字节，格式：192.168.1.1:47808）；</li><li>MSTP：MS/TP 地址，1 字节，主从令牌传递；</li><li>SC：安全连接地址，6 字节，WebSocket</li></ul> | - |
 | 可接收的最大APDU长度（单位：字节） | ✘ | 支持的最大 APDU（Application Protocol Data Unit，应用层协议数据单元）数据长度，单位为字节，建议不大于 1476。 | 1076 |
 | 是否支持报文分段 | ✘ | 可选支持项如下：<ul><li>支持收发分段（默认）：设备支持发送和接收分段的 APDU 报文；</li><li>仅发送分段：设备支持发送分段报文，但不支持接收分段报文；</li><li>仅接收分段：设备不支持发送分段报文，但可接收分段报文；</li><li>不支持分段：设备不支持发送或接收分段报文，仅支持长度不超过最大 APDU 限制的完整报文。</li></ul> | 支持收发分段 |
-| 编码 | ✘ | 使用的字符编码集，用于确保设备间文本信息的正确编码与解码。支持选项：<ul><li>ISO_10646_UTF8</li><li>IBM_MICROSOFT_DBCS</li><li>JIS_X0208</li><li>ISO_10646_UCS4</li><li>ISO_10646_UCS2</li><li>ISO_8859_1</li><li>UNKNOWN</li></ul> | ISO_10646_UTF8 |
+| 编码 | ✘ | 使用的字符编码集，用于确保设备间文本信息的正确编码与解码。支持选项：<ul><li>ISO_10646_UTF8</li><li>IBM_MICROSOFT_DBCS</li><li>JIS_X0208</li><li>ISO_10646_UCS4</li><li>ISO_10646_UCS2</li><li>ISO_8859_1</li><li>UNKNOWN</li></ul> | ISO_10646_UTF8 | 
 | 供应商名称 | ✘ | 设备厂商名称。 | - |
 | 型号名称 | ✘ | 设备型号。 | - |
 | 协议修订版本 | ✘ | 请传入 BACnet 协议中 `Protocol_Revision` 属性值。 | - |
