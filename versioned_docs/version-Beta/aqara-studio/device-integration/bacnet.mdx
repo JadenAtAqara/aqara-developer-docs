@@ -22,9 +22,13 @@ Before you start, please make sure your network meets these conditions based on 
 2. Select `BACnet IP` in the popup.   
     <img src="https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/en/Protocols-ChooseBACnetIP.png" alt="Select BACnet IP" style={{ width: '60%' }} /> 
 
-3. Select `BACnet IP`. Go to the `Protocol Configuration` tab, and set the protocol parameters.
+3. Select `BACnet IP`, and click the `Protocol Configuration` button, you need to configure the parameters of the protocol.
 
-    ![Configure Protocol](https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/en/Bacnet-ProtocolConfiguration.png)
+    ![Configure Protocol](https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/en/BACnetIP-ClickProtocolConfiguration.png)
+
+    You can configure the following types of parameters: **Basic Configuration**, **Worker Mode Configuration**, **Advanced Configuration**.
+
+    <img src="https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/en/BACnetIP-ProtocolConfiguration.png" alt="Configure Protocol" style={{ width: '70%' }} />
 
     The relevant parameters are shown in the following table:
 
@@ -118,7 +122,7 @@ Before you start, please make sure your network meets these conditions based on 
             <tr>
                 <td>Character Set</td>
                 <td>✘</td>
-                <td>The character set used, to ensure text information can be correctly encoded and decoded between devices. Supported options: ISO_10646_UTF8, IBM_MICROSOFT_DBCS, JIS_X0208, ISO_10646_UCS4, ISO_10646_UCS2, ISO_8859_1, UNKNOWN.</td>
+                <td>The character set used, to ensure text information can be correctly encoded and decoded between devices. Supported options:<ul><li>ISO_10646_UTF8</li><li>IBM_MICROSOFT_DBCS</li><li>JIS_X0208</li><li>ISO_10646_UCS4</li><li>ISO_10646_UCS2</li><li>ISO_8859_1</li><li>UNKNOWN</li></ul></td>
                 <td>ISO_10646_UTF8</td>
             </tr>
             <tr>
@@ -130,9 +134,17 @@ Before you start, please make sure your network meets these conditions based on 
         </tbody>
     </table>
 
-4. (Optional) Go to the "Add Device" tab, and click the ⚙ button to set up device discovery rules.
+4. Click the **Add Device** button.
 
-    ![Configure Protocol](https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/en/Bacnet-ProtocolConfiguration.png)
+    ![Click Add Device Button](https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/en/BACnetIP-ClickAddDevice.png)
+
+    In the popup, select **Auto Discovery** and click the **Start connecting the device** button.
+
+    <img src="https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/en/BACnetIP-SelectAutoDiscovery.png" alt="Select Auto Discovery" style={{ width: '60%' }} />
+
+5. (Optional) Click the **⚙** button to set up device discovery rules.
+
+    ![Configure Protocol](https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/en/BACnetIP-SetDiscoveryRule.png)
 
     The relevant parameters are described in the following table:
 
@@ -160,6 +172,10 @@ Before you start, please make sure your network meets these conditions based on 
                 <td>Wait Response Time</td>
                 <td>The time for the discovery process, in seconds. <br /><strong>Note:</strong> If device discovery fails or some devices are not found, adjust this field based on network conditions.</td>
             </tr>
+            <tr>
+                <td>Max Wait Time</td>
+                <td>The maximum time to wait for the discovery process, in seconds. Default is 10 seconds.</td>
+            </tr>
         </tbody>
     </table>
    
@@ -169,11 +185,19 @@ Before you start, please make sure your network meets these conditions based on 
     If Aqara Studio does not find your BACnet device, you can also [add the device manually](#how-to-handle-bacnet-devices-not-discovered-by-aqara-studio).
     :::
 
-    ![Discover Devices](https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/en/Bacnet-DiscoverDevices.png)    
+    ![Discover Devices](https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/en/BACnetIP-ClickDiscoverDevices.png)    
 
-6. Select the device(s) you want to add, and click the "+" button in the center. The newly added device(s) will appear in the **Added Device List** on the right, and will also be displayed under BACnet IP in the device tree on the left.
+6. Select the device(s) you want to add, and click the "+" button in the center. 
 
-    ![Add a Bacnet device](https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/en/Bacnet-AddADevice.png)
+    ![Add a Bacnet device](https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/en/BACnetIP-SelectAndAddDevices.png)
+
+    Newly added devices will appear in the **Added Device List** on the right. Click the **Complete** button to exit the add device process.
+
+    <img src="https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/en/BACnetIP-AddedDeviceList.png" alt="Added Device List" /> 
+
+7. You will then see the successfully added devices under the BACnet IP node in the left **Protocols and Devices** panel, as well as in the device list on the BACnet IP management page.
+
+    <img src="https://itad-aqara-docs-1300889962.aqara.com/dev/img/aqara-studio/en/BACnetIP-CheckAddedDevices.png" alt="Devices have been added" />
 
 ## Add Points
 
