@@ -7,7 +7,7 @@ keywords: ["Aqara 文档", "Aqara Studio", "API 参考", "设备功能 API", "tr
 
 ## 分页查询设备信息
 
-本接口用于分页查询设备信息列表。通过指定设备类型、排序字段、页码及每页大小等参数，可灵活筛选、排序并分页获取 Aqara Studio 中已接入设备的详细信息，包括设备 ID、名称、类型、添加时间、在线状态等。
+本接口用于分页查询设备信息列表。通过指定设备类型、排序字段、页码及每页大小等参数，可灵活筛选、排序并分页获取 Aqara Studio 中已接入设备的详细信息，包括设备 ID、名称、类型、添加时间、在线状态、所属空间等。
 
 适用于大批量设备的高效管理和展示。
 
@@ -61,6 +61,7 @@ keywords: ["Aqara 文档", "Aqara Studio", "API 参考", "设备功能 API", "tr
 | data.data[].deviceName | String | 设备名称。 |
 | data.data[].createTime | Number | 设备添加时间的 Unix 时间戳（毫秒）。 |
 | data.data[].state |Boolean | 设备在线状态：<ul><li>false：离线。</li><li>true：在线。</li></ul> |
+| data.data[].space | Object | 设备关联的空间信息。具体结构请参考 [Space 结构](./space-management-api.mdx#space-结构)。 |
 
 #### 响应示例
 
@@ -83,7 +84,13 @@ keywords: ["Aqara 文档", "Aqara Studio", "API 参考", "设备功能 API", "tr
                 "deviceTypesList": ["Light"],
                 "deviceName": "xxx",
                 "createTime":1758549173093,
-                "state": true
+                "state": true,
+                "space": {
+                    "parentSpaceId": "a1",
+                    "spaceId": "a1-001",
+                    "name": "客厅",
+                    "spatialMarking": null,
+                }
             }
         ]
     }
@@ -92,7 +99,7 @@ keywords: ["Aqara 文档", "Aqara Studio", "API 参考", "设备功能 API", "tr
 
 ## 全量查询设备信息
 
-本接口用于全量查询设备信息列表。通过该接口，您可以一次性获取 Aqara Studio 内所有设备的详细信息，包括设备 ID、名称、设备类型、添加时间、在线状态等。请求体支持根据设备类型、排序字段进行过滤。
+本接口用于全量查询设备信息列表。通过该接口，您可以一次性获取 Aqara Studio 内所有设备的详细信息，包括设备 ID、名称、设备类型、添加时间、在线状态、所属空间等。请求体支持根据设备类型、排序字段进行过滤。
 
 响应结果以数组形式返回设备列表，不带分页信息，适合需要一次性获取全部设备数据的场景。
 
@@ -138,6 +145,7 @@ keywords: ["Aqara 文档", "Aqara Studio", "API 参考", "设备功能 API", "tr
 | data[].deviceName | String | 设备名称。 |
 | data[].createTime | Number | 设备添加时间的 Unix 时间戳（毫秒）。 |
 | data[].state | Boolean | 设备在线状态：<ul><li>false：离线。</li><li>true：在线。</li></ul> |
+| data[].space | Object | 设备关联的空间信息。具体结构请参考 [Space 结构](./space-management-api.mdx#space-结构)。 |
 
 #### 响应示例
 
@@ -155,7 +163,12 @@ keywords: ["Aqara 文档", "Aqara Studio", "API 参考", "设备功能 API", "tr
             "deviceName": "客厅灯",
             "deviceTypesList": ["Light"],
             "createTime": 1609459200000,
-            "state": true
+            "state": true,
+            "space": {
+                "parentSpaceId": "a1",
+                "spaceId": "a1-001",
+                "name": "客厅",
+            }
         },
         {
             "deviceId": "device-002",
