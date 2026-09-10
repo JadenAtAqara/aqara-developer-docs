@@ -61,7 +61,17 @@ Below is an example request body for `GetDeviceInfoRequest`:
 | data.data[].deviceName | String | Device name. |
 | data.data[].createTime | Number | Unix timestamp (milliseconds) when the device was added. |
 | data.data[].state | Boolean | Device online status:<ul><li>false: offline.</li><li>true: online.</li></ul> |
-| data.data[].space | Object | Space information associated with the device. For the detailed structure, refer to [Space Structure](./space-management-api.mdx#space-structure). |
+| data.data[].space | Object | Space information associated with the device. For the detailed structure, refer to [Space Structure](#space-structure). |
+
+#### Space Structure
+
+| Parameter         | Type           | Description                                                                                                                                    |
+|-------------------|----------------|------------------------------------------------------------------------------------------------------------------------------------------------|
+| parentSpaceId | String | Parent space ID. If this field is not present, the space is a top-level space (i.e., has no parent space). |
+| spaceId           | String         | Space ID.                                                                                                                                      |
+| name              | String         | Space name.                                                                                                                                    |
+| spatialMarking    | String / Null  | Spatial marking.                                                                                                                               |
+| children          | Array of Object| List of child spaces. For detailed structure, refer to [Space Structure](#space-structure). If the request message type is [GetDeviceInfoRequest](./trait-api.mdx#query-device-information-by-pages) or [GetAllDeviceInfoRequest](./trait-api.mdx#query-all-device-information), this field will not be present. |
 
 #### Example Response
 
@@ -145,7 +155,7 @@ Below is an example request body for `GetAllDeviceInfoRequest`:
 | data[].deviceName | String | Device name. |
 | data[].createTime | Number | The Unix timestamp (milliseconds) when the device was added. |
 | data[].state | Boolean | Device online status:<ul><li>false: offline.</li><li>true: online.</li></ul> |
-| data[].space | Object | Space information associated with the device. For the detailed structure, refer to [Space Structure](./space-management-api.mdx#space-structure). |
+| data[].space | Object | Space information associated with the device. For the detailed structure, refer to [Space Structure](#space-structure). |
 
 #### Example Response
 
