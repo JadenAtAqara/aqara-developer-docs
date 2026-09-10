@@ -61,7 +61,17 @@ keywords: ["Aqara 文档", "Aqara Studio", "API 参考", "设备功能 API", "tr
 | data.data[].deviceName | String | 设备名称。 |
 | data.data[].createTime | Number | 设备添加时间的 Unix 时间戳（毫秒）。 |
 | data.data[].state |Boolean | 设备在线状态：<ul><li>false：离线。</li><li>true：在线。</li></ul> |
-| data.data[].space | Object | 设备关联的空间信息。具体结构请参考 [Space 结构](./space-management-api.mdx#space-结构)。 |
+| data.data[].space | Object | 设备关联的空间信息。具体结构请参考 [Space 结构](#space-结构)。 |
+
+#### Space 结构
+
+| 参数 | 类型 | 说明 |
+|------|------|------|
+| parentSpaceId | String | 父空间 ID。如无此字段，表示该空间为顶级空间，即没有父空间。 |
+| spaceId | String | 空间 ID。 |
+| name | String | 空间名称。 |
+| spatialMarking | String / Null | 空间标签。 |
+| children | Array of Object | 子空间列表。具体结构请参考 [Space 结构](#space-结构)。若请求消息类型为 [GetDeviceInfoRequest](./trait-api.mdx#分页查询设备信息) 和 [GetAllDeviceInfoRequest](./trait-api.mdx#全量查询设备信息) 时，不会有此字段。 |
 
 #### 响应示例
 
@@ -145,7 +155,7 @@ keywords: ["Aqara 文档", "Aqara Studio", "API 参考", "设备功能 API", "tr
 | data[].deviceName | String | 设备名称。 |
 | data[].createTime | Number | 设备添加时间的 Unix 时间戳（毫秒）。 |
 | data[].state | Boolean | 设备在线状态：<ul><li>false：离线。</li><li>true：在线。</li></ul> |
-| data[].space | Object | 设备关联的空间信息。具体结构请参考 [Space 结构](./space-management-api.mdx#space-结构)。 |
+| data[].space | Object | 设备关联的空间信息。具体结构请参考 [Space 结构](#space-结构)。 |
 
 #### 响应示例
 
