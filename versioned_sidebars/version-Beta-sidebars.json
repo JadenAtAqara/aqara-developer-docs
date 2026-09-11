@@ -60,7 +60,6 @@
                   "keywords": ["device-export"]
                 },
                 "items": [
-                  "aqara-studio/device-export/aiot",
                   "aqara-studio/device-export/haystack"
                 ]
               },
@@ -77,7 +76,6 @@
                     "aqara-studio/device-management/point-information",
                     "aqara-studio/device-management/commands",
                     "aqara-studio/device-management/history",
-                    "aqara-studio/device-management/tags",
                     {
                       "type": "category",
                       "label": "Aqara Device Configuration",
