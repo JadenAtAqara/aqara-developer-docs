@@ -44,6 +44,7 @@
 - Delete Automations: https://docs.aqara.com/docs/aqara-developer/data-export-api/delete-automations
 - Get Manual Trigger List: https://docs.aqara.com/docs/aqara-developer/data-export-api/query-automation-manual-trigger-list
 - Execute A Manual Trigger: https://docs.aqara.com/docs/aqara-developer/data-export-api/execute-automation-manual-trigger
+- JSON Automation Script: https://docs.aqara.com/docs/aqara-developer/data-export-api/reference/json-automation-script
 - Studio: https://docs.aqara.com/docs/aqara-developer/data-export-api/studio
 - Get Studio Statistics: https://docs.aqara.com/docs/aqara-developer/data-export-api/get-studio-statistics
 - WebSocket API Playground: https://docs.aqara.com/docs/aqara-developer/data-export-api/websocket-api/websocket-api

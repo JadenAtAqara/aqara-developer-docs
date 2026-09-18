@@ -44,6 +44,7 @@
 - 删除自动化: https://docs.aqara.com/zh/docs/aqara-developer/data-export-api/delete-automations
 - 获取手动触发器列表: https://docs.aqara.com/zh/docs/aqara-developer/data-export-api/query-automation-manual-trigger-list
 - 执行手动触发器: https://docs.aqara.com/zh/docs/aqara-developer/data-export-api/execute-automation-manual-trigger
+- JSON 自动化脚本定义: https://docs.aqara.com/zh/docs/aqara-developer/data-export-api/reference/json-automation-script
 - Studio: https://docs.aqara.com/zh/docs/aqara-developer/data-export-api/studio
 - 获取 Studio 统计信息: https://docs.aqara.com/zh/docs/aqara-developer/data-export-api/get-studio-statistics
 - WebSocket API Playground: https://docs.aqara.com/zh/docs/aqara-developer/data-export-api/websocket-api/websocket-api
