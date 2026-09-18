@@ -1,10 +1,7 @@
 ---
-hide_title: true
-hide_table_of_contents: true
-draft: true
 title: "JSON Automation Script"
 description: "This document explains the standard structure and examples of writing JSON automation scripts."
-keywords: ["Aqara Docs", "Aqara Studio", "API Reference", "JSON Automation Script"]
+keywords: ["Aqara Docs", "Aqara Developer", "JSON Automation Script"]
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -13,7 +10,8 @@ import TabItem from '@theme/TabItem';
 
 ## Prerequisites
 
-Before you start writing a JSON automation script, please make sure you have obtained the necessary trait information by calling the `QueryDeviceSupportedScriptAutomationConfigRequest` API. For details, see [Query Device Traits Available for Automation](./automation-api.mdx#query-device-traits-available-for-automation).
+Before you start writing a JSON automation script, please make sure you have obtained the necessary trait information by calling the `GET
+<Aqara_Developer_URL>/open/api/v1/automations/capabilities` API. For details, see [List Endpoint Capabilities for Automation](./../get-automation-capabilities.api.mdx).
 
 ## Standard Structure
 
