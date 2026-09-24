@@ -765,7 +765,7 @@ paths:
     post:
       tags: [Device]
       summary: Add A Virtual Device
-      description: Add a virtual device of either IR type or lightbox type.
+      description: Add a virtual device of IR type.
       operationId: addVirtualDevice
       x-skill-intent: device.virtual.add
       x-idempotent: false
@@ -783,10 +783,6 @@ paths:
                 value:
                   name: "Living Room IR Remote"
                   virtualDeviceType: ir
-              addLightboxVirtualDevice:
-                value:
-                  name: "Living Room Lightbox"
-                  virtualDeviceType: lightbox
       responses:
         '200':
           description: Request succeeded
@@ -2236,8 +2232,8 @@ components:
           description: Virtual device name
         virtualDeviceType:
           type: string
-          enum: [ir, lightbox]
-          description: "Virtual device type.<br />`ir`: Infrared device.<br />`lightbox`: Lightbox device."
+          enum: [ir]
+          description: "Virtual device type.<br />`ir`: Infrared device."
 
     VirtualDeviceAddData:
       type: object
