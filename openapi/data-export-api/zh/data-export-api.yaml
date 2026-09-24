@@ -763,7 +763,7 @@ paths:
     post:
       tags: [Device]
       summary: 添加虚拟设备
-      description: 添加一个红外类型或灯箱类型的虚拟设备。
+      description: 添加一个红外类型的虚拟设备。
       operationId: addVirtualDevice
       x-skill-intent: device.virtual.add
       x-idempotent: false
@@ -781,10 +781,6 @@ paths:
                 value:
                   name: "Living Room IR Remote"
                   virtualDeviceType: ir
-              addLightboxVirtualDevice:
-                value:
-                  name: "Living Room Lightbox"
-                  virtualDeviceType: lightbox
       responses:
         '200':
           description: 成功
@@ -2232,8 +2228,8 @@ components:
           description: 虚拟设备名称。
         virtualDeviceType:
           type: string
-          enum: [ir, lightbox]
-          description: 虚拟设备类型。<br />`ir` ：红外设备。<br />`lightbox` ：灯箱设备。
+          enum: [ir]
+          description: 虚拟设备类型。<br />`ir` ：红外设备。
 
     VirtualDeviceAddData:
       type: object
