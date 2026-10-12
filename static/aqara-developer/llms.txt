@@ -1,5 +1,5 @@
 # Aqara Developer
-> Cloud API, Studio local API, and data model documentation for developers integrating with Aqara.
+> Cloud API, Studio API, and data model documentation for developers integrating with Aqara.
 
 ## Recommended starting points
 - Overview: https://docs.aqara.com/docs/aqara-developer/introduction
