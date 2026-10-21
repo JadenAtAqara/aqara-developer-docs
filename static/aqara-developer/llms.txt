@@ -63,6 +63,7 @@
 - Control Devices by Traits: https://docs.aqara.com/docs/aqara-developer/aiot-api/execute-device-trait
 - Query Trait Values: https://docs.aqara.com/docs/aqara-developer/aiot-api/get-trait-values
 - Control Devices by Commands: https://docs.aqara.com/docs/aqara-developer/aiot-api/execute-device-command
+- Aqara 物模型标签: https://docs.aqara.com/docs/aqara-developer/aqara-data-model-specification/aqara-data-model-tags
 - Core Concepts: https://docs.aqara.com/docs/aqara-developer/aqara-data-model-specification/core-concepts
 - Device Types: https://docs.aqara.com/docs/aqara-developer/aqara-data-model-specification/device-types
 - Function Codes: https://docs.aqara.com/docs/aqara-developer/aqara-data-model-specification/function-codes
