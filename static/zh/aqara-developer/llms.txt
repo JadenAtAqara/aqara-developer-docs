@@ -63,6 +63,7 @@
 - 通过 Trait 控制设备: https://docs.aqara.com/zh/docs/aqara-developer/aiot-api/execute-device-trait
 - 查询 Trait 值: https://docs.aqara.com/zh/docs/aqara-developer/aiot-api/get-trait-values
 - 通过 Command 控制设备: https://docs.aqara.com/zh/docs/aqara-developer/aiot-api/execute-device-command
+- Aqara 物模型标签: https://docs.aqara.com/zh/docs/aqara-developer/aqara-data-model-specification/aqara-data-model-tags
 - 核心概念: https://docs.aqara.com/zh/docs/aqara-developer/aqara-data-model-specification/core-concepts
 - 设备类型: https://docs.aqara.com/zh/docs/aqara-developer/aqara-data-model-specification/device-types
 - 功能代码: https://docs.aqara.com/zh/docs/aqara-developer/aqara-data-model-specification/function-codes
