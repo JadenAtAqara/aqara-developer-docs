@@ -1,5 +1,6 @@
 export type JsonSchema = {
   type?: string | string[];
+  title?: string;
   description?: string;
   summary?: string;
   enum?: Array<string | number | null>;
@@ -7,10 +8,21 @@ export type JsonSchema = {
   format?: string;
   minLength?: number;
   maxLength?: number;
+  minItems?: number;
+  maxItems?: number;
+  uniqueItems?: boolean;
+  minProperties?: number;
   required?: string[];
   properties?: Record<string, JsonSchema>;
   items?: JsonSchema;
-  additionalProperties?: boolean;
+  additionalProperties?: boolean | JsonSchema;
+  anyOf?: JsonSchema[];
+  oneOf?: JsonSchema[];
+  allOf?: JsonSchema[];
+  if?: JsonSchema;
+  then?: JsonSchema;
+  else?: JsonSchema;
+  [key: string]: unknown;
 };
 
 export type MessageExample = {
