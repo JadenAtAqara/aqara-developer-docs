@@ -18,7 +18,7 @@
 - Aqara Hub: https://docs.aqara.com/docs/aqara-studio/device-integration/aqara
 - Aqara RS-485: https://docs.aqara.com/docs/aqara-studio/device-integration/aqara-rs-485
 - Aqara Zigbee: https://docs.aqara.com/docs/aqara-studio/device-integration/zigbee
-- Matter: https://docs.aqara.com/docs/aqara-studio/device-integration/matter
+- Aqara Matter: https://docs.aqara.com/docs/aqara-studio/device-integration/matter
 - Home Assistant: https://docs.aqara.com/docs/aqara-studio/device-integration/home-assistant
 - Modbus TCP: https://docs.aqara.com/docs/aqara-studio/device-integration/modbus-tcp
 - BACnet: https://docs.aqara.com/docs/aqara-studio/device-integration/bacnet
